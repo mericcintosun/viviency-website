@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+  background-color: coral;
+}
+.nav_item {
+  font-weight: 500;
+}
+
+@keyframes slide1 {
+    0% {
+      transform: translateX(0); /* Ortada başla */
+    }
+    100% {
+      transform: translateX(-100%); /* Sola kay */
+    }
+  }
+  
+  @keyframes slide2 {
+    0% {
+      transform: translateX(100%); /* Sağdan başla */
+    }
+    100% {
+      transform: translateX(0); /* Ortada bitir */
+    }
+  }
+  
+  @layer utilities {
+    /* Başlangıç animasyonları yok, sadece hover ile tetiklenir */
+    .animate-initial {
+      transform: translateX(0);
+      transition: none;
+    }
+  
+    /* Birinci metnin sola kayması */
+    .hover\\:animate-slide-1 {
+      animation: slide1 2s linear infinite;
+    }
+  
+    /* İkinci metnin sağdan gelip ortalanması */
+    .hover\\:animate-slide-2 {
+      animation: slide2 2s linear infinite;
+    }
+  }
+  
