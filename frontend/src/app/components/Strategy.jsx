@@ -86,8 +86,8 @@ export default function Strategy() {
             } xl:w-[33%]  xl:border-r xl:pb-12 border-gray-700 hover:border-[#F07F55] transition-all duration-300 `}
           >
             <motion.button
-              initial={{ opacity: 0, y: -50, rotate: isLargeScreen ? 0 : -90 }}
-              animate={{ opacity: 1, y: 0, rotate: isLargeScreen ? 0 : -90 }}
+              // initial={{ opacity: 0, y: -50, rotate: isLargeScreen ? 0 : -90 }}
+              // animate={{ opacity: 1, y: 0, rotate: isLargeScreen ? 0 : -90 }}
               transition={{
                 type: "spring",
                 stiffness: 100,
@@ -111,8 +111,8 @@ export default function Strategy() {
             } xl:w-[33%] xl:justify-center xl:items-center xl:border-r xl:pb-12 border-gray-700 hover:border-[#F07F55] transition-all duration-300 `}
           >
             <motion.button
-              initial={{ opacity: 0, y: -50, rotate: isLargeScreen ? 0 : -90 }}
-              animate={{ opacity: 1, y: 0, rotate: isLargeScreen ? 0 : -90 }}
+              // initial={{ opacity: 0, y: -50, rotate: isLargeScreen ? 0 : -90 }}
+              // animate={{ opacity: 1, y: 0, rotate: isLargeScreen ? 0 : -90 }}
               transition={{
                 type: "spring",
                 stiffness: 100,
@@ -134,8 +134,8 @@ export default function Strategy() {
             className="xl:box xl:w-[33%] xl:justify-center xl:items-center xl:border-none xl:pb-12"
           >
             <motion.button
-              initial={{ opacity: 0, y: -50, rotate: isLargeScreen ? 0 : -90 }}
-              animate={{ opacity: 1, y: 0, rotate: isLargeScreen ? 0 : -90 }}
+              // initial={{ opacity: 0, y: -50, rotate: isLargeScreen ? 0 : -90 }}
+              // animate={{ opacity: 1, y: 0, rotate: isLargeScreen ? 0 : -90 }}
               transition={{
                 type: "spring",
                 stiffness: 100,

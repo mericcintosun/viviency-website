@@ -90,6 +90,16 @@
   }
 }
 @media (max-width: 768px) {
+  #strategy-btn-one {
+    font-size: 2rem;
+    
+  }
+  #strategy-btn-two {
+    font-size: 2rem;
+  }
+  #strategy-btn-three {
+    font-size: 2rem;
+  }
   #strategy-box {
     color: white;
     display: flex;
@@ -116,13 +126,5 @@
     margin-inline: auto;
     margin-right: 3rem;
   }
-  #strategy-btn-one {
-    font-size: 2rem;
-  }
-  #strategy-btn-two {
-    font-size: 2rem;
-  }
-  #strategy-btn-three {
-    font-size: 2rem;
-  }
+  
 }
