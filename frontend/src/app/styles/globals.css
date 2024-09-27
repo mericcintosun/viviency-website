@@ -3,46 +3,98 @@
 @tailwind utilities;
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
-:root {
-  background-color: coral;
-}
 .nav_item {
   font-weight: 500;
 }
 
 @keyframes slide1 {
-    0% {
-      transform: translateX(0); /* Ortada başla */
-    }
-    100% {
-      transform: translateX(-100%); /* Sola kay */
-    }
+  0% {
+    transform: translateX(0); /* Ortada başla */
   }
-  
-  @keyframes slide2 {
-    0% {
-      transform: translateX(100%); /* Sağdan başla */
-    }
-    100% {
-      transform: translateX(0); /* Ortada bitir */
-    }
+  100% {
+    transform: translateX(-100%); /* Sola kay */
   }
-  
-  @layer utilities {
-    /* Başlangıç animasyonları yok, sadece hover ile tetiklenir */
-    .animate-initial {
-      transform: translateX(0);
-      transition: none;
-    }
-  
-    /* Birinci metnin sola kayması */
-    .hover\\:animate-slide-1 {
-      animation: slide1 2s linear infinite;
-    }
-  
-    /* İkinci metnin sağdan gelip ortalanması */
-    .hover\\:animate-slide-2 {
-      animation: slide2 2s linear infinite;
-    }
+}
+
+@keyframes slide2 {
+  0% {
+    transform: translateX(100%); /* Sağdan başla */
   }
-  
+  100% {
+    transform: translateX(0); /* Ortada bitir */
+  }
+}
+
+@layer utilities {
+  /* Başlangıç animasyonları yok, sadece hover ile tetiklenir */
+  .animate-initial {
+    transform: translateX(0);
+    transition: none;
+  }
+
+  /* Birinci metnin sola kayması */
+  .hover\\:animate-slide-1 {
+    animation: slide1 2s linear infinite;
+  }
+
+  /* İkinci metnin sağdan gelip ortalanması */
+  .hover\\:animate-slide-2 {
+    animation: slide2 2s linear infinite;
+  }
+}
+#strategy {
+  width: 100%;
+}
+#strategy img {
+  object-fit:cover;
+}
+#text-box {
+  height: 80%;
+  width: 70%;
+  padding-top: -4rem;
+  padding-left: 6rem;
+}
+.boxex {
+  height: 85dvh;
+  width: 100%;
+  position: absolute;
+}
+.box button {
+  position:relative;
+  transform: rotate(-90deg);
+  font-size: 1.5rem;
+  padding-bottom: 10px;
+  top: 450px;
+  left: 350px;
+  z-index: 100;
+}
+#strategy-border {
+  transform: rotate(-90deg);
+}
+#strategy-box-3 {
+  border: none;
+}
+.strategy {
+  position: relative;
+  width: 100%;
+  height: 85vh;
+  background-size: cover;
+  background-position: center;
+}
+
+.strategy::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  transition: opacity 0.5s ease-in-out;
+  opacity: 1;
+}
+
+.strategy.fade-out::before {
+  opacity: 0;
+}

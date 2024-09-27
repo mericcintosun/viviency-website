@@ -23,58 +23,69 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="bg-slate-200">
-        <div className="container mx-auto px-4 border">
-          <div className="flex justify-between items-center py-5 px-12 border">
-            {/* LOGO */}
-            <div>
-              <Link href="/" className="flex">
-                <Image className="" src="/logo.png" width={200} height={1} />
-              </Link>
+      <header className="border-b">
+        <nav className="lg:max-w-[1300px] w-full mx-auto">
+          <div className="container mx-auto">
+            <div className="flex justify-between items-center py-5">
+              {/* LOGO */}
+              <div>
+                <Link href="/" className="flex">
+                  <Image
+                    className="bg-black p-2 ml-4 md:ml-0"
+                    src="/logo.png"
+                    width={200}
+                    height={1}
+                  />
+                </Link>
+              </div>
+              {/* MENU SECTION */}
+              <div className="hidden lg:flex items-center gap-6">
+                {menuItems.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className={`text-md nav_item ${
+                      pathname === item.href
+                        ? "text-[#F07F55]"
+                        : "text-[#242424]"
+                    } hover:text-[#F07F55]`}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+                <Button />
+              </div>
+              {/* HAMBURGER ICON */}
+              <div className="lg:hidden flex items-center mr-4">
+                <button
+                  onClick={toggleMenu}
+                  className="text-white focus:outline-none"
+                >
+                  <Image src="/hamburger.png" width={40} height={40} />
+                </button>
+              </div>
             </div>
-            {/* MENU SECTION */}
-            <div className="hidden md:flex space-x-6 items-center">
+            {/* Mobile Menu */}
+            <div
+              className={`${
+                isOpen ? "block" : "hidden"
+              } lg:hidden flex flex-col gap-4 mx-4 `}
+            >
               {menuItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`text-lg nav_item ${
+                  className={`text-lg border-b border-black py-2 ${
                     pathname === item.href ? "text-[#F07F55]" : "text-[#242424]"
                   } hover:text-[#F07F55]`}
                 >
                   {item.label}
                 </Link>
               ))}
-              <Button/>
-            </div>
-            {/* HAMBURGER ICON */}
-            <div className="md:hidden flex items-center">
-              <button
-                onClick={toggleMenu}
-                className="text-white focus:outline-none"
-              >
-                <Image src="/hamburger.png" width={40} height={40} />
-              </button>
             </div>
           </div>
-          {/* Mobile Menu */}
-          <div
-            className={`${isOpen ? "block" : "hidden"} md:hidden flex flex-col`}
-          >
-            {menuItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`text-lg ${
-                  pathname === item.href ? "text-blue-500" : "text-white"
-                } hover:text-blue-500`}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </nav>
+        </nav>
+      </header>
     </>
   );
 }
