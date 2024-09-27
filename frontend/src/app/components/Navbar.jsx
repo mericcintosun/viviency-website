@@ -23,15 +23,15 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="border-b">
-        <nav className="lg:max-w-[1300px] w-full mx-auto">
-          <div className="container mx-auto">
-            <div className="flex justify-between items-center py-5">
+      <header className="border-b font-medium flex flex-col px-12 sm:m-0 sm:p-0">
+        <nav className="xl:m-0 xl:p-0">
+          <div className="container mx-auto px-12">
+            <div className="flex justify-between items-center py-5 gap-12">
               {/* LOGO */}
               <div>
                 <Link href="/" className="flex">
                   <Image
-                    className="bg-black p-2 ml-4 md:ml-0"
+                    className="bg-black p-2 md:ml-0"
                     src="/logo.png"
                     width={200}
                     height={1}
@@ -55,6 +55,7 @@ export default function Navbar() {
                 ))}
                 <Button />
               </div>
+              
               {/* HAMBURGER ICON */}
               <div className="lg:hidden flex items-center mr-4">
                 <button

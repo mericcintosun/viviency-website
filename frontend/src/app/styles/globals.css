@@ -1,85 +1,38 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
-
-.nav_item {
-  font-weight: 500;
-}
 
 @keyframes slide1 {
   0% {
-    transform: translateX(0); /* Ortada başla */
+    transform: translateX(0);
   }
   100% {
-    transform: translateX(-100%); /* Sola kay */
+    transform: translateX(-100%);
   }
 }
 
 @keyframes slide2 {
   0% {
-    transform: translateX(100%); /* Sağdan başla */
+    transform: translateX(100%);
   }
   100% {
-    transform: translateX(0); /* Ortada bitir */
+    transform: translateX(0);
   }
 }
 
 @layer utilities {
-  /* Başlangıç animasyonları yok, sadece hover ile tetiklenir */
   .animate-initial {
     transform: translateX(0);
     transition: none;
   }
 
-  /* Birinci metnin sola kayması */
   .hover\\:animate-slide-1 {
     animation: slide1 2s linear infinite;
   }
 
-  /* İkinci metnin sağdan gelip ortalanması */
   .hover\\:animate-slide-2 {
     animation: slide2 2s linear infinite;
   }
-}
-#strategy {
-  width: 100%;
-}
-#strategy img {
-  object-fit:cover;
-}
-#text-box {
-  height: 80%;
-  width: 70%;
-  padding-top: -4rem;
-  padding-left: 6rem;
-}
-.boxex {
-  height: 85dvh;
-  width: 100%;
-  position: absolute;
-}
-.box button {
-  position:relative;
-  transform: rotate(-90deg);
-  font-size: 1.5rem;
-  padding-bottom: 10px;
-  top: 450px;
-  left: 350px;
-  z-index: 100;
-}
-#strategy-border {
-  transform: rotate(-90deg);
-}
-#strategy-box-3 {
-  border: none;
-}
-.strategy {
-  position: relative;
-  width: 100%;
-  height: 85vh;
-  background-size: cover;
-  background-position: center;
 }
 
 .strategy::before {
@@ -94,7 +47,82 @@
   transition: opacity 0.5s ease-in-out;
   opacity: 1;
 }
-
 .strategy.fade-out::before {
   opacity: 0;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+#logos {
+  z-index: -100;
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  #strategy-box {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    align-items: flex-end;
+    padding: 3rem;
+    gap: 1.5rem;
+    color: white;
+    position: absolute;
+  }
+  #strategy-content {
+    display: flex;
+    padding-top: 9rem;
+    gap: 1.5rem;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 3rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 40dvh;
+    margin: 0;
+    width: 80%;
+  }
+}
+@media (max-width: 768px) {
+  #strategy-box {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    padding: 3rem;
+    gap: 1.5rem;
+    color: white;
+    position: absolute;
+  }
+  #strategy-content {
+    color: white;
+    display: flex;
+    padding-top: 9rem;
+    gap: 1.5rem;
+    padding-left: 3rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 40dvh;
+    margin-inline: auto;
+    margin-right: 3rem;
+  }
+  #strategy-btn-one {
+    font-size: 2rem;
+  }
+  #strategy-btn-two {
+    font-size: 2rem;
+  }
+  #strategy-btn-three {
+    font-size: 2rem;
+  }
 }
