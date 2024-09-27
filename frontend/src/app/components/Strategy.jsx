@@ -124,7 +124,7 @@ export default function Strategy() {
               onClick={() => handleChange("image2", "title2", "desc2")}
               className={`${
                 activeButton === "image2" ? "text-[#F07F55]" : ""
-              } hover:text-[#F07F55] md:text-3xl  xl:relative xl:transform xl:-rotate-90 xl:text-2xl  xl:pb-2 xl:top-[450px] xl:left-[350px] xl:z-[100] xl:transition-colors xl:duration-300`}
+              }  hover:text-[#F07F55] md:text-3xl  xl:relative xl:transform xl:-rotate-90 xl:text-2xl  xl:pb-2 xl:top-[450px] xl:left-[350px] xl:z-[100] xl:transition-colors xl:duration-300`}
             >
               How We Do It
             </motion.button>
@@ -154,10 +154,10 @@ export default function Strategy() {
           </div>
         </div>
 
-        <div id="strategy-content" className="xl:flex xl:flex-col xl:justify-center xl:gap-6 xl:h-[70%] xl:pt-[-4rem] pl-[6rem] xl:pl-[6rem] xl:w-[60%]">
+        <div id="strategy-content" className="xl:flex xl:flex-col xl:justify-center xl:gap-6 xl:h-[70%] xl:pt-[-4rem] pl-[6rem] xl:pl-[6rem] xl:w-[60%] pr-6">
           <motion.h1
             key={titleText}
-            className="text-2xl sm:text-7xl md:text-white md:font-bold  xl:font-bold"
+            className="text-3xl font-bold sm:text-6xl md:text-white md:font-bold  xl:font-bold"
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 50 }}
