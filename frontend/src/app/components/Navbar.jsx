@@ -4,7 +4,8 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
+
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
@@ -23,7 +24,7 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="fixed w-full top-0 left-0 z-50 backdrop-blur-2xl bg-white/50 font-medium flex flex-col px-12 sm:m-0 sm:p-0">
+      <header className="fixed w-full top-0 left-0 z-50 bg-white font-medium flex flex-col px-12 sm:m-0 sm:p-0">
         <nav className="xl:m-0 xl:p-0">
           <div className="container mx-auto px-12">
             <div className="flex justify-between items-center py-5 gap-12">
@@ -54,7 +55,13 @@ export default function Navbar() {
                     {item.label}
                   </Link>
                 ))}
-                <Button id = "social-btn" className = "btn"><span className="scroll-text">let's talk social</span></Button>
+                <Link
+                  href="/contact"
+                  id="social-btn"
+                  className="btn rounded-xl"
+                >
+                  <span className="scroll-text">let's talk social!</span>
+                </Link>
               </div>
 
               {/* HAMBURGER ICON */}

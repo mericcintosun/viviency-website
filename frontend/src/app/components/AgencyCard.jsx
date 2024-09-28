@@ -45,59 +45,65 @@ export default function AgencyCard() {
 
   return (
     <div className="agency-card-container w-[90%] mx-auto grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {agencyData.map((agency, index) => {
-        const controls = useAnimation();
-        const ref = useRef(null);
+      {agencyData.map((agency, index) => (
+        <AgencyCardItem key={index} agency={agency} />
+      ))}
+    </div>
+  );
+}
 
-        useEffect(() => {
-          const handleScroll = () => {
-            const rect = ref.current.getBoundingClientRect();
-            if (rect.top < window.innerHeight && rect.bottom >= 0) {
-              controls.start({ opacity: 1, y: 0 });
-            } else {
-              controls.start({ opacity: 0, y: -50 });
-            }
-          };
+function AgencyCardItem({ agency }) {
+  const controls = useAnimation();
+  const ref = useRef(null);
 
-          window.addEventListener("scroll", handleScroll);
-          return () => window.removeEventListener("scroll", handleScroll);
-        }, [controls]);
+  useEffect(() => {
+    const handleScroll = () => {
+      if (ref.current) {
+        const rect = ref.current.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom >= 0) {
+          controls.start({ opacity: 1, y: 0 });
+        } else {
+          controls.start({ opacity: 0, y: -50 });
+        }
+      }
+    };
 
-        return (
-          <div
-            key={index}
-            className="agency-card relative overflow-hidden rounded-xl mt-4 cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-xl"
-          >
-            <img
-              src={agency.image}
-              alt={agency.title}
-              className="agency-image w-full h-auto"
-            />
-            <div className="absolute inset-0 flex flex-col justify-end p-4 bg-black bg-opacity-50 hover:bg-opacity-70">
-              <motion.h2
-                ref={ref}
-                initial={{ opacity: 0, y: -50 }}
-                animate={controls}
-                exit={{ opacity: 0, y: 50 }}
-                transition={{ duration: 0.8 }}
-                className="text-white text-xl font-bold mb-2"
-              >
-                {agency.title}
-              </motion.h2>
-              <motion.p
-                ref={ref}
-                initial={{ opacity: 0, y: -50 }}
-                animate={controls}
-                exit={{ opacity: 0, y: 50 }}
-                transition={{ duration: 0.8 }}
-                className="text-white text-sm"
-              >
-                {agency.description}
-              </motion.p>
-            </div>
-          </div>
-        );
-      })}
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [controls]);
+
+  return (
+    <div className="agency-card relative overflow-hidden rounded-xl mt-4 cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-xl">
+      <img
+        src={agency.image}
+        alt={agency.title}
+        className="agency-image w-full h-auto"
+      />
+      <div
+        ref={ref}
+        className="absolute inset-0 flex flex-col justify-end p-4 bg-black bg-opacity-50 hover:bg-opacity-70"
+      >
+        <motion.h2
+          initial={{ opacity: 0, y: -50 }}
+          animate={controls}
+          exit={{ opacity: 0, y: 50 }}
+          transition={{ duration: 0.8 }}
+          className="text-white text-xl font-bold mb-2"
+        >
+          {agency.title}
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, y: -50 }}
+          animate={controls}
+          exit={{ opacity: 0, y: 50 }}
+          transition={{ duration: 0.8 }}
+          className="text-white text-sm"
+        >
+          {agency.description}
+        </motion.p>
+      </div>
     </div>
   );
 }

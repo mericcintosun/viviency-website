@@ -61,13 +61,13 @@ export default function Strategy() {
     <>
       <motion.div
         key={backgroundImage}
-        initial={{ opacity: 0.5, scale: 0.99 }}
+        initial={{ opacity: 1, scale: 0.99 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{
           type: "spring",
           stiffness: 200,
           damping: 20,
-          duration: 0.5,
+          duration: 0.1,
         }}
         className={`lg:static xl:strategy xl:relative xl:w-full xl:h-[85vh] xl:bg-cover xl:bg-center  xl:text-white xl:flex xl:flex-col xl:transition-opacity xl:duration-500`}
         id="strategy"
@@ -86,8 +86,6 @@ export default function Strategy() {
             } xl:w-[33%]  xl:border-r xl:pb-12 border-gray-700 hover:border-[#F07F55] transition-all duration-300 `}
           >
             <motion.button
-              // initial={{ opacity: 0, y: -50, rotate: isLargeScreen ? 0 : -90 }}
-              // animate={{ opacity: 1, y: 0, rotate: isLargeScreen ? 0 : -90 }}
               transition={{
                 type: "spring",
                 stiffness: 100,
@@ -111,8 +109,6 @@ export default function Strategy() {
             } xl:w-[33%] xl:justify-center xl:items-center xl:border-r xl:pb-12 border-gray-700 hover:border-[#F07F55] transition-all duration-300 `}
           >
             <motion.button
-              // initial={{ opacity: 0, y: -50, rotate: isLargeScreen ? 0 : -90 }}
-              // animate={{ opacity: 1, y: 0, rotate: isLargeScreen ? 0 : -90 }}
               transition={{
                 type: "spring",
                 stiffness: 100,
@@ -134,8 +130,6 @@ export default function Strategy() {
             className="xl:box xl:w-[33%] xl:justify-center xl:items-center xl:border-none xl:pb-12"
           >
             <motion.button
-              // initial={{ opacity: 0, y: -50, rotate: isLargeScreen ? 0 : -90 }}
-              // animate={{ opacity: 1, y: 0, rotate: isLargeScreen ? 0 : -90 }}
               transition={{
                 type: "spring",
                 stiffness: 100,

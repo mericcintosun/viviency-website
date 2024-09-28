@@ -1,61 +1,40 @@
 "use client";
-import { useState, useRef, useEffect } from "react";
+import Link from "next/link";
+import { useRef, useEffect, useState } from "react";
 
 export default function Works() {
-  const projects = [
-    "Proje 1",
-    "Proje 2",
-    "Proje 3",
-    "Proje 4",
-    "Proje 5",
-    "Proje 6",
-    "Proje 7",
-    "Proje 8",
-    "Proje 9",
-    "Proje 10",
-    "Proje 11",
-    "Proje 12",
-    "Proje 13",
-    "Proje 14",
-    "Proje 15",
-    "Proje 16",
-    "Proje 17",
-    "Proje 18",
-    "Proje 19",
-    "Proje 20",
-  ];
+  const projects = Array.from(
+    { length: 20 },
+    (_, index) => `https://picsum.photos/450/250?random=${index + 1}`
+  );
 
-  const [repeatedProjects] = useState(() => {
-    const repeated = [];
-    for (let i = 0; i < 10; i++) {
-      repeated.push(...projects);
-    }
-    return repeated;
-  });
+  const repeatedProjects = Array.from({ length: 10 }).flatMap(() => projects);
 
   const scrollContainerRef = useRef(null);
-  const scrollRef = useRef(0);
-  const speed = 1; // Normal kaydırma hızı
+  const scrollPosition = useRef(0);
+  const speed = 0.5;
   const [currentSpeed, setCurrentSpeed] = useState(speed);
 
   const handleMouseDown = (e) => {
-    const startX = e.pageX - scrollContainerRef.current.offsetLeft;
-    const scrollLeft = scrollContainerRef.current.scrollLeft;
+    const container = scrollContainerRef.current;
+    const startX = e.pageX - container.offsetLeft;
+    const scrollLeft = container.scrollLeft;
 
     const handleMouseMove = (e) => {
-      const x = e.pageX - scrollContainerRef.current.offsetLeft;
+      const x = e.pageX - container.offsetLeft;
       const walk = (x - startX) * 0.5;
-      scrollContainerRef.current.scrollLeft = scrollLeft - walk;
-      scrollRef.current = scrollLeft - walk;
+      const newScrollLeft = scrollLeft - walk;
+      container.scrollLeft = newScrollLeft;
+      scrollPosition.current = newScrollLeft;
     };
 
     const handleMouseUp = () => {
-      scrollContainerRef.current.style.cursor = "grab";
+      container.style.cursor = "grab";
       document.removeEventListener("mousemove", handleMouseMove);
       document.removeEventListener("mouseup", handleMouseUp);
     };
 
-    scrollContainerRef.current.style.cursor = "grabbing";
+    container.style.cursor = "grabbing";
     document.addEventListener("mousemove", handleMouseMove);
     document.addEventListener("mouseup", handleMouseUp);
 
@@ -63,18 +42,20 @@ export default function Works() {
   };
 
   useEffect(() => {
+    const container = scrollContainerRef.current;
     let animationFrameId;
 
     const scrollAutomatically = () => {
-      if (scrollContainerRef.current) {
-        scrollContainerRef.current.scrollLeft += currentSpeed;
-        scrollRef.current += currentSpeed;
+      if (container) {
+        scrollPosition.current += currentSpeed;
+        container.scrollLeft = scrollPosition.current;
 
         if (
-          scrollRef.current >=
-          scrollContainerRef.current.scrollWidth - scrollContainerRef.current.clientWidth
+          scrollPosition.current >=
+          container.scrollWidth - container.clientWidth
         ) {
-          scrollRef.current = 0;
+          scrollPosition.current = 0;
+          container.scrollLeft = scrollPosition.current;
         }
       }
       animationFrameId = requestAnimationFrame(scrollAutomatically);
@@ -83,22 +64,21 @@ export default function Works() {
     animationFrameId = requestAnimationFrame(scrollAutomatically);
 
     return () => cancelAnimationFrame(animationFrameId);
-  }, [currentSpeed]); // currentSpeed değiştiğinde animasyonu güncelle
+  }, [currentSpeed]);
 
-  // Mouse üzerinde olduğu zaman hızın yavaşlaması
   const handleMouseEnter = () => {
-    setCurrentSpeed(speed * 0.25); // Hızı daha fazla yavaşlat
+    setCurrentSpeed(speed * 0.5);
   };
 
   const handleMouseLeave = () => {
-    setCurrentSpeed(speed); // Hızı eski haline döndür
+    setCurrentSpeed(speed);
   };
 
   return (
-    <div className="relative w-full overflow-hidden bg-gray-200 py-12">
+    <div className="relative w-full overflow-hidden bg-[#F07F55]">
       <div
         ref={scrollContainerRef}
-        className="flex items-center space-x-4 px-8 overflow-x-auto hide-scrollbar"
+        className="flex items-center overflow-x-auto hide-scrollbar relative"
         onMouseDown={handleMouseDown}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
@@ -107,9 +87,28 @@ export default function Works() {
         {repeatedProjects.map((project, index) => (
           <div
             key={index}
-            className="min-w-[200px] p-6 rounded-lg bg-blue-500 text-white"
+            className="relative min-w-[500px] py-12 px-2 text-white inline-block group"
           >
-            {project}
+            <img
+              src={project}
+              alt={`Project ${index + 1}`}
+              className="block w-full group-hover:opacity-80"
+            />
+            <div className="absolute inset-0 bg-black opacity-50 z-10 transition-opacity duration-300"></div>
+            {/* Başlık ve logo */}
+            <div className="absolute inset-0 flex justify-between items-end z-20 p-4 ">
+              <h1 className="bg-opacity-75 px-4 py-2 absolute bottom-[60px] left-[30px]">
+                Title {index + 1}
+              </h1>
+              <p className="bg-opacity-75 px-4 py-2 absolute bottom-[60px] right-[30px]">
+                Logo {index + 1}
+              </p>
+            </div>
+            <Link href="/portfolio" className="absolute inset-0 flex items-center justify-center opacity-0 scale-50 transition-all duration-300 z-30 group-hover:opacity-100 group-hover:scale-100">
+              <span className="bg-white text-black px-4 py-2 rounded">
+                Review Now
+              </span>
+            </Link>
           </div>
         ))}
       </div>
