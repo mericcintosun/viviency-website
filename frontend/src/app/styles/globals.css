@@ -117,7 +117,16 @@
     transform: translateX(100%); /* Sağa kaybolur */
   }
 }
-
+#about-image {
+  max-height: 90dvh;
+  object-fit: cover;
+  object-position: top;
+}
+#brand-image {
+  max-height: 75dvh;
+  object-fit: cover;
+  object-position: center;
+}
 #social-btn {
   position: relative; /* Konumlandırma ayarı */
   overflow: hidden; /* Taşmaları gizler */

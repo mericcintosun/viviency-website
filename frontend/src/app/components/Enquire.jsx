@@ -1,28 +1,23 @@
 "use client";
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Enquire({ phrases, buttonText, titleText }) {
-  const controls = useAnimation();
   const [index, setIndex] = useState(0);
+  const [opacity, setOpacity] = useState(1);
 
   useEffect(() => {
-    // Bileşen mount edildiğinde animasyonu başlat
-    controls.start({ opacity: 1 });
-
     const interval = setInterval(() => {
-      // Opaklığı sıfıra düşürme
-      controls.start({ opacity: 0 }).then(() => {
-        // İndeksi güncelleme
-        setIndex((prevIndex) => (prevIndex + 1) % phrases.length);
-        // Opaklığı tekrar bir yapma
-        controls.start({ opacity: 1 });
-      });
+      setOpacity(0); // Opaklığı sıfıra düşür
+      setTimeout(() => {
+        setIndex((prevIndex) => (prevIndex + 1) % phrases.length); // İndeksi güncelle
+        setOpacity(1); // Opaklığı tekrar bir yap
+      }, 500); // 0.5 saniye sonra opacity 1'e geri dönsün
     }, 2000);
 
     return () => clearInterval(interval);
-  }, [controls, phrases.length]);
+  }, [phrases.length]);
 
   return (
     <div
@@ -33,8 +28,8 @@ export default function Enquire({ phrases, buttonText, titleText }) {
         <span className="font-bold lg:mr-4">{titleText}</span>
         <motion.span
           className="font-bold text-xl sm:text-2xl md:text-3xl lg:text-6xl ml-2 text-[#F07F55]"
-          initial={{ opacity: 0 }}
-          animate={controls}
+          animate={{ opacity }} // Animasyonu direkt olarak motion üzerinden yönetiyoruz
+          transition={{ duration: 0.5 }} // Geçiş süresi
         >
           {phrases[index]}
         </motion.span>
