@@ -4,7 +4,6 @@ import HomeTeams from "./components/HomeTeams";
 import ScrollReferences from "./components/ScrollReferences";
 import Strategy from "./components/Strategy";
 import Works from "./components/Works";
-
 export default function Home() {
   const phrases = [
     "bersu alkaç",

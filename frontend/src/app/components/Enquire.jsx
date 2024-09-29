@@ -2,12 +2,13 @@
 import { motion, useAnimation } from "framer-motion";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+
 export default function Enquire({ phrases, buttonText, titleText }) {
   const controls = useAnimation();
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    // İlk animasyonun başlaması
+    // Bileşen mount edildiğinde animasyonu başlat
     controls.start({ opacity: 1 });
 
     const interval = setInterval(() => {
@@ -21,7 +22,7 @@ export default function Enquire({ phrases, buttonText, titleText }) {
     }, 2000);
 
     return () => clearInterval(interval);
-  }, [controls]);
+  }, [controls, phrases.length]);
 
   return (
     <div

@@ -1,7 +1,9 @@
+import AboutWelcome from "../components/AboutWelcome";
+
 export default function About() {
   return (
     <>
-      <h1>Welcome About!</h1>
+    <AboutWelcome/>
     </>
   );
 }

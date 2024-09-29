@@ -64,30 +64,30 @@ export default function Footer() {
             <p>Email: info@viviency.com</p>
 
             <div className="flex mt-4 space-x-4">
-              <a
+              <Link
                 href="#"
                 className="hover:text-gray-300 transition duration-300"
               >
                 <FontAwesomeIcon icon={faFacebookF} />
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#"
                 className="hover:text-gray-300 transition duration-300"a
               >
                 <FontAwesomeIcon icon={faXTwitter} />
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#"
                 className="hover:text-gray-300 transition duration-300"
               >
                 <FontAwesomeIcon icon={faInstagram} />
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#"
                 className="hover:text-gray-300 transition duration-300"
               >
                 <FontAwesomeIcon icon={faLinkedinIn} />
-              </a>
+              </Link>
             </div>
           </div>
         </div>

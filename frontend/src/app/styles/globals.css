@@ -61,162 +61,32 @@
 #logos {
   z-index: -100;
 }
-@media (min-width: 768px) and (max-width: 1280px) {
-  #strategy-box {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    height: 100%;
-    align-items: flex-end;
-    padding: 3rem;
-    gap: 1.5rem;
-    color: white;
-    position: absolute;
-  }
-  #strategy-content {
-    display: flex;
-    padding-top: 9rem;
-    gap: 1.5rem;
-    width: 60%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 3rem;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 40dvh;
-    margin: 0;
-    width: 80%;
-  }
-}
-@media (max-width: 768px) {
-  #strategy-btn-one {
-    font-size: 1rem;
-    
-  }
-  #strategy-btn-two {
-    font-size: 1rem;
-  }
-  #strategy-btn-three {
-    font-size: 1rem;
-  }
-  #strategy-box {
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    width: 100%;
-    height: 100%;
-    align-items: center;
-    padding: 3rem;
-    gap: 1.5rem;
-    color: white;
-    position: absolute;
-  }
-  #strategy-content {
-    color: white;
-    display: flex;
-    padding-top: 9rem;
-    gap: 1.5rem;
-    padding-left: 3rem;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 40dvh;
-    margin-inline: auto;
-    margin-right: 3rem;
-  }
-  
-}
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
-  }
-  .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-  }
-}
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-}
 .btn {
   background-color: white;
-  color:white;
+  color: white;
   font-size: 1.3rem;
   font-weight: bold;
   padding: 1.5rem;
-  margin-left: .9rem;
+  margin-left: 0.9rem;
   border: none; /* Kenar boşluğu kaldırıldı */
   cursor: pointer; /* İmleçin butona geldiğinde el şeklini alması için */
   transition: all 0.3s ease; /* Geçiş efektini ekledik */
 }
 
 .btn:hover {
-  background-color: #F07F55;
+  background-color: #f07f55;
   color: white; /* Metin rengini değiştirdik */
   transform: scale(1.05); /* Boyutu %5 büyütüyoruz */
 }
 #enquire-btn {
-  background-color: #F07F55;
+  background-color: #f07f55;
 }
 #social-btn {
   display: flex; /* Flexbox ile düzenleme */
   align-items: center; /* Dikeyde ortalama */
   justify-content: center; /* Yatayda ortalama */
   padding: 1.5rem 6rem;
-  background-color: #F07F55;
+  background-color: #f07f55;
   color: white;
   font-weight: 500;
   overflow: hidden; /* Taşan metni gizler */
@@ -263,5 +133,82 @@
 }
 
 #social-btn:hover {
-  background-color: #92B188; /* Hover arka plan rengi */
+  background-color: #92b188; /* Hover arka plan rengi */
+}
+#bgc {
+  background-color: black;
+  height: 1000px;
+}
+#bgg {
+  background-image: url("/assets/bgg.png");
+  background-position: center;
+  height: 1000px;
+  background-repeat: no-repeat;
+}
+
+@media (min-width: 768px) and (max-width: 1280px) {
+  #strategy-box {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    align-items: flex-end;
+    padding: 3rem;
+    gap: 1.5rem;
+    color: white;
+    position: absolute;
+  }
+  #strategy-content {
+    display: flex;
+    padding-top: 9rem;
+    gap: 1.5rem;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 3rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 40dvh;
+    margin: 0;
+    width: 80%;
+  }
+}
+@media (max-width: 768px) {
+  #strategy-btn-one {
+    font-size: 1rem;
+  }
+  #strategy-btn-two {
+    font-size: 1rem;
+  }
+  #strategy-btn-three {
+    font-size: 1rem;
+  }
+  #strategy-box {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    padding: 3rem;
+    gap: 1.5rem;
+    color: white;
+    position: absolute;
+  }
+  #strategy-content {
+    color: white;
+    display: flex;
+    padding-top: 9rem;
+    gap: 1.5rem;
+    padding-left: 3rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 40dvh;
+    margin-inline: auto;
+    margin-right: 3rem;
+  }
+ 
 }
