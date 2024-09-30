@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function PortfolioWelcome() {
   return (
     <>
-      <div id="about" className="relative">
+      <div id="about" className="relative mb-12">
         <div className="bg-black w-full h-full">
           <div className="relative">
             <Image
