@@ -51,7 +51,7 @@ export default function ScrollReferences() {
   };
 
   return (
-    <div className="relative w-full overflow-hidden bg-orange-500 py-12">
+    <div className="relative w-full overflow-hidden bg-[#F07F55] py-12">
       <div
         ref={scrollContainerRef}
         className="mx-12 flex items-center space-x-8 px-8 overflow-x-auto hide-scrollbar"

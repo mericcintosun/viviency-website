@@ -28,8 +28,8 @@ export default function Enquire({ phrases, buttonText, titleText }) {
         <span className="font-bold lg:mr-4">{titleText}</span>
         <motion.span
           className="font-bold text-xl sm:text-2xl md:text-3xl lg:text-6xl ml-2 text-[#F07F55]"
-          animate={{ opacity }} // Animasyonu direkt olarak motion üzerinden yönetiyoruz
-          transition={{ duration: 0.5 }} // Geçiş süresi
+          animate={{ opacity }} 
+          transition={{ duration: 0.5 }} 
         >
           {phrases[index]}
         </motion.span>

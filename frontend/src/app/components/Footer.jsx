@@ -19,8 +19,9 @@ export default function Footer() {
               {[
                 { name: "Ana Sayfa", href: "/" },
                 { name: "Biz", href: "/about" },
+                { name: "Hizmetler", href: "/works" },
                 { name: "Portfolyo", href: "/portfolio" },
-                { name: "Blog", href: "/blog" },
+                { name: "Sesler", href: "/blog" },
                 { name: "İletişim", href: "/contact" },
               ].map((item) => (
                 <li key={item.name}>

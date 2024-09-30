@@ -13,8 +13,9 @@ export default function Navbar() {
   const menuItems = [
     { href: "/", label: "ana sayfa" },
     { href: "/about", label: "biz" },
+    { href: "/works", label: "hizmetler" },
     { href: "/portfolio", label: "portfolyo" },
-    { href: "/blog", label: "blog" },
+    { href: "/insights", label: "sesler" },
     { href: "/contact", label: "iletişim" },
   ];
 

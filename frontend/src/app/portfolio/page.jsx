@@ -1,7 +1,11 @@
+import PortfolioCard from "../components/PortfolioCard";
+import PortfolioWelcome from "../components/PortfolioWelcome";
+
 export default function Portfolio() {
   return (
     <>
-      <h1>Welcome Portfolio!</h1>
+      <PortfolioWelcome/>
+      <PortfolioCard/>
     </>
   );
 }

@@ -182,8 +182,28 @@
     margin: 0;
     width: 80%;
   }
+  #services-bersu {
+    max-width: 90%;
+    margin-inline: auto;
+    max-height: 60dvh;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+#services-bersu {
+  margin-inline: auto;
+  max-height: 60dvh;
+  object-fit: cover;
+  object-position: center;
 }
 @media (max-width: 768px) {
+  #services-bersu {
+    max-width: 90%;
+    margin-inline: auto;
+    max-height: 60dvh;
+    object-fit: cover;
+    object-position: center;
+  }
   #strategy-btn-one {
     font-size: 1rem;
   }
@@ -219,5 +239,4 @@
     margin-inline: auto;
     margin-right: 3rem;
   }
- 
 }
