@@ -37,6 +37,7 @@ export default function Strategy() {
       setIsLargeScreen(window.innerWidth <= 1280);
     };
 
+    handleResize(); // İlk render'da genişliği kontrol et
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -79,7 +80,10 @@ export default function Strategy() {
           width: "100%",
         }}
       >
-        <div id="strategy-box" className="xl:boxes xl:border xl:flex xl:justify-center group xl:absolute xl:w-full xl:h-[85dvh] xl:m-auto">
+        <div
+          id="strategy-box"
+          className="xl:boxes xl:border xl:flex xl:justify-center group xl:absolute xl:w-full xl:h-[85dvh] xl:m-auto"
+        >
           <div
             className={`${
               activeButton === "image1" ? "border-[#F07F55]" : "border-gray-700"
@@ -148,7 +152,10 @@ export default function Strategy() {
           </div>
         </div>
 
-        <div id="strategy-content" className="xl:flex xl:flex-col xl:justify-center xl:gap-6 xl:h-[70%] xl:pt-[-4rem] pl-[6rem] xl:pl-[6rem] xl:w-[60%] pr-6">
+        <div
+          id="strategy-content"
+          className="xl:flex xl:flex-col xl:justify-center xl:gap-6 xl:h-[70%] xl:pt-[-4rem] pl-[6rem] xl:pl-[6rem] xl:w-[60%] pr-6"
+        >
           <motion.h1
             key={titleText}
             className="text-3xl font-bold sm:text-6xl md:text-white md:font-bold  xl:font-bold"

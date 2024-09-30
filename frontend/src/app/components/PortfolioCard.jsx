@@ -30,7 +30,7 @@ export default function PortfolioCard() {
       img: "/assets/portfolio-assets/work1.webp",
       content: "SOFTWARE & BLOCKCHAIN",
       title: "Hukuki Danışmanlık",
-      link: "/insights",
+      link: "/blog",
     },
     {
       img: "/assets/portfolio-assets/work2.webp",
@@ -45,6 +45,7 @@ export default function PortfolioCard() {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
         {works.map((work, index) => (
           <Link key={index} href={work.link} target="_blank">
+            
             <div
               className="relative bg-cover bg-center h-96 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer"
               style={{ backgroundImage: `url(${work.img})` }}

@@ -6,18 +6,19 @@ import Image from "next/image";
 export default function BlogWelcome() {
   return (
     <>
-      <div id="about" className="relative mb-12">
+      <div id="about" className="relative">
         <div className="bg-black w-full h-full">
           <div className="relative">
-            <Image
-              id="about-image"
-              src="/assets/about-assets/teams.jpg"
-              width={500}
-              height={1}
-              className="opacity-50"
-              alt="teams"
-              layout="responsive"
-            />
+            <div className="relative w-full h-[500px]">
+              <Image
+                id="about-image"
+                src="/assets/about-assets/teams.jpg"
+                layout="fill" // Eskiden kullanılan layout özelliğini fill ile değiştirdik.
+                objectFit="cover" // Görselin tam ekrana yayılması ve hizalanması için kullanıyoruz.
+                className="opacity-50"
+                alt="teams"
+              />
+            </div>
             {/* Flexbox ile ortalama */}
             <div className="absolute inset-0 flex items-center justify-center">
               <motion.h1

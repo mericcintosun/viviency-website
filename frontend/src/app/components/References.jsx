@@ -1,6 +1,6 @@
 "use client";
+import Link from "next/link";
 import React from "react";
-
 export default function References() {
   const logos = [
     "/assets/references/aorus.png",
@@ -39,7 +39,7 @@ export default function References() {
         
         <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12">
           {logos.map((logo, index) => (
-            <a
+            <Link
               key={index}
               href={links[index]} // Linki buraya ekledik
               target="_blank"
@@ -56,7 +56,7 @@ export default function References() {
                 {links[index]}
                 </p>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </div>

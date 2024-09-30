@@ -14,7 +14,7 @@ export default function Navbar() {
     { href: "/about", label: "biz" },
     { href: "/works", label: "hizmetler" },
     { href: "/portfolio", label: "portfolyo" },
-    { href: "/insights", label: "blog" },
+    { href: "/blog", label: "blog" },
     { href: "/contact", label: "iletişim" },
   ];
 

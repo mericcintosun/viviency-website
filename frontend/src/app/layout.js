@@ -2,13 +2,14 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import "./styles/globals.css";
 import { Poppins } from "next/font/google";
+
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
 });
 
 export const metadata = {
-  title: "Viviency",
+  title: "Your Website Title",
   icons: {
     icon: "/favicon.png",
   },

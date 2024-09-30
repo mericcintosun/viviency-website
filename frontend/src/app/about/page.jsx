@@ -14,8 +14,6 @@ export default function About() {
   const buttonTwoText = "let's talk social!";
   const loveText = "Seviyoruz";
 
-  const titleText = "Biz";
-
   return (
     <>
     <AboutWelcome titleText = {"biz"}/>

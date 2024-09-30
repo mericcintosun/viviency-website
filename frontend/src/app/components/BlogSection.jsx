@@ -1,110 +1,132 @@
 "use client";
+
+import { useState } from "react";
+import Link from "next/link";
 import {
   Card,
   CardHeader,
   CardBody,
+  CardFooter,
   Typography,
-  Button,
 } from "@material-tailwind/react";
+import { useQuery } from "@tanstack/react-query";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { fetchBlogPosts } from "@/lib/api";
 
 export default function BlogSection() {
-  return (
-    <>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 bg-[#242424] p-6">
-        <Card className="grid grid-cols-1">
-          <CardHeader
-            shadow={false}
-            floated={false}
-            className="m-0 sm:w-full rounded-none sm:rounded-r-none"
-          >
-            <img
-              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80"
-              alt="card-image"
-              className="h-full w-full object-cover"
-            />
-          </CardHeader>
-          <CardBody>
-            <Typography variant="h6" color="gray" className="mb-4 uppercase">
-              startups
-            </Typography>
-            <Typography variant="h4" color="blue-gray" className="mb-2">
-              Lyft launching cross-platform service this week
-            </Typography>
-            <Typography color="gray" className="mb-8 font-normal">
-              Like so many organizations these days, Autodesk is a company in
-              transition. It was until recently a traditional boxed software
-              company selling licenses. Yet its own business model disruption is
-              only part of the story
-            </Typography>
-            <a href="#" className="inline-block">
-              <Button variant="text" className="flex items-center gap-2">
-                Read More
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  className="h-4 w-4"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-                  />
-                </svg>
-              </Button>
-            </a>
-          </CardBody>
-        </Card>
+  const { data, isLoading, isError } = useQuery({
+    queryKey: ["blogPosts"],
+    queryFn: fetchBlogPosts,
+  });
 
-        {/* İkinci kartı ekleyelim */}
-        <Card className="grid grid-cols-1">
-          <CardHeader
-            shadow={false}
-            floated={false}
-            className="m-0 sm:w-full rounded-none sm:rounded-r-none"
+  const [expandedPosts, setExpandedPosts] = useState({});
+
+  const toggleExpand = (postId) => {
+    setExpandedPosts((prev) => ({
+      ...prev,
+      [postId]: !prev[postId],
+    }));
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
+  };
+
+  const buttonVariants = {
+    hover: { scale: 1.1, transition: { duration: 0.2 } },
+    tap: { scale: 0.95 },
+  };
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (isError) {
+    return <div>Error fetching blog posts</div>;
+  }
+
+  return (
+    <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 bg-[#f07f55]">
+      {data?.data.map((post) => {
+        const { id: postId, attributes } = post;
+        const coverImageUrl =
+          attributes.coverimage?.data?.attributes?.formats?.large?.url;
+        const imageUrl = coverImageUrl
+          ? `http://localhost:1337${coverImageUrl}`
+          : "/default-image.jpg";
+        const excerpt = attributes.Excerpt || "";
+        const shortExcerpt = excerpt.substring(0, 100);
+        const isExpanded = expandedPosts[postId];
+
+        return (
+          <Link
+            target="_blank"
+            href={`/blog/${attributes.slug}`}
+            passHref
+            key={postId}
           >
-            <img
-              src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-              alt="card-image"
-              className="h-full w-full object-cover"
-            />
-          </CardHeader>
-          <CardBody>
-            <Typography variant="h6" color="gray" className="mb-4 uppercase">
-              innovation
-            </Typography>
-            <Typography variant="h4" color="blue-gray" className="mb-2">
-              The rise of remote work and its impact on innovation
-            </Typography>
-            <Typography color="gray" className="mb-8 font-normal">
-              With the shift to remote work, businesses are finding new ways to
-              foster innovation while maintaining productivity. Many companies
-              are discovering the benefits of hybrid work models.
-            </Typography>
-            <a href="#" className="inline-block">
-              <Button variant="text" className="flex items-center gap-2">
-                Read More
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  className="h-4 w-4"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+            <motion.div
+              variants={cardVariants}
+              initial="hidden"
+              animate="visible"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="mt-[4rem]"
+            >
+              <Card className="my-[2rem] w-[80%] mx-auto lg:my-[5rem] lg:w-96 lg:flex lg:flex-col lg:mx-auto lg:justify-between cursor-pointer min-h-[70dvh]">
+                <CardHeader color="blue-gray" className="relative h-72 lg:h-56">
+                  <Image
+                    src={imageUrl}
+                    alt={attributes.Title}
+                    layout="fill"
+                    objectFit="cover"
+                    priority
+                    quality={100}
                   />
-                </svg>
-              </Button>
-            </a>
-          </CardBody>
-        </Card>
-      </div>
-    </>
+                </CardHeader>
+                <CardBody className="flex-grow overflow-hidden">
+                  <Typography variant="h5" color="blue-gray" className="mb-2">
+                    {attributes.Title}
+                  </Typography>
+                  <Typography>
+                    {isExpanded ? excerpt : `${shortExcerpt}...`}
+                  </Typography>
+                </CardBody>
+                <CardFooter className="pt-0 flex justify-between">
+                  <motion.button
+                    variants={buttonVariants}
+                    whileHover="hover"
+                    whileTap="tap"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      toggleExpand(postId);
+                    }}
+                    className="px-4 py-2 text-white bg-[#F07F55] rounded-lg z-50"
+                  >
+                    {isExpanded ? "Show Less" : "Read More"}
+                  </motion.button>
+
+                  <motion.button
+                    variants={buttonVariants}
+                    whileHover="hover"
+                    whileTap="tap"
+                    className="px-4 py-2 border-2 border-[#F07F55] text-[#F07F55] rounded-lg"
+                  >
+                    Go to Post
+                  </motion.button>
+                </CardFooter>
+              </Card>
+            </motion.div>
+          </Link>
+        );
+      })}
+    </div>
   );
 }
