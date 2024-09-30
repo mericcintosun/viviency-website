@@ -5,7 +5,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 
-
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
@@ -15,7 +14,7 @@ export default function Navbar() {
     { href: "/about", label: "biz" },
     { href: "/works", label: "hizmetler" },
     { href: "/portfolio", label: "portfolyo" },
-    { href: "/insights", label: "sesler" },
+    { href: "/insights", label: "blog" },
     { href: "/contact", label: "iletişim" },
   ];
 
