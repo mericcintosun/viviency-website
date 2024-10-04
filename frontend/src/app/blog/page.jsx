@@ -1,29 +1,46 @@
-// Blog.js
-"use client"; // Bu sayfa client-side
+"use client";
 
+import {
+  QueryClient,
+  QueryClientProvider,
+  useQuery,
+} from "@tanstack/react-query";
+import { fetchBlogPosts } from "@/lib/api";
+import { useState } from "react";
 import BlogSection from "@/app/components/BlogSection";
+import BlogSlider from "@/app/components/BlogSlider";
 import BlogWelcome from "@/app/components/BlogWelcome";
 import Enquire from "@/app/components/Enquire";
-import BlogSlider from "@/app/components/BlogSlider";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { useState } from "react";
 
 export default function Blog() {
   const [queryClient] = useState(() => new QueryClient());
-  const content = ["satışlarınızı artırmak", "markanızı tanıtmak"];
-  const buttonTwoText = "enquire now";
-  const loveText = "ister misiniz?";
 
   return (
     <QueryClientProvider client={queryClient}>
-      <BlogWelcome />
-      <BlogSlider />
-      <BlogSection />
-      <Enquire
-        titleText={loveText}
-        phrases={content}
-        buttonText={buttonTwoText}
-      />
+      <BlogContent />
     </QueryClientProvider>
+  );
+}
+
+function BlogContent() {
+  const { data, error, isLoading } = useQuery({
+    queryKey: ["blogPosts"],
+    queryFn: fetchBlogPosts,
+  });
+
+  if (isLoading) return <div>Yükleniyor...</div>;
+  if (error) return <div>Hata: Veriler getirilemedi.</div>;
+
+  return (
+    <>
+      <BlogWelcome />
+      <BlogSlider posts={data} />
+      <BlogSection posts={data} />
+      <Enquire
+        titleText="ister misiniz?"
+        phrases={["satışlarınızı artırmak", "markanızı tanıtmak"]}
+        buttonText="enquire now"
+      />
+    </>
   );
 }

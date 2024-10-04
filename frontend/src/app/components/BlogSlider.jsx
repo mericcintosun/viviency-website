@@ -20,36 +20,26 @@ export default function BlogSlider() {
     return <div>Error fetching blog posts</div>;
   }
 
-  const latestBlogs = data?.data.slice(0, 3); // Son 3 blog
+  // Blogları tarihe göre sıralıyoruz
+  const sortedBlogs = data.sort((a, b) => new Date(b.date) - new Date(a.date));
+  const latestBlogs = sortedBlogs.slice(0, 3); // Son 3 blog
 
   return (
     <div className="bg-[#242424] p-8 py-[5rem]">
-      <h2 className="text-4xl lg:text-6xl font-bold text-white  mb-12">
-        İlham Aldığımız Yazılar
+      <h2 className="text-4xl lg:text-7xl font-bold text-white mb-12">
+        <span className="text-md lg:text-xl">İlhamla Yazdığımız </span> <br />{" "}
+        Son Yazılar
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {latestBlogs.map((post) => {
-          const { id: postId, attributes } = post;
-          const coverImageUrl =
-            attributes.coverimage?.data?.attributes?.formats?.large?.url;
-          const imageUrl = coverImageUrl
-            ? `http://localhost:1337${coverImageUrl}`
-            : "/default-image.jpg";
-          const title = attributes.Title;
-          const author =
-            attributes.author?.data?.attributes?.name || "Unknown Author"; // Yazar bilgisi
-          const publicationDate = new Date(
-            post.attributes.publication
-          ).toLocaleDateString();
+          const { id, blogImage, blogTitle, author, slug, date, tags } = post;
+          const imageUrl = blogImage || "/default-image.jpg";
 
           return (
             <motion.div
-              key={postId}
+              key={id}
               className="bg-white rounded-lg shadow-lg overflow-hidden relative"
-              whileHover={{
-                scale: 1.05,
-                boxShadow: "0px 8px 20px rgba(0, 0, 0, 0.3)",
-              }}
+              whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             >
               <motion.div
@@ -58,7 +48,7 @@ export default function BlogSlider() {
               >
                 <Image
                   src={imageUrl}
-                  alt={title}
+                  alt={blogTitle}
                   width={300}
                   height={200}
                   className="w-full h-[200px] object-cover"
@@ -66,17 +56,17 @@ export default function BlogSlider() {
               </motion.div>
               <div className="p-4 flex flex-col h-[250px] justify-between">
                 <div>
-                  <h3 className="text-lg font-bold">{title}</h3>
+                  <h3 className="text-lg font-bold">{blogTitle}</h3>
                   <p className="text-sm text-gray-600">Yazar: {author}</p>
-                  <p className="text-sm text-gray-500">
-                    Tarih: {publicationDate}
+                  {/* Date and Tags */}
+                  <p className="text-sm text-gray-600">
+                    Yayınlanma Tarihi: {new Date(date).toLocaleDateString()}
+                  </p>
+                  <p className="text-sm text-gray-600">
+                    Etiketler: {tags.join(", ")}
                   </p>
                 </div>
-                <Link
-                  href={`/blog/${attributes.slug}`}
-                  className="mt-auto self-end"
-                  target="_blank"
-                >
+                <Link href={`/blog/${slug}`} className="mt-auto self-end">
                   <motion.button
                     whileHover={{
                       backgroundColor: "#1D4ED8",

@@ -1,17 +1,20 @@
-import axios from "axios";
-
+// lib/api.js
 export const fetchBlogPosts = async () => {
-  const { data } = await axios.get(
-    "http://localhost:1337/api/blog-posts?populate[coverimage][populate]=*"
-  );
+  const response = await fetch("/api/blogPosts");
+  if (!response.ok) {
+    throw new Error("Veriler getirilemedi");
+  }
+  const data = await response.json();
   return data;
 };
 
 export const fetchBlogPost = async (slug) => {
-  const { data } = await axios.get(
-    `http://localhost:1337/api/blog-posts?filters[slug][$eq]=${slug}&populate=*`
-  );
-  return data;
+  const response = await fetch("/api/blogPosts");
+  if (!response.ok) {
+    throw new Error("Veriler getirilemedi");
+  }
+  const blogs = await response.json();
+
+  const blogPost = blogs.find((blog) => blog.slug === slug);
+  return blogPost || null;
 };
-
-

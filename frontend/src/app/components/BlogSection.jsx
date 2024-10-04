@@ -29,20 +29,6 @@ export default function BlogSection() {
     }));
   };
 
-  const cardVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5, ease: "easeOut" },
-    },
-  };
-
-  const buttonVariants = {
-    hover: { scale: 1.1, transition: { duration: 0.2 } },
-    tap: { scale: 0.95 },
-  };
-
   if (isLoading) {
     return <div>Loading...</div>;
   }
@@ -51,28 +37,29 @@ export default function BlogSection() {
     return <div>Error fetching blog posts</div>;
   }
 
+  // Blogları tarihe göre sıralıyoruz
+  const sortedBlogs = data.sort((a, b) => new Date(b.date) - new Date(a.date));
+
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 bg-[#f07f55]">
-      {data?.data.map((post) => {
-        const { id: postId, attributes } = post;
-        const coverImageUrl =
-          attributes.coverimage?.data?.attributes?.formats?.large?.url;
-        const imageUrl = coverImageUrl
-          ? `http://localhost:1337${coverImageUrl}`
-          : "/default-image.jpg";
-        const excerpt = attributes.Excerpt || "";
+      {sortedBlogs.map((post) => {
+        const {
+          id: postId,
+          blogImage,
+          blogTitle,
+          summary,
+          slug,
+          date,
+          tags,
+        } = post;
+        const imageUrl = blogImage || "/default-image.jpg";
+        const excerpt = summary || "";
         const shortExcerpt = excerpt.substring(0, 100);
         const isExpanded = expandedPosts[postId];
 
         return (
-          <Link
-            target="_blank"
-            href={`/blog/${attributes.slug}`}
-            passHref
-            key={postId}
-          >
+          <Link target="_blank" href={`/blog/${slug}`} passHref key={postId}>
             <motion.div
-              variants={cardVariants}
               initial="hidden"
               animate="visible"
               whileHover={{ scale: 1.05 }}
@@ -83,26 +70,35 @@ export default function BlogSection() {
                 <CardHeader color="blue-gray" className="relative h-72 lg:h-56">
                   <Image
                     src={imageUrl}
-                    alt={attributes.Title}
+                    alt={blogTitle}
                     layout="fill"
                     objectFit="cover"
                     priority
                     quality={100}
+                    className="rounded-lg"
                   />
                 </CardHeader>
                 <CardBody className="flex-grow overflow-hidden">
                   <Typography variant="h5" color="blue-gray" className="mb-2">
-                    {attributes.Title}
+                    {blogTitle}
                   </Typography>
                   <Typography>
                     {isExpanded ? excerpt : `${shortExcerpt}...`}
                   </Typography>
+                  {/* Date and Tags */}
+                  <div className="mt-4">
+                    <p className="text-sm text-gray-600">
+                      Yayınlanma Tarihi: {new Date(date).toLocaleDateString()}
+                    </p>
+                    <p className="text-sm text-gray-600">
+                      Etiketler: {tags.join(", ")}
+                    </p>
+                  </div>
                 </CardBody>
                 <CardFooter className="pt-0 flex justify-between">
                   <motion.button
-                    variants={buttonVariants}
-                    whileHover="hover"
-                    whileTap="tap"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
                     onClick={(e) => {
                       e.preventDefault();
                       e.stopPropagation();
@@ -114,9 +110,8 @@ export default function BlogSection() {
                   </motion.button>
 
                   <motion.button
-                    variants={buttonVariants}
-                    whileHover="hover"
-                    whileTap="tap"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
                     className="px-4 py-2 border-2 border-[#F07F55] text-[#F07F55] rounded-lg"
                   >
                     Go to Post
