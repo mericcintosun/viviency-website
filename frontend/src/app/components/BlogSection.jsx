@@ -12,12 +12,21 @@ import {
 import { useQuery } from "@tanstack/react-query";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { fetchBlogPosts } from "@/lib/api";
+import { fetchBlogPosts, fetchTags } from "@/lib/api";
 
 export default function BlogSection() {
   const { data, isLoading, isError } = useQuery({
-    queryKey: ["blogPosts"],
-    queryFn: fetchBlogPosts,
+    queryKey: ["blogPosts", { page: 1, perPage: 100 }],
+    queryFn: async () => {
+      const blogPosts = await fetchBlogPosts(1, 100);
+      const updatedPosts = await Promise.all(
+        blogPosts.map(async (post) => {
+          const tags = await fetchTags(post.tags); // Etiketleri getirme
+          return { ...post, tags };
+        })
+      );
+      return updatedPosts;
+    },
   });
 
   const [expandedPosts, setExpandedPosts] = useState({});
@@ -29,28 +38,47 @@ export default function BlogSection() {
     }));
   };
 
+  const stripHtmlTags = (html) => {
+    const doc = new DOMParser().parseFromString(html, "text/html");
+    return doc.body.textContent || "";
+  };
+
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div>Yükleniyor...</div>;
   }
 
-  if (isError) {
-    return <div>Error fetching blog posts</div>;
+  if (isError || !data) {
+    return <div>Blog yazıları getirilemedi veya mevcut değil.</div>;
   }
-
-  // Blogları tarihe göre sıralıyoruz
-  const sortedBlogs = data.sort((a, b) => new Date(b.date) - new Date(a.date));
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 bg-[#f07f55]">
-      {sortedBlogs.map((post) => {
-        const { id: postId, blogImage, blogTitle, summary, slug, date, tags } = post;
+      {data.map((post) => {
+        const {
+          id: postId,
+          blogImage,
+          blogTitle,
+          summary,
+          slug,
+          date,
+          tags,
+        } = post;
+
+        // HTML etiketlerini temizle
+        const cleanTitle = stripHtmlTags(blogTitle);
+        const cleanSummary = stripHtmlTags(summary);
         const imageUrl = blogImage || "/default-image.jpg";
-        const excerpt = summary || "";
-        const shortExcerpt = excerpt.substring(0, 100);
+        const shortExcerpt = cleanSummary ? cleanSummary.substring(0, 100) : ""; // Summary kontrolü
         const isExpanded = expandedPosts[postId];
 
         return (
-          <Link target="_blank" href={`/blog/${slug}`} passHref key={postId}>
+          <Link
+            target="_blank"
+            href={`/blog/${slug}`}
+            passHref
+            key={postId}
+            rel="noopener noreferrer" // Güvenlik için rel ekledik
+          >
             <motion.div
               initial="hidden"
               animate="visible"
@@ -62,28 +90,30 @@ export default function BlogSection() {
                 <CardHeader color="blue-gray" className="relative h-72 lg:h-56">
                   <Image
                     src={imageUrl}
-                    alt={blogTitle}
-                    layout="fill"
-                    objectFit="cover"
+                    alt={cleanTitle || "Blog image"} // Temizlenmiş başlığı kullan
+                    fill
+                    style={{ objectFit: "cover" }}
                     priority
-                    quality={100}
                     className="rounded-lg"
                   />
                 </CardHeader>
                 <CardBody className="flex-grow overflow-hidden">
                   <Typography variant="h5" color="blue-gray" className="mb-2">
-                    {blogTitle}
+                    {cleanTitle || "Başlık Yok"}{" "}
+                    {/* Temizlenmiş başlığı kullan */}
                   </Typography>
                   <Typography>
-                    {isExpanded ? excerpt : `${shortExcerpt}...`}
+                    {isExpanded ? cleanSummary : `${shortExcerpt}...`}
                   </Typography>
-                  {/* Date and Tags */}
                   <div className="mt-4">
                     <p className="text-sm text-gray-600">
                       Yayınlanma Tarihi: {new Date(date).toLocaleDateString()}
                     </p>
                     <p className="text-sm text-gray-600">
-                      Etiketler: {tags?.join(", ") || "No Tags"}
+                      Etiketler:{" "}
+                      {tags.length
+                        ? tags.map((tag) => tag.name).join(", ")
+                        : "Etiket Yok"}
                     </p>
                   </div>
                 </CardBody>

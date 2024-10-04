@@ -23,13 +23,13 @@ export default function Blog() {
 }
 
 function BlogContent() {
-  const { data, error, isLoading } = useQuery({
-    queryKey: ["blogPosts"],
-    queryFn: fetchBlogPosts,
+  const { data, isLoading, isError } = useQuery({
+    queryKey: ["blogPosts", { page: 1, perPage: 100 }],
+    queryFn: () => fetchBlogPosts(1, 100),
   });
 
   if (isLoading) return <div>Yükleniyor...</div>;
-  if (error) return <div>Hata: Veriler getirilemedi.</div>;
+  if (isError) return <div>Hata: Veriler getirilemedi.</div>;
 
   return (
     <>
@@ -37,7 +37,7 @@ function BlogContent() {
       <BlogSlider posts={data} />
       <BlogSection posts={data} />
       <Enquire
-        titleText="ister misiniz?"
+        titleText="İster misiniz?"
         phrases={["satışlarınızı artırmak", "markanızı tanıtmak"]}
         buttonText="enquire now"
       />

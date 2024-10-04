@@ -1,39 +1,56 @@
 "use client";
 
 import { useQuery } from "@tanstack/react-query";
-import { fetchBlogPosts } from "@/lib/api";
+import { fetchBlogPosts, fetchTags } from "@/lib/api";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function BlogSlider() {
+  // İlk 3 blog yazısını çekerken `fetchBlogPosts(1, 3)` çağrılıyor
   const { data, isLoading, isError } = useQuery({
     queryKey: ["latestBlogPosts"],
-    queryFn: fetchBlogPosts,
+    queryFn: () => fetchBlogPosts(1, 3), // İlk sayfa ve 3 blog yazısını çekiyoruz
   });
 
-  if (isLoading) {
-    return <div>Loading...</div>;
+  const { data: tagsData, isLoading: isTagsLoading } = useQuery({
+    queryKey: ["tags", data?.map((post) => post.tags).flat()],
+    queryFn: () => fetchTags(data?.map((post) => post.tags).flat()),
+    enabled: !!data, // Blog verisi varsa tag'leri çek
+  });
+
+  // Yükleniyor ekranı
+  if (isLoading || isTagsLoading) {
+    return <div>Yükleniyor...</div>;
   }
 
-  if (isError) {
-    return <div>Error fetching blog posts</div>;
+  // Hata durumu
+  if (isError || !data || data.length === 0) {
+    return <div>Blog verileri getirilemedi veya mevcut değil.</div>;
   }
 
-  // Blogları tarihe göre sıralıyoruz
-  const sortedBlogs = data.sort((a, b) => new Date(b.date) - new Date(a.date));
-  const latestBlogs = sortedBlogs.slice(0, 3); // Son 3 blog
+  const stripHtmlTags = (html) => {
+    const doc = new DOMParser().parseFromString(html, "text/html");
+    return doc.body.textContent || "";
+  };
 
   return (
     <div className="bg-[#242424] p-8 py-[5rem]">
       <h2 className="text-4xl lg:text-7xl font-bold text-white mb-12">
-        <span className="text-md lg:text-xl">İlhamla Yazdığımız </span> <br />{" "}
+        <span className="text-md lg:text-xl">İlhamla Yazdığımız </span> <br />
         Son Yazılar
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {latestBlogs.map((post) => {
+        {data.map((post) => {
           const { id, blogImage, blogTitle, author, slug, date, tags } = post;
           const imageUrl = blogImage || "/default-image.jpg";
+
+          // HTML etiketlerini temizle
+          const cleanTitle = stripHtmlTags(blogTitle);
+
+          // Blog'a ait etiketler
+          const postTags =
+            tagsData?.filter((tag) => tags.includes(tag.id)) || [];
 
           return (
             <motion.div
@@ -48,7 +65,7 @@ export default function BlogSlider() {
               >
                 <Image
                   src={imageUrl}
-                  alt={blogTitle}
+                  alt={cleanTitle || "Blog image"} // Temizlenmiş başlığı kullan
                   width={300}
                   height={200}
                   className="w-full h-[200px] object-cover"
@@ -56,17 +73,32 @@ export default function BlogSlider() {
               </motion.div>
               <div className="p-4 flex flex-col h-[250px] justify-between">
                 <div>
-                  <h3 className="text-lg font-bold">{blogTitle}</h3>
+                  <h3 className="text-lg font-bold">
+                    {cleanTitle || "Başlık Yok"}{" "}
+                    {/* Temizlenmiş başlığı kullan */}
+                  </h3>
                   <p className="text-sm text-gray-600">Yazar: {author}</p>
-                  {/* Date and Tags */}
                   <p className="text-sm text-gray-600">
                     Yayınlanma Tarihi: {new Date(date).toLocaleDateString()}
                   </p>
                   <p className="text-sm text-gray-600">
-                    Etiketler: {tags.join(", ")}
+                    Etiketler:{" "}
+                    {postTags.length > 0
+                      ? postTags
+                          .map((tag) => (
+                            <Link
+                              key={tag.id}
+                              href={`/tags/${tag.slug}`}
+                              className="text-[#F07F55] hover:underline"
+                            >
+                              {tag.name}
+                            </Link>
+                          ))
+                          .reduce((prev, curr) => [prev, ", ", curr])
+                      : "Etiket Yok"}
                   </p>
                 </div>
-                <Link href={`/blog/${slug}`} className="mt-auto self-end">
+                <Link href={`/blog/${slug}`} passHref>
                   <motion.button
                     whileHover={{
                       backgroundColor: "#1D4ED8",
