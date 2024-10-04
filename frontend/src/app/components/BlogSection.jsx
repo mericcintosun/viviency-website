@@ -43,15 +43,7 @@ export default function BlogSection() {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 bg-[#f07f55]">
       {sortedBlogs.map((post) => {
-        const {
-          id: postId,
-          blogImage,
-          blogTitle,
-          summary,
-          slug,
-          date,
-          tags,
-        } = post;
+        const { id: postId, blogImage, blogTitle, summary, slug, date, tags } = post;
         const imageUrl = blogImage || "/default-image.jpg";
         const excerpt = summary || "";
         const shortExcerpt = excerpt.substring(0, 100);
