@@ -91,7 +91,7 @@ export default function BlogSection() {
                       Yayınlanma Tarihi: {new Date(date).toLocaleDateString()}
                     </p>
                     <p className="text-sm text-gray-600">
-                      Etiketler: {tags.join(", ")}
+                      Etiketler: {tags?.join(", ") || "No Tags"}
                     </p>
                   </div>
                 </CardBody>
