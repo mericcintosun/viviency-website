@@ -13,7 +13,6 @@ export default function Navbar() {
 
   // Animasyonlu metin için state ve useEffect
   const phrases = ["strategy", "creative", "impact", "social", "results"];
-  const titleText = "Bizimle Çalışın";
   const [index, setIndex] = useState(0);
   const [opacity, setOpacity] = useState(1);
 
