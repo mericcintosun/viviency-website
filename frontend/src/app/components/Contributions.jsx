@@ -20,7 +20,7 @@ export default function Contributions() {
     );
 
   const getTitleClass = (value) =>
-    open === value ? "text-white" : "text-black"; // Değiştirilecek renk burada
+    open === value ? "text-white" : "text-black"; 
 
   return (
     <>

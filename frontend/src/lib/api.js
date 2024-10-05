@@ -1,6 +1,5 @@
 import axios from "axios";
 
-// Tüm blog yazılarını çeken fonksiyon
 export const fetchBlogPosts = async (page = 1, perPage = 100) => {
   try {
     const response = await axios.get(
@@ -26,13 +25,12 @@ export const fetchBlogPosts = async (page = 1, perPage = 100) => {
   }
 };
 
-// Belirli bir blog yazısını slug ile getiren fonksiyon
 export const fetchBlogPost = async (slug) => {
   try {
     const response = await axios.get(
       `https://viviency.com/wp-json/wp/v2/posts?slug=${slug}&_embed`
     );
-    const post = response.data[0]; // Slug ile gelen verinin ilk elemanı
+    const post = response.data[0]; 
 
     if (!post) {
       throw new Error("Blog bulunamadı");
@@ -57,7 +55,7 @@ export const fetchBlogPost = async (slug) => {
   }
 };
 export const fetchTags = async (tagIds) => {
-  if (!tagIds || tagIds.length === 0) return []; // Tag yoksa boş array döndür
+  if (!tagIds || tagIds.length === 0) return [];
   try {
     const responses = await Promise.all(
       tagIds.map((id) =>

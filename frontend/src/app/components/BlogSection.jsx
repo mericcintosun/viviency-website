@@ -21,7 +21,7 @@ export default function BlogSection() {
       const blogPosts = await fetchBlogPosts(1, 100);
       const updatedPosts = await Promise.all(
         blogPosts.map(async (post) => {
-          const tags = await fetchTags(post.tags); // Etiketleri getirme
+          const tags = await fetchTags(post.tags);
           return { ...post, tags };
         })
       );
@@ -52,7 +52,7 @@ export default function BlogSection() {
   }
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 bg-[#f07f55]">
+    <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 bg-[#f07f55] p-6 gap-4">
       {data.map((post) => {
         const {
           id: postId,
@@ -62,13 +62,13 @@ export default function BlogSection() {
           slug,
           date,
           tags,
+          author, 
         } = post;
 
-        // HTML etiketlerini temizle
         const cleanTitle = stripHtmlTags(blogTitle);
         const cleanSummary = stripHtmlTags(summary);
         const imageUrl = blogImage || "/default-image.jpg";
-        const shortExcerpt = cleanSummary ? cleanSummary.substring(0, 100) : ""; // Summary kontrolü
+        const shortExcerpt = cleanSummary ? cleanSummary.substring(0, 100) : "";
         const isExpanded = expandedPosts[postId];
 
         return (
@@ -77,42 +77,61 @@ export default function BlogSection() {
             href={`/blog/${slug}`}
             passHref
             key={postId}
-            rel="noopener noreferrer" // Güvenlik için rel ekledik
+            rel="noopener noreferrer"
           >
             <motion.div
               initial="hidden"
               animate="visible"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="mt-[4rem]"
+              className="mt-[4rem] cursor-pointer"
             >
-              <Card className="my-[2rem] w-[80%] mx-auto lg:my-[5rem] lg:w-96 lg:flex lg:flex-col lg:mx-auto lg:justify-between cursor-pointer min-h-[70dvh]">
-                <CardHeader color="blue-gray" className="relative h-72 lg:h-56">
+              <Card className="my-[2rem] w-full mx-auto lg:w-96 flex flex-col h-full">
+                <CardHeader
+                  color="blue-gray"
+                  className="relative h-72 lg:h-56 overflow-hidden flex-shrink-0"
+                >
                   <Image
                     src={imageUrl}
-                    alt={cleanTitle || "Blog image"} // Temizlenmiş başlığı kullan
+                    alt={cleanTitle || "Blog image"}
                     fill
                     style={{ objectFit: "cover" }}
                     priority
-                    className="rounded-lg"
+                    className="rounded-lg transition-transform duration-300 transform hover:scale-110"
                   />
                 </CardHeader>
-                <CardBody className="flex-grow overflow-hidden">
-                  <Typography variant="h5" color="blue-gray" className="mb-2">
-                    {cleanTitle || "Başlık Yok"}{" "}
-                    {/* Temizlenmiş başlığı kullan */}
-                  </Typography>
-                  <Typography>
-                    {isExpanded ? cleanSummary : `${shortExcerpt}...`}
-                  </Typography>
+                <CardBody className="flex-grow flex flex-col justify-between">
+                  <div className="flex-grow">
+                    <Typography variant="h5" color="blue-gray" className="mb-2">
+                      {cleanTitle || ""}
+                    </Typography>
+                    <Typography>
+                      {isExpanded ? cleanSummary : `${shortExcerpt}...`}
+                    </Typography>
+                  </div>
                   <div className="mt-4">
                     <p className="text-sm text-gray-600">
                       Yayınlanma Tarihi: {new Date(date).toLocaleDateString()}
                     </p>
                     <p className="text-sm text-gray-600">
+                      Yazar:{" "}
+                      <span className="text-[#F07F55]  hover:bg-[#FFC107] hover:text-white transition duration-300 rounded px-1">
+                        {author || ""}
+                      </span>
+                    </p>
+                    <p className="text-sm text-gray-600">
                       Etiketler:{" "}
                       {tags.length
-                        ? tags.map((tag) => tag.name).join(", ")
+                        ? tags
+                            .map((tag) => (
+                              <span
+                                key={tag.id}
+                                className="text-[#F07F55]  hover:bg-[#FFC107] hover:text-white transition duration-300 rounded px-1"
+                              >
+                                {tag.name}
+                              </span>
+                            ))
+                            .reduce((prev, curr) => [prev, ", ", curr])
                         : "Etiket Yok"}
                     </p>
                   </div>
@@ -126,18 +145,20 @@ export default function BlogSection() {
                       e.stopPropagation();
                       toggleExpand(postId);
                     }}
-                    className="px-4 py-2 text-white bg-[#F07F55] rounded-lg z-50"
+                    className="px-4 py-2 text-white bg-[#F07F55] rounded-lg transition-colors duration-300 hover:bg-[#FFC107]"
                   >
                     {isExpanded ? "Show Less" : "Read More"}
                   </motion.button>
 
-                  <motion.button
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="px-4 py-2 border-2 border-[#F07F55] text-[#F07F55] rounded-lg"
-                  >
-                    Go to Post
-                  </motion.button>
+                  <Link href={`/blog/${slug}`}>
+                    <motion.button
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="px-4 py-2 border-2 border-[#F07F55] text-[#F07F55] rounded-lg transition-colors duration-300 hover:bg-[#F07F55] hover:text-white"
+                    >
+                      Go to Post
+                    </motion.button>
+                  </Link>
                 </CardFooter>
               </Card>
             </motion.div>

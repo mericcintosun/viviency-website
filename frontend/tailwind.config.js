@@ -59,7 +59,7 @@ module.exports = withMT({
         sm: "calc(var(--radius) - 4px)",
       },
       backgroundImage: {
-        "enquire-bg-image": "url('/assets/enquire-bg-img.png')", // Use your image path here
+        "enquire-bg-image": "url('/assets/enquire-bg-img.png')", 
       },
     },
   },

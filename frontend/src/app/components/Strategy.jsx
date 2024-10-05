@@ -37,7 +37,7 @@ export default function Strategy() {
       setIsLargeScreen(window.innerWidth <= 1280);
     };
 
-    handleResize(); // İlk render'da genişliği kontrol et
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);

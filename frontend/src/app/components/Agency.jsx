@@ -18,7 +18,6 @@ const AnimatedHeader = memo(() => (
 export default function Agency() {
   const { scrollY } = useScroll();
 
-  // Transform the scrollY value for scaling and position
   const scaleTransform = useTransform(scrollY, [0, 300], [0.8, 1]);
   const yTransform = useTransform(scrollY, [0, 300], [50, 0]);
 

@@ -4,7 +4,7 @@ const nextConfig = {
     forceSwcTransforms: true,
   },
   images: {
-    domains: ["localhost", "picsum.photos", "viviency.com"], // viviency.com eklendi
+    domains: ["localhost", "picsum.photos", "viviency.com"], 
   },
 };
 

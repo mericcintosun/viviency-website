@@ -13,7 +13,6 @@ export default function Home() {
     "meriç cintosun",
   ];
   
-  // İkinci Enquire bileşeni için farklı içerikler
   const content = [
     "yaratıcı olmayı",
     "ilham vermeyi",

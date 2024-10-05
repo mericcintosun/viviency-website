@@ -13,8 +13,8 @@ export default function BlogWelcome() {
               <Image
                 id="about-image"
                 src="/assets/about-assets/teams.jpg"
-                layout="fill" // Eskiden kullanılan layout özelliğini fill ile değiştirdik.
-                objectFit="cover" // Görselin tam ekrana yayılması ve hizalanması için kullanıyoruz.
+                layout="fill"
+                objectFit="cover"
                 className="opacity-50"
                 alt="teams"
               />

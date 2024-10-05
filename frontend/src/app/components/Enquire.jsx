@@ -9,11 +9,11 @@ export default function Enquire({ phrases, buttonText, titleText }) {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setOpacity(0); // Opaklığı sıfıra düşür
+      setOpacity(0); 
       setTimeout(() => {
-        setIndex((prevIndex) => (prevIndex + 1) % phrases.length); // İndeksi güncelle
-        setOpacity(1); // Opaklığı tekrar bir yap
-      }, 500); // 0.5 saniye sonra opacity 1'e geri dönsün
+        setIndex((prevIndex) => (prevIndex + 1) % phrases.length); 
+        setOpacity(1); 
+      }, 500); 
     }, 2000);
 
     return () => clearInterval(interval);

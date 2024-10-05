@@ -41,7 +41,7 @@ export default function References() {
           {logos.map((logo, index) => (
             <Link
               key={index}
-              href={links[index]} // Linki buraya ekledik
+              href={links[index]} 
               target="_blank"
               rel="noopener noreferrer"
               className="relative group overflow-hidden rounded-lg shadow-lg cursor-pointer"

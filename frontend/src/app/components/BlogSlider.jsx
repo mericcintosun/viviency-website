@@ -7,24 +7,21 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function BlogSlider() {
-  // İlk 3 blog yazısını çekerken `fetchBlogPosts(1, 3)` çağrılıyor
   const { data, isLoading, isError } = useQuery({
     queryKey: ["latestBlogPosts"],
-    queryFn: () => fetchBlogPosts(1, 3), // İlk sayfa ve 3 blog yazısını çekiyoruz
+    queryFn: () => fetchBlogPosts(1, 3),
   });
 
   const { data: tagsData, isLoading: isTagsLoading } = useQuery({
     queryKey: ["tags", data?.map((post) => post.tags).flat()],
     queryFn: () => fetchTags(data?.map((post) => post.tags).flat()),
-    enabled: !!data, // Blog verisi varsa tag'leri çek
+    enabled: !!data,
   });
 
-  // Yükleniyor ekranı
   if (isLoading || isTagsLoading) {
     return <div>Yükleniyor...</div>;
   }
 
-  // Hata durumu
   if (isError || !data || data.length === 0) {
     return <div>Blog verileri getirilemedi veya mevcut değil.</div>;
   }
@@ -45,10 +42,8 @@ export default function BlogSlider() {
           const { id, blogImage, blogTitle, author, slug, date, tags } = post;
           const imageUrl = blogImage || "/default-image.jpg";
 
-          // HTML etiketlerini temizle
           const cleanTitle = stripHtmlTags(blogTitle);
 
-          // Blog'a ait etiketler
           const postTags =
             tagsData?.filter((tag) => tags.includes(tag.id)) || [];
 
@@ -65,34 +60,29 @@ export default function BlogSlider() {
               >
                 <Image
                   src={imageUrl}
-                  alt={cleanTitle || "Blog image"} // Temizlenmiş başlığı kullan
+                  alt={cleanTitle || "Blog image"}
                   width={300}
                   height={200}
                   className="w-full h-[200px] object-cover"
                 />
               </motion.div>
-              <div className="p-4 flex flex-col h-[250px] justify-between">
-                <div>
-                  <h3 className="text-lg font-bold">
-                    {cleanTitle || "Başlık Yok"}{" "}
-                    {/* Temizlenmiş başlığı kullan */}
-                  </h3>
-                  <p className="text-sm text-gray-600">Yazar: {author}</p>
+              <div className="p-4 flex flex-col h-[300px] justify-between">
+                <div className="flex flex-col gap-4 my-4">
+                  <h3 className="text-lg font-bold">{cleanTitle || ""} </h3>
+                  <p className="text-sm text-gray-600">
+                    Yazar: <span className="text-[#F07F55]">{author}</span>
+                  </p>
                   <p className="text-sm text-gray-600">
                     Yayınlanma Tarihi: {new Date(date).toLocaleDateString()}
                   </p>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-gray-600 flex gap-1">
                     Etiketler:{" "}
                     {postTags.length > 0
                       ? postTags
                           .map((tag) => (
-                            <Link
-                              key={tag.id}
-                              href={`/tags/${tag.slug}`}
-                              className="text-[#F07F55] hover:underline"
-                            >
+                            <div key={tag.id} className="text-[#F07F55]">
                               {tag.name}
-                            </Link>
+                            </div>
                           ))
                           .reduce((prev, curr) => [prev, ", ", curr])
                       : "Etiket Yok"}
