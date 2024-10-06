@@ -5,7 +5,6 @@ import Image from "next/image";
 import dynamic from "next/dynamic"; // Dinamik import
 
 // Map bileşeni dinamik olarak yüklenir
-const Map = dynamic(() => import("../components/Map"), { ssr: false });
 
 export default function ContactForm() {
   const phrases = ["strategy", "creative", "impact", "social", "results"];
@@ -27,7 +26,6 @@ export default function ContactForm() {
   return (
     <>
       <div className="container mx-auto px-12 py-12 grid grid-cols-1 lg:grid-cols-2 gap-12">
-        {/* Sol Taraf: Metin İçeriği */}
         <div className="space-y-8">
           <h1 className="text-6xl font-bold">
             let's talk &nbsp;
@@ -95,7 +93,6 @@ export default function ContactForm() {
             </button>
           </form>
         </div>
-        {/* Sağ Taraf: Görsel */}
         <div className="flex justify-center items-center">
           <Image
             src="/assets/contactImage.jpg"
@@ -106,7 +103,6 @@ export default function ContactForm() {
           />
         </div>
       </div>
-      <Map />
     </>
   );
 }
