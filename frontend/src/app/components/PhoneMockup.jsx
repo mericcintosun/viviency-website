@@ -1,82 +1,110 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useParams } from "next/navigation";
+import servicesData from "@/data/servicesData";
+import { Carousel, IconButton } from "@material-tailwind/react";
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
-export default function ComputerMockup({ images = [] }) {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
+function useMediaQuery(query) {
+  const [matches, setMatches] = useState(null);
 
-  // Function to handle moving to the next image
-  const nextImage = () => {
-    if (isAnimating) return;
-    setIsAnimating(true);
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-  };
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const media = window.matchMedia(query);
+      setMatches(media.matches);
 
-  // Function to handle moving to the previous image
-  const prevImage = () => {
-    if (isAnimating) return;
-    setIsAnimating(true);
-    setCurrentIndex(
-      (prevIndex) => (prevIndex - 1 + images.length) % images.length
-    );
-  };
+      const listener = () => setMatches(media.matches);
+      media.addEventListener("change", listener);
 
-  // Reset animation state after image load
-  const handleImageLoad = () => {
-    setIsAnimating(false);
-  };
+      return () => media.removeEventListener("change", listener);
+    }
+  }, [query]);
+
+  return matches;
+}
+
+export default function ComputerMockup() {
+  const params = useParams();
+  const slug = params.slug;
+
+  // Find the service based on the slug
+  const service = servicesData.find((service) => service.slug === slug);
+
+  // If service is not found, handle the error
+  if (!service) {
+    return <p>Service not found</p>;
+  }
+
+  // Use custom hook to detect mobile view
+  const isMobile = useMediaQuery("(max-width: 768px)");
+
+  // Wait until we know if it's mobile or not
+  if (isMobile === null) {
+    return null; // or a loading indicator
+  }
+
+  // Choose images based on device
+  const currentImages = isMobile ? service.responsiveImages : service.images;
 
   return (
-    <div className="h-[80vh] flex justify-center items-center bg-gray-100">
-      <div className="relative mx-auto w-full max-w-[90%] md:max-w-[1024px]">
-        {/* Laptop Frame (Outer Border) */}
-        <div className="border-[8px] border-gray-800 rounded-xl shadow-2xl relative bg-black dark:border-gray-700 dark:bg-gray-900">
-          {/* Laptop Screen */}
-          <div className="overflow-hidden bg-black relative h-[70vh] rounded-t-xl">
-            {images.length > 0 && (
+    <>
+      <h1 className="font-bold text-4xl md:text-5xl lg:text-7xl w-full mx-auto text-center bg-[#F07F55] text-white p-12">
+        Çalıştığımız Markalar
+      </h1>
+      <div className="w-full h-[80dvh] py-6 lg:h-[80vh] mx-auto relative bg-black">
+        <Carousel
+          transition={{ duration: 0.5 }}
+          className="rounded-xl h-full"
+          autoplay={false}
+          prevArrow={({ handlePrev }) => (
+            <IconButton
+              variant="text"
+              color="white"
+              size="lg"
+              onClick={handlePrev}
+              className="!absolute top-1/2 -translate-y-1/2 left-4"
+            >
+              <ChevronLeftIcon strokeWidth={2} className="w-6 h-6" />
+            </IconButton>
+          )}
+          nextArrow={({ handleNext }) => (
+            <IconButton
+              variant="text"
+              color="white"
+              size="lg"
+              onClick={handleNext}
+              className="!absolute top-1/2 -translate-y-1/2 right-4"
+            >
+              <ChevronRightIcon strokeWidth={2} className="w-6 h-6" />
+            </IconButton>
+          )}
+        >
+          {currentImages.map((imageSrc, index) => (
+            <div key={index} className="relative h-full w-full group">
               <Image
-                key={currentIndex}
-                src={images[currentIndex]}
-                className={`h-full w-full object-cover transition-opacity duration-500 ease-in-out ${
-                  isAnimating ? "opacity-0" : "opacity-100"
-                }`}
-                alt={`Laptop Screen ${currentIndex + 1}`}
+                src={imageSrc}
+                alt={`Image ${index + 1}`}
                 fill
-                onLoadingComplete={handleImageLoad}
+                className="object-contain"
+                sizes="(max-width: 1024px) 100vw, 70vw"
               />
-            )}
-            {/* Loading Spinner */}
-            {isAnimating && (
-              <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
-                <div className="w-10 h-10 border-4 border-gray-300 rounded-full animate-spin border-t-gray-600"></div>
+              <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <div className="text-white text-center px-4">
+                  <ul className="mt-2">
+                    {service.objective.map((item, idx) => (
+                      <li key={idx} className="text-lg">
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-            )}
-
-            {/* Navigation Buttons */}
-            <button
-              onClick={prevImage}
-              className="absolute left-5 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-90 hover:bg-opacity-100 transition duration-300 rounded-full p-3 focus:outline-none shadow-lg"
-              aria-label="Previous Image"
-            >
-              <span className="text-lg text-gray-900">&#9664;</span>
-            </button>
-            <button
-              onClick={nextImage}
-              className="absolute right-5 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-90 hover:bg-opacity-100 transition duration-300 rounded-full p-3 focus:outline-none shadow-lg"
-              aria-label="Next Image"
-            >
-              <span className="text-lg text-gray-900">&#9654;</span>
-            </button>
-          </div>
-
-          {/* Bottom Section (Laptop Base) */}
-          <div className="relative mx-auto bg-gray-900 dark:bg-gray-800 rounded-b-lg h-[40px] w-full mt-1">
-            <div className="absolute left-1/2 transform -translate-x-1/2 rounded-b-lg w-[120px] h-[10px] bg-gray-700 dark:bg-gray-600"></div>
-          </div>
-        </div>
+            </div>
+          ))}
+        </Carousel>
       </div>
-    </div>
+    </>
   );
 }
