@@ -2,8 +2,13 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import dynamic from "next/dynamic"; // Dinamik import
+import MyMap from "../components/MyMap";
+import Enquire from "../components/Enquire";
+import Form from "../components/Form";
 
+const content = ["satışlarınızı artırmak", "markanızı tanıtmak"];
+const buttonTwoText = "enquire now";
+const loveText = "ister misiniz?";
 // Map bileşeni dinamik olarak yüklenir
 
 export default function ContactForm() {
@@ -42,67 +47,25 @@ export default function ContactForm() {
           </p>
 
           {/* Form Bölümü */}
-          <form className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Your name
-                </label>
-                <input
-                  type="text"
-                  className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-[#F07F55] focus:border-[#F07F55] sm:text-sm p-2"
-                  placeholder="Full name"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Email address
-                </label>
-                <input
-                  type="email"
-                  className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-[#F07F55] focus:border-[#F07F55] sm:text-sm p-2"
-                  placeholder="Email Address"
-                />
-              </div>
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700">
-                (Optional) Phone number
-              </label>
-              <input
-                type="text"
-                className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-[#F07F55] focus:border-[#F07F55] sm:text-sm p-2"
-                placeholder="Phone number"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700">
-                Your message
-              </label>
-              <textarea
-                rows="4"
-                className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-[#F07F55] focus:border-[#F07F55] sm:text-sm p-2"
-                placeholder="Tell us about your brand and why you're looking for a social agency."
-              />
-            </div>
-            <button
-              type="submit"
-              className="w-full bg-[#F07F55] text-white py-3 px-4 rounded-lg hover:bg-[#e07040] transition-all"
-            >
-              Send Message
-            </button>
-          </form>
+          <Form />
         </div>
         <div className="flex justify-center items-center">
           <Image
             src="/assets/contactImage.jpg"
             alt="Contact"
-            width={500}
-            height={500}
-            className="rounded-lg shadow-lg object-cover"
+            width={600}
+            height={400}
+            priority
           />
         </div>
       </div>
+
+      <MyMap />
+      <Enquire
+        titleText={loveText}
+        phrases={content}
+        buttonText={buttonTwoText}
+      />
     </>
   );
 }

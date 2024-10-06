@@ -75,28 +75,30 @@ export default function BlogSlider() {
                   <p className="text-sm text-gray-600">
                     Yayınlanma Tarihi: {new Date(date).toLocaleDateString()}
                   </p>
-                  <p className="text-sm text-gray-600 flex gap-1">
+                  <p className="text-sm text-gray-600 flex gap-1 flex-wrap">
                     Etiketler:{" "}
-                    {postTags.length > 0
-                      ? postTags
-                          .map((tag) => (
-                            <div key={tag.id} className="text-[#F07F55]">
-                              {tag.name}
-                            </div>
-                          ))
-                          .reduce((prev, curr) => [prev, ", ", curr])
-                      : "Etiket Yok"}
+                    {postTags.length > 0 ? (
+                      <div className="flex gap-1 flex-wrap max-h-[80px] overflow-y-auto">
+                        {postTags.map((tag) => (
+                          <div key={tag.id} className="text-[#F07F55]">
+                            {tag.name}
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      "Etiket Yok"
+                    )}
                   </p>
                 </div>
                 <Link href={`/blog/${slug}`} passHref>
                   <motion.button
                     whileHover={{
-                      backgroundColor: "#1D4ED8",
+                      backgroundColor: "#ab5333",
                       color: "#fff",
                       scale: 1.05,
                     }}
                     transition={{ duration: 0.3 }}
-                    className="bg-blue-500 text-white py-2 px-4 rounded-lg shadow hover:bg-blue-600 transition-all"
+                    className=" bg-[#F07F55] text-white py-2 px-4 rounded-lg shadow hover:bg-[#ab5333] transition-all"
                   >
                     Devamını Oku
                   </motion.button>

@@ -30,7 +30,7 @@ export const fetchBlogPost = async (slug) => {
     const response = await axios.get(
       `https://viviency.com/wp-json/wp/v2/posts?slug=${slug}&_embed`
     );
-    const post = response.data[0]; 
+    const post = response.data[0];
 
     if (!post) {
       throw new Error("Blog bulunamadı");

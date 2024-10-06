@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import Form from "./Form";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -246,56 +247,7 @@ export default function Navbar() {
 
               {/* FORM */}
               <div className="flex-1 flex flex-col justify-center text-black">
-                <form className="space-y-8">
-                  <div className="flex gap-4">
-                    <div className="flex-1">
-                      <label className="block text-sm font-medium text-gray-700">
-                        Your name
-                      </label>
-                      <input
-                        type="text"
-                        className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#F07F55] focus:border-[#F07F55] sm:text-sm"
-                        placeholder="Full name"
-                      />
-                    </div>
-                    <div className="flex-1">
-                      <label className="block text-sm font-medium text-gray-700">
-                        Email address
-                      </label>
-                      <input
-                        type="email"
-                        className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#F07F55] focus:border-[#F07F55] sm:text-sm"
-                        placeholder="Email Address"
-                      />
-                    </div>
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700">
-                      Phone number (Optional)
-                    </label>
-                    <input
-                      type="text"
-                      className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#F07F55] focus:border-[#F07F55] sm:text-sm"
-                      placeholder="Phone number"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700">
-                      Your message
-                    </label>
-                    <textarea
-                      rows="4"
-                      className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#F07F55] focus:border-[#F07F55] sm:text-sm"
-                      placeholder="Tell us about your brand and why you're looking for a social agency."
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    className="w-full bg-[#F07F55] text-white py-3 px-4 rounded-lg hover:bg-[#e07040] transition-all"
-                  >
-                    Send Message
-                  </button>
-                </form>
+                <Form/>
               </div>
 
               {/* KAPATMA BUTONU */}

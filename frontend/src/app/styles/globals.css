@@ -144,7 +144,10 @@
 #social-btn:hover {
   background-color: #92b188; /* Hover arka plan rengi */
 }
-
+img {
+  width: auto;
+  height: auto;
+}
 #bgc {
   background-color: black;
   height: 1000px;
@@ -155,7 +158,9 @@
   height: 1000px;
   background-repeat: no-repeat;
 }
-
+#my-map {
+  z-index: 0;
+}
 @media (min-width: 768px) and (max-width: 1280px) {
   #strategy-box {
     display: flex;
