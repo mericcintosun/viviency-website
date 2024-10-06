@@ -4,7 +4,7 @@ const nextConfig = {
     forceSwcTransforms: true,
   },
   images: {
-    domains: ["localhost", "picsum.photos", "viviency.com"], 
+    domains: ["localhost", "picsum.photos", "viviency.com" , 'flowbite.s3.amazonaws.com'], 
   },
 };
 
