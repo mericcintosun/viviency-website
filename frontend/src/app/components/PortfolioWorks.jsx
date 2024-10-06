@@ -1,12 +1,16 @@
 "use client";
 import { portfolioData } from "@/data/portfolioData";
+import { useParams } from "next/navigation"; // Dinamik segmenti almak için
 import Link from "next/link";
 import { useRef, useEffect, useState } from "react";
 
-export default function Works() {
+export default function PortfolioWorks() {
+  const { id } = useParams(); // URL'deki id'yi alıyoruz
+  const project = portfolioData.find((item) => item.id === id); // Projeyi dinamik olarak buluyoruz
+
   const scrollContainerRef = useRef(null);
   const scrollPosition = useRef(0);
-  const speed = 0.5;
+  const speed = 1;
   const [currentSpeed, setCurrentSpeed] = useState(speed);
 
   const handleMouseDown = (e) => {
@@ -68,8 +72,13 @@ export default function Works() {
     setCurrentSpeed(speed);
   };
 
+  // Eğer proje bulunamazsa hata mesajı gösteriyoruz
+  if (!project) {
+    return <div>Proje bulunamadı.</div>;
+  }
+
   return (
-    <div className="relative w-full overflow-hidden bg-[#F07F55]">
+    <div className="relative w-full overflow-hidden">
       <div
         ref={scrollContainerRef}
         className="flex items-center overflow-x-auto hide-scrollbar relative"
@@ -78,36 +87,20 @@ export default function Works() {
         onMouseLeave={handleMouseLeave}
         id="projects"
       >
-        {portfolioData.map((project, index) => (
+        {/* Sadece bu projenin images dizisinden resimleri döndürüyoruz */}
+        {project.images.map((image, index) => (
           <div
-            key={project.id}
+            key={index}
             className="relative min-w-[500px] py-12 px-2 text-white inline-block group"
           >
             <img
-              src={project.img}
-              alt={`Project ${project.title}`}
-              className="block w-full group-hover:opacity-80"
+              src={image}
+              alt={`Image ${index + 1} for ${project.title}`}
+              className="block w-full "
             />
-            <div className="absolute inset-0 bg-black opacity-50 z-10 transition-opacity duration-300"></div>
-            {/* Başlık ve logo */}
-            <div className="absolute inset-0 flex justify-between items-end z-20 p-4 ">
-              <h1 className="bg-opacity-75 px-4 py-2 absolute bottom-[60px] left-[30px]">
-                {project.title}
-              </h1>
-              <img
-                src={project.logo}
-                alt={`${project.client} logo`}
-                className="h-8 w-8 absolute bottom-[60px] right-[30px]" // 32x32 boyutunda logo
-              />
-            </div>
-            <Link
-              href={`/portfolio/${project.id}`} // Dinamik bağlantı için id kullanıyoruz
-              className="absolute inset-0 flex items-center justify-center opacity-0 scale-50 transition-all duration-300 z-30 group-hover:opacity-100 group-hover:scale-100"
-            >
-              <span className="bg-white text-black px-4 py-2 rounded">
-                Review Now
-              </span>
-            </Link>
+            <div className="absolute inset-0  z-10 transition-opacity duration-300"></div>
+            
+          
           </div>
         ))}
       </div>
