@@ -10,8 +10,8 @@ import { useState } from "react";
 import BlogSection from "@/app/components/BlogSection";
 import BlogSlider from "@/app/components/BlogSlider";
 import BlogWelcome from "@/app/components/BlogWelcome";
-import Enquire from "@/app/components/Enquire";
 import LoadingSpinner from "../components/LoadingSpinner";
+import EnquireReverse from "../components/EnquireReverse";
 
 export default function Blog() {
   const [queryClient] = useState(() => new QueryClient());
@@ -37,8 +37,8 @@ function BlogContent() {
       <BlogWelcome />
       <BlogSlider posts={data} />
       <BlogSection posts={data} />
-      <Enquire
-        titleText="İster misiniz?"
+      <EnquireReverse
+        titleText="ister misiniz?"
         phrases={["satışlarınızı artırmak", "markanızı tanıtmak"]}
         buttonText="bize ulaş"
       />

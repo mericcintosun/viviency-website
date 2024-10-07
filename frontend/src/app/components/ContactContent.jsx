@@ -7,7 +7,7 @@ import Form from "./Form";
 import { motion } from "framer-motion";
 import LoadingSpinner from "./LoadingSpinner";
 const MyMap = dynamic(() => import("./MyMap"), { ssr: false });
-const Enquire = dynamic(() => import("./Enquire"), { ssr: false });
+const EnquireReverse = dynamic(() => import("./EnquireReverse"), { ssr: false });
 
 const content = ["satışlarınızı artırmak", "markanızı tanıtmak"];
 const buttonTwoText = "bize ulaş";
@@ -85,7 +85,7 @@ export default function ContactContent() {
 
         <MyMap />
       </motion.div>
-      <Enquire
+      <EnquireReverse
         titleText={loveText}
         phrases={content}
         buttonText={buttonTwoText}

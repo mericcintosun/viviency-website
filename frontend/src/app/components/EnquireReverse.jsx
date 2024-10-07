@@ -24,9 +24,9 @@ export default function EnquireReverse({ phrases, buttonText, titleText }) {
       id="enquire"
       className="bg-enquire-bg-image w-full h-[300px] object-cover flex flex-col justify-center items-center md:items-start p-0 sm:pl-4 md:pl-6 lg:pl-9 xl:pl-12 gap-12"
     >
-      <div className="flex items-center justify-center px-2 text-white text-xl sm:text-2xl md:text-3xl lg:text-6xl gap-5">
+      <div className="flex flex-col lg:flex-row lg:flex items-center justify-center px-2 text-white text-4xl  lg:text-6xl gap-5">
         <motion.span
-          className="font-bold text-xl sm:text-2xl md:text-3xl lg:text-6xl ml-2 text-[#F07F55]"
+          className="font-bold text-4xl  lg:text-6xl ml-2 text-[#F07F55]"
           animate={{ opacity }}
           transition={{ duration: 0.5 }}
         >

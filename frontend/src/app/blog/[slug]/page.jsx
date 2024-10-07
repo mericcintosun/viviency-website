@@ -65,6 +65,7 @@ function BlogPostContent({ slug }) {
   const cleanTitle = stripHtmlTags(blogTitle);
 
   return (
+    <>
     <div className="p-8 bg-[#242424] text-white min-h-screen flex flex-col items-center gap-4">
       {blogImage && (
         <div className="relative w-full h-80 lg:h-[80dvh]">
@@ -147,5 +148,6 @@ function BlogPostContent({ slug }) {
         </div>
       )}
     </div>
+    </>
   );
 }

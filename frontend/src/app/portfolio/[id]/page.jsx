@@ -6,12 +6,13 @@ import { useParams } from "next/navigation";
 import { motion } from "framer-motion";
 import OtherWorks from "@/app/components/OtherWorks";
 import Enquire from "@/app/components/Enquire";
-import { useState, useEffect } from "react"; 
+import { useState, useEffect } from "react";
 import LoadingSpinner from "@/app/components/LoadingSpinner";
+import EnquireReverse from "@/app/components/EnquireReverse";
 export default function PortfolioDetail() {
   const content = ["yaratıcı olmayı", "ilham vermeyi", "hayal kurmayı"];
   const buttonTwoText = "hadi konuşalım!";
-  const loveText = "Seviyoruz";
+  const loveText = "seviyoruz";
   const { id } = useParams();
   const work = portfolioData.find((item) => item.id === id);
 
@@ -53,7 +54,7 @@ export default function PortfolioDetail() {
           initial="hidden"
           animate="visible"
           variants={fadeInUp}
-          className="relative z-10 flex flex-col justify-end items-center h-full text-center text-white px-4 pb-6"
+          className="relative z-10 flex flex-col justify-center items-center h-full text-center text-white px-4 pb-6"
         >
           {work.logo && (
             <motion.img
@@ -108,9 +109,10 @@ export default function PortfolioDetail() {
         <p className="text-md text-gray-700">{work.approach}</p>
       </div>
 
-      <div className="mb-12 flex flex-col lg:flex-row justify-center items-center lg:items-start mt-16 gap-10">
-        <div className="flex flex-col gap-6">
-          <div className="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-2xl transition-shadow duration-300">
+      <div className="mb-12 flex flex-col lg:flex-row  mt-16 w-[70%] mx-auto gap-12">
+        {/* Sol Kısım: İki Kart */}
+        <div className="flex flex-col gap-6 w-full  lg:mx-auto">
+          <div className="bg-white w-full  mx-auto p-8 rounded-lg shadow-lg text-center hover:shadow-2xl transition-shadow duration-300">
             <motion.h2
               initial="hidden"
               animate="visible"
@@ -131,7 +133,7 @@ export default function PortfolioDetail() {
             </motion.p>
           </div>
 
-          <div className="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-2xl transition-shadow duration-300">
+          <div className="bg-white w-full  mx-auto p-8 rounded-lg shadow-lg text-center hover:shadow-2xl transition-shadow duration-300">
             <motion.h2
               initial="hidden"
               animate="visible"
@@ -153,13 +155,14 @@ export default function PortfolioDetail() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-6 w-full lg:w-1/2">
+        {/* Sağ Kısım: Sonuçlar Başlığı ve Açıklama */}
+        <div className="w-full mx-auto flex flex-col gap-6  lg:mx-auto">
           <motion.h2
             initial="hidden"
             animate="visible"
             variants={fadeInUp}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-5xl font-bold text-gray-900"
+            className="text-5xl font-bold text-gray-900 w-full  lg:mx-auto text-center"
           >
             sonuçlar
           </motion.h2>
@@ -168,7 +171,7 @@ export default function PortfolioDetail() {
             animate="visible"
             variants={fadeInUp}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-lg text-gray-700 leading-relaxed"
+            className=" text-lg text-gray-700 leading-relaxed w-[80%] mx-auto  lg:mx-auto text-center"
           >
             {work.results.resultsText}
           </motion.p>
@@ -176,7 +179,7 @@ export default function PortfolioDetail() {
       </div>
 
       <OtherWorks />
-      <Enquire
+      <EnquireReverse
         titleText={loveText}
         phrases={content}
         buttonText={buttonTwoText}

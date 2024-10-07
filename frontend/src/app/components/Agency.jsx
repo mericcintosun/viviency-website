@@ -23,7 +23,7 @@ export default function Agency() {
 
   return (
     <>
-      <div className="container mt-12 flex flex-col pl-4 gap-9 w-[70%] mx-auto">
+      <div className="w-[90%] container mt-12 flex flex-col pl-4 gap-9 lg:w-[70%] mx-auto">
         <AnimatedHeader />
         <motion.p
           initial={{ opacity: 0, y: -50, scale: 0.8 }}

@@ -67,7 +67,7 @@ export default function BlogSlider() {
                   className="w-full h-[200px] object-cover"
                 />
               </motion.div>
-              <div className="p-4 flex flex-col h-[300px] justify-between">
+              <div className="p-4 flex flex-col h-[45dvh]  justify-between">
                 <div className="flex flex-col gap-4 my-4">
                   <h3 className="text-lg font-bold">{cleanTitle || ""} </h3>
                   <p className="text-sm text-gray-600">
