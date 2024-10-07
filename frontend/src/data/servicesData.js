@@ -83,14 +83,14 @@ const servicesData = [
       "Yüksek kaliteli ekipman ve uzman bir prodüksiyon ekibi kullanın",
     ],
     images: [
-      "/assets/instagram1.jpg",
-      "/assets/instagram2.jpg",
-      "/assets/instagram3.jpg",
+      "https://picsum.photos/1025/850?random=551",
+      "https://picsum.photos/1025/850?random=170",
+      "https://picsum.photos/1025/850?random=550",
     ],
     responsiveImages: [
-      "/assets/responsiveImage1.jpg",
-      "/assets/responsiveImage2.jpg",
-      "/assets/responsiveImage3.jpg",
+      "https://picsum.photos/1080/1920?random=39",
+      "https://picsum.photos/1080/1920?random=963",
+      "https://picsum.photos/1080/1920?random=898",
     ],
     timeline: [
       {
@@ -144,14 +144,14 @@ const servicesData = [
       "Performansı izlemek için analiz araçları entegre edin",
     ],
     images: [
-      "/assets/instagram1.jpg",
-      "/assets/instagram2.jpg",
-      "/assets/instagram3.jpg",
+      "https://picsum.photos/1025/850?random=385",
+      "https://picsum.photos/1025/850?random=408",
+      "https://picsum.photos/1025/850?random=767",
     ],
     responsiveImages: [
-      "/assets/responsiveImage1.jpg",
-      "/assets/responsiveImage2.jpg",
-      "/assets/responsiveImage3.jpg",
+      "https://picsum.photos/1080/1920?random=241",
+      "https://picsum.photos/1080/1920?random=10",
+      "https://picsum.photos/1080/1920?random=229",
     ],
     timeline: [
       {
@@ -205,14 +205,14 @@ const servicesData = [
       "Maksimum ROI için belirli demografileri hedefleyin",
     ],
     images: [
-      "/assets/instagram1.jpg",
-      "/assets/instagram2.jpg",
-      "/assets/instagram3.jpg",
+      "https://picsum.photos/1025/850?random=14",
+      "https://picsum.photos/1025/850?random=294",
+      "https://picsum.photos/1025/850?random=999",
     ],
     responsiveImages: [
-      "/assets/responsiveImage1.jpg",
-      "/assets/responsiveImage2.jpg",
-      "/assets/responsiveImage3.jpg",
+      "https://picsum.photos/1080/1920?random=698",
+      "https://picsum.photos/1080/1920?random=215",
+      "https://picsum.photos/1080/1920?random=647",
     ],
     timeline: [
       {
@@ -266,14 +266,14 @@ const servicesData = [
       "İşletmelere sürekli hukuki destek sağlamak",
     ],
     images: [
-      "/assets/instagram1.jpg",
-      "/assets/instagram2.jpg",
-      "/assets/instagram3.jpg",
+      "https://picsum.photos/1025/850?random=808",
+      "https://picsum.photos/1025/850?random=438",
+      "https://picsum.photos/1025/850?random=937",
     ],
     responsiveImages: [
-      "/assets/responsiveImage1.jpg",
-      "/assets/responsiveImage2.jpg",
-      "/assets/responsiveImage3.jpg",
+      "https://picsum.photos/1080/1920?random=98",
+      "https://picsum.photos/1080/1920?random=986",
+      "https://picsum.photos/1080/1920?random=127",
     ],
     timeline: [
       {
@@ -327,14 +327,14 @@ const servicesData = [
       "Uzun vadeli marka büyümesi için stratejiler uygulayın",
     ],
     images: [
-      "/assets/instagram1.jpg",
-      "/assets/instagram2.jpg",
-      "/assets/instagram3.jpg",
+      "https://picsum.photos/1025/850?random=624",
+      "https://picsum.photos/1025/850?random=596",
+      "https://picsum.photos/1025/850?random=358",
     ],
     responsiveImages: [
-      "/assets/responsiveImage1.jpg",
-      "/assets/responsiveImage2.jpg",
-      "/assets/responsiveImage3.jpg",
+      "https://picsum.photos/1080/1920?random=984",
+      "https://picsum.photos/1080/1920?random=790",
+      "https://picsum.photos/1080/1920?random=926",
     ],
     timeline: [
       {

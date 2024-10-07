@@ -1,4 +1,3 @@
-
 import Link from "next/link";
 
 const services = [
@@ -39,6 +38,14 @@ const services = [
     slug: "marka-gelistirme",
   },
 ];
+const imageSrcs = [
+  "https://picsum.photos/1500/1875?random=453",
+  "https://picsum.photos/1500/1875?random=342",
+  "https://picsum.photos/1500/1875?random=246",
+  "https://picsum.photos/1500/1875?random=560",
+  "https://picsum.photos/1500/1875?random=200",
+  "https://picsum.photos/1500/1875?random=876",
+];
 
 export default function ServicesCard() {
   const imageSrc = "/assets/services-assets/strategy.webp";
@@ -53,7 +60,7 @@ export default function ServicesCard() {
             className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col"
           >
             <img
-              src={imageSrc}
+              src={imageSrcs[index]} 
               alt={service.title}
               className="w-full h-48 object-cover object-top"
             />
@@ -63,7 +70,7 @@ export default function ServicesCard() {
                 {service.description}
               </p>
               <Link
-              target = "_blank"
+                target="_blank"
                 href={`/works/${service.slug}`}
                 className="font-bold tracking-widest inline-block text-white bg-[#F07F55] rounded-xl px-6 py-3 transition-colors duration-300 hover:bg-[#92b188] hover:text-black focus:outline-none focus:ring-4 focus:ring-[#F07F55]/50 mt-auto w-[51%] lg:w-[45%]"
               >

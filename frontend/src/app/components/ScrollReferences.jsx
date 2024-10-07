@@ -51,20 +51,26 @@ export default function ScrollReferences() {
   };
 
   return (
-    
-    <div className="relative w-full overflow-hidden bg-[#92b188] py-12">
+    <div className="relative w-full overflow-hidden bg-[#F07F55] py-12">
       <div
         ref={scrollContainerRef}
         className="mx-12 flex items-center space-x-8 px-8 overflow-x-auto hide-scrollbar"
         onMouseDown={handleMouseDown}
         id="logos"
+        style={{
+          background:
+            "linear-gradient(90deg, rgba(240,127,85,1) 0%, rgba(240,127,85,0.7) 50%, rgba(240,127,85,1) 100%)",
+        }}
       >
         {repeatedLogos.map((logo, index) => (
           <img
             key={index}
             src={logo}
             alt={`logo-${index}`}
-            className="w-[200px] mr-2"
+            className="w-[200px] mr-2 transform transition-transform" 
+            style={{
+              filter: "drop-shadow(0 8px 9px rgba(0, 0, 0, 0.4))",
+            }}
           />
         ))}
       </div>
