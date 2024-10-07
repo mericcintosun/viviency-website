@@ -12,7 +12,6 @@ export default function Form() {
 
   const [status, setStatus] = useState("");
 
-  // Input değişikliklerini yönetme fonksiyonu
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -23,7 +22,6 @@ export default function Form() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Form alanları boş mu kontrol edelim
     if (!formData.name || !formData.email || !formData.message) {
       setStatus("Lütfen zorunlu alanları doldurun.");
       return;
@@ -32,7 +30,6 @@ export default function Form() {
     try {
       setStatus("Gönderiliyor...");
 
-      // Form verilerini API route'a gönderiyoruz
       const res = await fetch("/api/sendEmail", {
         method: "POST",
         headers: {

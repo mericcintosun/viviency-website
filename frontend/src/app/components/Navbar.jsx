@@ -12,8 +12,13 @@ export default function Navbar() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const pathname = usePathname();
 
-  // Animasyonlu metin için state ve useEffect
-  const phrases = ["strategy", "creative", "impact", "social", "results"];
+  const phrases = [
+    "yaratıcılık",
+    "strateji",
+    "sosyal medya",
+    "pazarlama",
+    "yazılım",
+  ];
   const [index, setIndex] = useState(0);
   const [opacity, setOpacity] = useState(1);
 
@@ -77,7 +82,6 @@ export default function Navbar() {
         <nav className="xl:m-0 xl:p-0">
           <div className="container mx-auto px-12">
             <div className="flex justify-between items-center py-5 gap-12">
-              {/* LOGO */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -94,7 +98,6 @@ export default function Navbar() {
                 </Link>
               </motion.div>
 
-              {/* MENU SECTION */}
               <motion.div
                 className="hidden lg:flex items-center gap-6"
                 initial="closed"
@@ -130,7 +133,6 @@ export default function Navbar() {
                 </motion.div>
               </motion.div>
 
-              {/* HAMBURGER ICON */}
               <div className="lg:hidden flex items-center mr-4">
                 <motion.button
                   onClick={toggleMenu}
@@ -140,7 +142,7 @@ export default function Navbar() {
                 >
                   {isOpen ? (
                     <Image
-                      src="/close.png" // Çarpı simgesi
+                      src="/close.png" 
                       width={40}
                       height={40}
                       alt="close"
@@ -148,7 +150,7 @@ export default function Navbar() {
                     />
                   ) : (
                     <Image
-                      src="/hamburger.png" // Hamburger simgesi
+                      src="/hamburger.png" 
                       width={40}
                       height={40}
                       alt="menu"
@@ -159,7 +161,6 @@ export default function Navbar() {
               </div>
             </div>
 
-            {/* Mobile Menu */}
             <AnimatePresence>
               {isOpen && (
                 <motion.div
@@ -206,22 +207,20 @@ export default function Navbar() {
             transition={{ duration: 0.3 }}
           >
             <motion.div className="bg-white p-10 rounded-lg max-w-5xl w-full relative flex flex-col md:flex-row gap-12 md:gap-16">
-              {/* ANİMASYONLU METİN */}
               <div className="flex-1 flex flex-col justify-center px-4 md:px-6 lg:px-8 text-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
-                <span className="font-bold text-black">let's talk</span>
                 <motion.span
-                  className="font-bold text-[#F07F55] text-3xl sm:text-4xl md:text-5xl lg:text-6xl mt-2"
+                  className="font-bold text-[#F07F55] text-3xl pb-3  sm:text-4xl md:text-5xl lg:text-6xl mt-2"
                   animate={{ opacity }}
                   transition={{ duration: 0.5 }}
                 >
                   {phrases[index]}
                 </motion.span>
+                <span className="font-bold text-black">konuşalım</span>
                 <p className="text-base sm:text-lg md:text-xl lg:text-2xl mt-4 text-gray-600">
                   If you think we might be a fit, reach out and tell us about
                   your brand and your goals, and we’ll be happy to discuss.
                 </p>
 
-                {/* Alt Kısımdaki Yazılar */}
                 <div className="mt-8 flex flex-col gap-6 text-sm text-gray-700">
                   <div className="text-left">
                     <p className="font-bold text-lg">send a brief</p>
@@ -245,12 +244,10 @@ export default function Navbar() {
                 </div>
               </div>
 
-              {/* FORM */}
               <div className="flex-1 flex flex-col justify-center text-black">
-                <Form/>
+                <Form />
               </div>
 
-              {/* KAPATMA BUTONU */}
               <button
                 onClick={closePopup}
                 className="absolute top-4 right-4 text-black"

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 
 export default function OtherWorks() {
-  const { id } = useParams(); // URL'deki mevcut portföy işinin id'sini alıyoruz
+  const { id } = useParams(); 
 
   return (
     <div className="bg-black py-16">
@@ -12,7 +12,7 @@ export default function OtherWorks() {
       </h2>
       <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {portfolioData
-          .filter((work) => work.id !== id) // Mevcut bulunduğunuz sayfanın id'sine eşit olmayanları filtreliyoruz
+          .filter((work) => work.id !== id) 
           .map((work) => (
             <Link href={`/portfolio/${work.id}`} key={work.id}>
               <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">

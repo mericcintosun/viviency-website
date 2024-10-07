@@ -26,13 +26,12 @@ export default function TimeLine({ service }) {
             variants={itemVariants}
             initial="hidden"
             animate="visible"
-            transition={{ duration: 0.5, delay: index * 0.1 }} // Delay for staggered effect
+            transition={{ duration: 0.5, delay: index * 0.1 }}
           >
             <TimelineItem className="transition duration-300 ease-in-out rounded-lg">
               {index < service.timeline.length - 1 && <TimelineConnector />}
               <TimelineHeader className="h-3">
                 <TimelineIcon className="transition-transform duration-300 ease-in-out hover:scale-110 hover:bg-[#F07F55] p-2 rounded-full" />{" "}
-                {/* Added hover effect */}
                 <Typography
                   variant="h6"
                   color="blue-gray"

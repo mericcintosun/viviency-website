@@ -7,7 +7,6 @@ export default function ServiceInformation() {
   const params = useParams();
   const slug = params.slug;
 
-  // Find the service matching the provided slug
   const service = servicesData.find((service) => service.slug === slug);
 
   const { information } = service;

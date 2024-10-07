@@ -150,7 +150,7 @@ export default function BlogSection() {
                     {isExpanded ? "Show Less" : "Read More"}
                   </motion.button>
 
-                  <Link href={`/blog/${slug}`}>
+                  <Link target = "_blank" href={`/blog/${slug}`}>
                     <motion.button
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.95 }}

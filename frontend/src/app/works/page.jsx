@@ -1,15 +1,14 @@
-// app/works/Works.jsx
 
-import Enquire from "../components/Enquire";
+import EnquireReverse from "../components/EnquireReverse";
 import ScrollReferences from "../components/ScrollReferences";
 import Services from "../components/Services";
 import ServicesCard from "../components/ServicesCard";
 import ServicesWelcome from "../components/ServicesWelcome";
 
 export default function Works() {
-  const content = ["satışlarınızı artırmak", "markanızı tanıtmak"];
+  const content = ["satışlarınızı artırmak", "markanızı tanıtmak" , "bizimle çalışmak"];
   const buttonTwoText = "Enquire Now";
-  const loveText = "İster misiniz?";
+  const loveText = "ister misiniz?";
   const titleText = "Hizmetler";
 
   return (
@@ -18,7 +17,7 @@ export default function Works() {
       <Services />
       <ScrollReferences />
       <ServicesCard />
-      <Enquire
+      <EnquireReverse
         titleText={loveText}
         phrases={content}
         buttonText={buttonTwoText}

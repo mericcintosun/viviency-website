@@ -1,4 +1,3 @@
-// PortfolioCard.js
 import { portfolioData } from "@/data/portfolioData";
 import Link from "next/link";
 

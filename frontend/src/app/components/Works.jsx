@@ -89,7 +89,6 @@ export default function Works() {
               className="block w-full group-hover:opacity-80"
             />
             <div className="absolute inset-0 bg-black opacity-50 z-10 transition-opacity duration-300"></div>
-            {/* Başlık ve logo */}
             <div className="absolute inset-0 flex justify-between items-end z-20 p-4 ">
               <h1 className="bg-opacity-75 px-4 py-2 absolute bottom-[60px] left-[30px]">
                 {project.title}
@@ -97,11 +96,12 @@ export default function Works() {
               <img
                 src={project.logo}
                 alt={`${project.client} logo`}
-                className="h-8 w-8 absolute bottom-[60px] right-[30px]" // 32x32 boyutunda logo
+                className="h-8 w-8 absolute bottom-[60px] right-[30px]" 
               />
             </div>
             <Link
-              href={`/portfolio/${project.id}`} // Dinamik bağlantı için id kullanıyoruz
+            target = "_blank"
+              href={`/portfolio/${project.id}`} 
               className="absolute inset-0 flex items-center justify-center opacity-0 scale-50 transition-all duration-300 z-30 group-hover:opacity-100 group-hover:scale-100"
             >
               <span className="bg-white text-black px-4 py-2 rounded">

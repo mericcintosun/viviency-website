@@ -4,17 +4,17 @@ import { useState, useRef } from "react";
 export default function ScrollReferences() {
   const logos = [
     "/assets/references/aorus.png",
-    "/assets/references/bephantol.webp",
+    "/assets/references/bepanthol.png",
     "/assets/references/itopya.png",
-    "/assets/references/kfc.webp",
+    "/assets/references/kfc.png",
     "/assets/references/maybelline.png",
     "/assets/references/mutlu-bale.webp",
-    "/assets/references/nasaqu.webp",
+    "/assets/references/nasaqu.png",
     "/assets/references/pepsi.png",
-    "/assets/references/steelseries.webp",
-    "/assets/references/supradyn.webp",
+    "/assets/references/steelseries.png",
+    "/assets/references/supradyn.png",
     "/assets/references/teknosa.png",
-    "/assets/references/zio.webp",
+    "/assets/references/ziogaming.png",
   ];
 
   const [repeatedLogos] = useState(() => {
@@ -51,7 +51,8 @@ export default function ScrollReferences() {
   };
 
   return (
-    <div className="relative w-full overflow-hidden bg-[#F07F55] py-12">
+    
+    <div className="relative w-full overflow-hidden bg-[#92b188] py-12">
       <div
         ref={scrollContainerRef}
         className="mx-12 flex items-center space-x-8 px-8 overflow-x-auto hide-scrollbar"

@@ -1,4 +1,3 @@
-// components/ServiceWelcome.jsx
 
 "use client";
 
@@ -7,15 +6,14 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function ServiceWelcome({ title, image }) {
-  const [isLoading, setIsLoading] = useState(true); // Yükleme durumu
+  const [isLoading, setIsLoading] = useState(true); 
 
-  // Yükleme tamamlandığında durumu güncelle
   useEffect(() => {
     const timer = setTimeout(() => {
-      setIsLoading(false); // 2 saniye sonra yüklemeyi tamamla
-    }, 2000); // Burada süreyi ayarlayabilirsiniz
+      setIsLoading(false); 
+    }, 2000); 
 
-    return () => clearTimeout(timer); // Temizleme işlemi
+    return () => clearTimeout(timer); 
   }, []);
 
   return (
@@ -34,7 +32,6 @@ export default function ServiceWelcome({ title, image }) {
           </div>
 
           <div className="absolute inset-0 flex items-center justify-center">
-            {/* Yükleme animasyonu */}
             { (
               <motion.h1
                 initial={{ opacity: 0, y: -50 }}

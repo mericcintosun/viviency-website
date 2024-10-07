@@ -1,12 +1,12 @@
 "use client";
 import { portfolioData } from "@/data/portfolioData";
-import { useParams } from "next/navigation"; // Dinamik segmenti almak için
+import { useParams } from "next/navigation"; 
 import Link from "next/link";
 import { useRef, useEffect, useState } from "react";
 
 export default function PortfolioWorks() {
-  const { id } = useParams(); // URL'deki id'yi alıyoruz
-  const project = portfolioData.find((item) => item.id === id); // Projeyi dinamik olarak buluyoruz
+  const { id } = useParams(); 
+  const project = portfolioData.find((item) => item.id === id); 
 
   const scrollContainerRef = useRef(null);
   const scrollPosition = useRef(0);
@@ -72,7 +72,6 @@ export default function PortfolioWorks() {
     setCurrentSpeed(speed);
   };
 
-  // Eğer proje bulunamazsa hata mesajı gösteriyoruz
   if (!project) {
     return <div>Proje bulunamadı.</div>;
   }
@@ -87,7 +86,6 @@ export default function PortfolioWorks() {
         onMouseLeave={handleMouseLeave}
         id="projects"
       >
-        {/* Sadece bu projenin images dizisinden resimleri döndürüyoruz */}
         {project.images.map((image, index) => (
           <div
             key={index}

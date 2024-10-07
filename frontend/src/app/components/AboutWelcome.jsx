@@ -18,7 +18,6 @@ export default function AboutWelcome() {
               alt="teams"
               layout="responsive"
             />
-            {/* Flexbox ile ortalama */}
             <div className="absolute inset-0 flex items-center justify-center">
               <motion.h1
                 initial={{ opacity: 0, y: -50 }}

@@ -1,4 +1,3 @@
-// components/ServicesCard.jsx
 
 import Link from "next/link";
 

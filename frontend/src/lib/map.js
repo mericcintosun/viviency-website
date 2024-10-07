@@ -1,4 +1,3 @@
-// lib/map.js
 
 export const getCoordinatesFromAddress = async (address) => {
   const response = await fetch(

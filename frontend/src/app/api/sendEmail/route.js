@@ -1,4 +1,3 @@
-// app/api/sendEmail/route.js
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
@@ -42,7 +41,7 @@ export async function POST(req) {
 
     await transporter.sendMail({
       from: `"${name}" <${email}>`,
-      to: "mericcintosunn@gmail.com", // Hedef e-posta adresi
+      to: "mericcintosunn@gmail.com", 
       subject: `Yeni Mesaj: ${name}`,
       text: emailContent,
     });

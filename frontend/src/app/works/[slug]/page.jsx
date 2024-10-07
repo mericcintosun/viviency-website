@@ -3,13 +3,17 @@ import servicesData from "@/data/servicesData";
 import ServiceWelcome from "@/app/components/ServiceWelcome";
 import CaseStudy from "@/app/components/CaseStudy";
 import PhoneMockup from "@/app/components/PhoneMockup";
-import Enquire from "@/app/components/Enquire";
 import Timeline from "@/app/components/Timeline";
 import ServiceInformation from "@/app/components/ServiceInformation";
+import EnquireReverse from "@/app/components/EnquireReverse";
 export default function WorkPage({ params }) {
-  const content = ["yaratıcı olmayı", "ilham vermeyi", "hayal kurmayı"];
-  const buttonTwoText = "let's talk social!";
-  const loveText = "Seviyoruz";
+  const content = [
+    "satışlarınızı artırmak",
+    "markanızı tanıtmak",
+    "bizimle çalışmak",
+  ];
+  const buttonTwoText = "Enquire Now";
+  const loveText = "ister misiniz?";
 
   const { slug } = params;
   const service = servicesData.find((service) => service.slug === slug);
@@ -23,14 +27,12 @@ export default function WorkPage({ params }) {
         <CaseStudy service={service} />
       </section>
       <section className="phone-mockup-section">
-        {/* Telefon Mockup bileşenine dinamik olarak instagramImages veriliyor */}
         <PhoneMockup images={service.images} />
       </section>
 
-      {/* Pass the service prop to the Timeline component */}
       <Timeline service={service} />
       <ServiceInformation />
-      <Enquire
+      <EnquireReverse
         titleText={loveText}
         phrases={content}
         buttonText={buttonTwoText}

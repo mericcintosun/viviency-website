@@ -13,7 +13,6 @@ export default function MyMap() {
   const address =
     "Fenerbahçe Mahallesi, Fener Kalamış Caddesi, İstanbul, Türkiye";
 
-  // Dynamic contact information
   const contactInfo = {
     email: "info@viviency.com",
     phone: "+90 533 230 19 59",
@@ -46,9 +45,8 @@ export default function MyMap() {
   }
 
   return (
-    <div id = "my-map" className=" w-[85%] mx-auto flex rounded-lg overflow-hidden mb-12">
-      {/* Contact Information Section */}
-      <div className="contentContact w-[35%] flex flex-col gap-6 p-6 bg-white">
+    <div id = "my-map" className=" w-[85%] mx-auto flex flex-col md:flex-row rounded-lg lg:overflow-hidden mb-12">
+      <div className="contentContact w-[90%] lg:w-[35%] flex flex-col gap-6 p-6 bg-white">
         <h1 className="text-4xl lg:text-5xl font-bold text-gray-800">
           Fancy a Visit
         </h1>
@@ -71,12 +69,11 @@ export default function MyMap() {
         </p>
       </div>
 
-      {/* Map Section */}
-      <div className="w-[65%] z-0">
+      <div className="w-[100%] lg:w-[65%] z-0">
         <MapContainer
           center={[coordinates.lat, coordinates.lon]}
           zoom={13}
-          className="h-full w-full"
+          className="h-[500px] lg:h-full lg:w-full"
         >
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

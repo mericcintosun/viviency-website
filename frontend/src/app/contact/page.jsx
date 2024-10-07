@@ -1,4 +1,3 @@
-// app/contact/page.jsx
 
 import ContactContent from "../components/ContactContent";
 

@@ -5,13 +5,17 @@ import { portfolioData } from "@/data/portfolioData";
 import { useParams } from "next/navigation";
 import { motion } from "framer-motion";
 import OtherWorks from "@/app/components/OtherWorks";
+import Enquire from "@/app/components/Enquire";
 
 export default function PortfolioDetail() {
-  const { id } = useParams(); // URL'den proje ID'sini alıyoruz
-  const work = portfolioData.find((item) => item.id === id); // İlgili projeyi buluyoruz
+  const content = ["yaratıcı olmayı", "ilham vermeyi", "hayal kurmayı"];
+  const buttonTwoText = "let's talk social!";
+  const loveText = "Seviyoruz";
+  const { id } = useParams(); 
+  const work = portfolioData.find((item) => item.id === id);
 
   if (!work) {
-    return <div>Portfolyo bulunamadı.</div>; // Eğer proje bulunamazsa
+    return <div>Portfolyo bulunamadı.</div>; 
   }
 
   const fadeInUp = {
@@ -21,28 +25,48 @@ export default function PortfolioDetail() {
 
   return (
     <>
-      <div
+      <motion.div
+        initial="hidden"
+        animate="visible"
         className="relative h-screen bg-cover bg-center"
         style={{ backgroundImage: `url(${work.img})` }}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: { opacity: 1, transition: { duration: 1.2 } },
+        }}
       >
-        {/* Overlay */}
         <div className="absolute inset-0 bg-black bg-opacity-60"></div>
 
-        {/* Content */}
-        <div className="relative z-10 flex flex-col justify-end items-center h-full text-center text-white px-4 pb-6">
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={fadeInUp}
+          className="relative z-10 flex flex-col justify-end items-center h-full text-center text-white px-4 pb-6"
+        >
           {work.logo && (
-            <img
+            <motion.img
               src={work.logo}
               alt={`${work.client} logo`}
               className="mb-8 rounded-full"
               style={{ width: "128px", height: "128px" }}
+              variants={fadeInUp}
+              transition={{ delay: 0.5 }}
             />
           )}
-          <h1 className="text-5xl font-bold mb-4">{work.title}</h1>{" "}
-          <p className="text-lg md:text-xl lg:text-2xl max-w-2xl">
+          <motion.h1
+            className="text-5xl font-bold mb-4"
+            variants={fadeInUp}
+            transition={{ delay: 0.2 }}
+          >
+            {work.title}
+          </motion.h1>
+          <motion.p
+            className="text-lg md:text-xl lg:text-2xl max-w-2xl"
+            variants={fadeInUp}
+            transition={{ delay: 0.3 }}
+          >
             {work.description}
-          </p>
-          {/* Extra Information */}
+          </motion.p>
           <div className="flex justify-center gap-12 mt-8">
             <div>
               <h3 className="text-sm font-bold uppercase">Date</h3>
@@ -57,10 +81,9 @@ export default function PortfolioDetail() {
               <p>{work.category || "Social Media Strategy"}</p>
             </div>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
-      {/* Problem Section */}
       <div className="mt-8 w-[60%] mx-auto py-12 bg-gray-300 bg-opacity-10 rounded-lg flex flex-col gap-12 leading-loose">
         <h2 className="text-6xl font-bold mb-4">the problem</h2>
         <p className="text-md text-gray-700">{work.problem}</p>
@@ -68,15 +91,12 @@ export default function PortfolioDetail() {
 
       <PortfolioWorks />
 
-      {/* Approach Section */}
       <div className="mt-8 w-[60%] mx-auto py-12 bg-gray-300 bg-opacity-10 rounded-lg flex flex-col gap-12 leading-loose">
         <h2 className="text-6xl font-bold mb-4">the approach</h2>
         <p className="text-md text-gray-700">{work.approach}</p>
       </div>
 
-      {/* Results Section */}
       <div className="mb-12 flex flex-col lg:flex-row justify-center items-center lg:items-start mt-16 gap-10">
-        {/* Sol kısım - Followers Gained & Impressions Increase */}
         <div className="flex flex-col gap-6">
           <div className="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-2xl transition-shadow duration-300">
             <motion.h2
@@ -121,7 +141,6 @@ export default function PortfolioDetail() {
           </div>
         </div>
 
-        {/* Sağ kısım - The Results Text */}
         <div className="flex flex-col gap-6 w-full lg:w-1/2">
           <motion.h2
             initial="hidden"
@@ -145,6 +164,11 @@ export default function PortfolioDetail() {
       </div>
 
       <OtherWorks />
+      <Enquire
+        titleText={loveText}
+        phrases={content}
+        buttonText={buttonTwoText}
+      />
     </>
   );
 }

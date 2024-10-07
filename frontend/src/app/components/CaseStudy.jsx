@@ -1,4 +1,3 @@
-// components/CaseStudy.jsx
 
 import Image from "next/image";
 
@@ -12,7 +11,6 @@ export default function CaseStudy({ service }) {
       </div>
 
       <div className="flex flex-col lg:flex-row justify-between mt-8 gap-12">
-        {/* Objective Section */}
         <div className="lg:w-1/2">
           <h2 className="text-3xl font-bold mb-4">Objective</h2>
           <ul className="list-disc pl-5 space-y-2 text-lg">
@@ -22,7 +20,6 @@ export default function CaseStudy({ service }) {
           </ul>
         </div>
 
-        {/* Solution Section */}
         <div className="lg:w-1/2">
           <h2 className="text-3xl font-bold mb-4">Solution</h2>
           <ul className="list-disc pl-5 space-y-2 text-lg">
@@ -33,7 +30,6 @@ export default function CaseStudy({ service }) {
         </div>
       </div>
 
-      {/* Image Section */}
             
 
       

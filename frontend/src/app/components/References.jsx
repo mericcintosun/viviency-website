@@ -4,17 +4,17 @@ import React from "react";
 export default function References() {
   const logos = [
     "/assets/references/aorus.png",
-    "/assets/references/bephantol.webp",
+    "/assets/references/bepanthol.png",
     "/assets/references/itopya.png",
-    "/assets/references/kfc.webp",
+    "/assets/references/kfc.png",
     "/assets/references/maybelline.png",
     "/assets/references/mutlu-bale.webp",
-    "/assets/references/nasaqu.webp",
+    "/assets/references/nasaqu.png",
     "/assets/references/pepsi.png",
-    "/assets/references/steelseries.webp",
-    "/assets/references/supradyn.webp",
+    "/assets/references/steelseries.png",
+    "/assets/references/supradyn.png",
     "/assets/references/teknosa.png",
-    "/assets/references/zio.webp",
+    "/assets/references/ziogaming.png",
   ];
   
   const links = [

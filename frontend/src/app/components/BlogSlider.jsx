@@ -90,7 +90,7 @@ export default function BlogSlider() {
                     )}
                   </p>
                 </div>
-                <Link href={`/blog/${slug}`} passHref>
+                <Link target="_blank" href={`/blog/${slug}`} passHref>
                   <motion.button
                     whileHover={{
                       backgroundColor: "#ab5333",

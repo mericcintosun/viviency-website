@@ -29,23 +29,18 @@ export default function ComputerMockup() {
   const params = useParams();
   const slug = params.slug;
 
-  // Find the service based on the slug
   const service = servicesData.find((service) => service.slug === slug);
 
-  // If service is not found, handle the error
   if (!service) {
     return <p>Service not found</p>;
   }
 
-  // Use custom hook to detect mobile view
   const isMobile = useMediaQuery("(max-width: 768px)");
 
-  // Wait until we know if it's mobile or not
   if (isMobile === null) {
-    return null; // or a loading indicator
+    return null; 
   }
 
-  // Choose images based on device
   const currentImages = isMobile ? service.responsiveImages : service.images;
 
   return (
