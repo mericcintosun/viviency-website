@@ -1,4 +1,4 @@
-import Enquire from "../components/Enquire";
+import EnquireReverse from "../components/EnquireReverse";
 import PortfolioCard from "../components/PortfolioCard";
 import PortfolioWelcome from "../components/PortfolioWelcome";
 import ScrollReferences from "../components/ScrollReferences";
@@ -16,7 +16,7 @@ export default function Portfolio() {
       <ScrollReferences />
       <Testimonials />
       <Works />
-      <Enquire
+      <EnquireReverse
         titleText={loveText}
         phrases={content}
         buttonText={buttonTwoText}
