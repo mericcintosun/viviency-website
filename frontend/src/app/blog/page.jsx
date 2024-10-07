@@ -40,7 +40,7 @@ function BlogContent() {
       <EnquireReverse
         titleText="ister misiniz?"
         phrases={["satışlarınızı artırmak", "markanızı tanıtmak"]}
-        buttonText="bize ulaş"
+        buttonText="bize ulaşın"
       />
     </>
   );

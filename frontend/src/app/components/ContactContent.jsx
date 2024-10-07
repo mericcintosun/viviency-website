@@ -10,7 +10,7 @@ const MyMap = dynamic(() => import("./MyMap"), { ssr: false });
 const EnquireReverse = dynamic(() => import("./EnquireReverse"), { ssr: false });
 
 const content = ["satışlarınızı artırmak", "markanızı tanıtmak"];
-const buttonTwoText = "bize ulaş";
+const buttonTwoText = "bize ulaşın";
 const loveText = "ister misiniz?";
 
 export default function ContactContent() {

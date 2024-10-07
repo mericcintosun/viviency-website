@@ -7,7 +7,7 @@ import ServicesWelcome from "../components/ServicesWelcome";
 
 export default function Works() {
   const content = ["satışlarınızı artırmak", "markanızı tanıtmak" , "bizimle çalışmak"];
-  const buttonTwoText = "Bize Ulaş";
+  const buttonTwoText = "Bize Ulaşın";
   const loveText = "ister misiniz?";
   const titleText = "Hizmetler";
 

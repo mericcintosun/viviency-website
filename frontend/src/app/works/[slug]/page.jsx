@@ -12,7 +12,7 @@ export default function WorkPage({ params }) {
     "markanızı tanıtmak",
     "bizimle çalışmak",
   ];
-  const buttonTwoText = "Bize Ulaş";
+  const buttonTwoText = "Bize Ulaşın";
   const loveText = "ister misiniz?";
 
   const { slug } = params;
