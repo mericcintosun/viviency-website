@@ -1,4 +1,5 @@
 import Agency from "./components/Agency";
+import BlogSlider from "./components/BlogSlider";
 import EnquireReverse from "./components/EnquireReverse";
 import HomeTeams from "./components/HomeTeams";
 import ScrollReferences from "./components/ScrollReferences";
@@ -24,6 +25,7 @@ export default function Home() {
       <Agency />
       <Works />
       <HomeTeams />
+      <BlogSlider/>
       <EnquireReverse titleText = {loveText} phrases={content} buttonText={buttonTwoText} />
     </>
   );
