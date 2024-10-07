@@ -1,8 +1,9 @@
 "use client";
-
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import LoadingSpinner from "./LoadingSpinner";
 export default function Strategy() {
+  const [loading, setLoading] = useState(true);
   const backgroundImages = {
     image1: "/assets/what-we-do.webp",
     image2: "/assets/how-we-do-it.webp",
@@ -57,7 +58,16 @@ export default function Strategy() {
   useEffect(() => {
     handleChange("image1", "title1", "desc1");
   }, []);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1000);
 
+    return () => clearTimeout(timer);
+  }, []);
+  if (loading) {
+    return <LoadingSpinner />;
+  }
   return (
     <>
       <motion.div

@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 import Form from "./Form";
 import { motion } from "framer-motion";
+import LoadingSpinner from "./LoadingSpinner";
 const MyMap = dynamic(() => import("./MyMap"), { ssr: false });
 const Enquire = dynamic(() => import("./Enquire"), { ssr: false });
 
@@ -34,7 +35,18 @@ export default function ContactContent() {
 
     return () => clearInterval(interval);
   }, [phrases.length]);
+  const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+  if (loading) {
+    return <LoadingSpinner />;
+  }
   return (
     <>
       <motion.div

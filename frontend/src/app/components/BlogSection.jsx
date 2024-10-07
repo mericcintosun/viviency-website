@@ -13,6 +13,7 @@ import { useQuery } from "@tanstack/react-query";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { fetchBlogPosts, fetchTags } from "@/lib/api";
+import LoadingSpinner from "./LoadingSpinner";
 
 export default function BlogSection() {
   const { data, isLoading, isError } = useQuery({
@@ -44,7 +45,7 @@ export default function BlogSection() {
   };
 
   if (isLoading) {
-    return <div>Yükleniyor...</div>;
+    return <LoadingSpinner/>;
   }
 
   if (isError || !data) {

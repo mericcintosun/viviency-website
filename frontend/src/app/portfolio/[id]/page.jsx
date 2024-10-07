@@ -6,7 +6,8 @@ import { useParams } from "next/navigation";
 import { motion } from "framer-motion";
 import OtherWorks from "@/app/components/OtherWorks";
 import Enquire from "@/app/components/Enquire";
-
+import { useState, useEffect } from "react"; 
+import LoadingSpinner from "@/app/components/LoadingSpinner";
 export default function PortfolioDetail() {
   const content = ["yaratıcı olmayı", "ilham vermeyi", "hayal kurmayı"];
   const buttonTwoText = "hadi konuşalım!";
@@ -22,7 +23,18 @@ export default function PortfolioDetail() {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
   };
+  const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+  if (loading) {
+    return <LoadingSpinner />;
+  }
   return (
     <>
       <motion.div

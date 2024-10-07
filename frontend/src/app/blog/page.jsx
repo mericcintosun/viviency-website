@@ -11,6 +11,7 @@ import BlogSection from "@/app/components/BlogSection";
 import BlogSlider from "@/app/components/BlogSlider";
 import BlogWelcome from "@/app/components/BlogWelcome";
 import Enquire from "@/app/components/Enquire";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 export default function Blog() {
   const [queryClient] = useState(() => new QueryClient());
@@ -28,7 +29,7 @@ function BlogContent() {
     queryFn: () => fetchBlogPosts(1, 100),
   });
 
-  if (isLoading) return <div>Yükleniyor...</div>;
+  if (isLoading) return <LoadingSpinner/>;
   if (isError) return <div>Hata: Veriler getirilemedi.</div>;
 
   return (

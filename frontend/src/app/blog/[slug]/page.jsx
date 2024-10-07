@@ -8,6 +8,7 @@ import {
 import { fetchBlogPost, fetchTags, fetchBlogPosts } from "@/lib/api";
 import { useState } from "react";
 import Image from "next/image";
+import LoadingSpinner from "@/app/components/LoadingSpinner";
 
 export default function BlogPostPage({ params }) {
   const [queryClient] = useState(() => new QueryClient());
@@ -39,7 +40,7 @@ function BlogPostContent({ slug }) {
     enabled: !!authorId,
   });
 
-  if (isLoading || isTagsLoading) return <div>Yükleniyor...</div>;
+  if (isLoading || isTagsLoading) return <LoadingSpinner/>;
   if (error || !data || !tagsData) {
     console.error("Error fetching blog post:", error);
     return <div>Hata: Blog bulunamadı</div>;
@@ -124,7 +125,7 @@ function BlogPostContent({ slug }) {
             Yazarın Diğer Blogları
           </h2>
           {isAuthorPostsLoading ? (
-            <div>Yükleniyor...</div>
+            <LoadingSpinner/>
           ) : (
             <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
               {authorPosts?.map((post) => (

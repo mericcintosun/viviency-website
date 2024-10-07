@@ -20,6 +20,8 @@ export default function WorkPage({ params }) {
 
   if (!service) notFound();
 
+  
+
   return (
     <main className="work-page">
       <ServiceWelcome title={service.title} image={service.image} />

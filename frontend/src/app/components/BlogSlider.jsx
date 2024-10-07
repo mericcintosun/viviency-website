@@ -5,6 +5,7 @@ import { fetchBlogPosts, fetchTags } from "@/lib/api";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import LoadingSpinner from "./LoadingSpinner";
 
 export default function BlogSlider() {
   const { data, isLoading, isError } = useQuery({
@@ -19,7 +20,7 @@ export default function BlogSlider() {
   });
 
   if (isLoading || isTagsLoading) {
-    return <div>Yükleniyor...</div>;
+    return <LoadingSpinner/>;
   }
 
   if (isError || !data || data.length === 0) {

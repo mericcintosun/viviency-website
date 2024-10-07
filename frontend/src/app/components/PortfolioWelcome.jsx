@@ -2,8 +2,21 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-
+import { useState, useEffect } from "react";
+import LoadingSpinner from "./LoadingSpinner";
 export default function PortfolioWelcome() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+  if (loading) {
+    return <LoadingSpinner />;
+  }
   return (
     <>
       <div id="about" className="relative mb-12">
