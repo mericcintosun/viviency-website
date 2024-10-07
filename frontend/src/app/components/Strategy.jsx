@@ -9,17 +9,17 @@ export default function Strategy() {
     image3: "/assets/who-we-help.webp",
   };
   const titles = {
-    title1: "where strategy meets creativity",
-    title2: "human-first social marketing",
-    title3: "ambitious brands making",
+    title1: "stratejinin yaratıcılık ile buluştuğu yer",
+    title2: "insan odaklı sosyal pazarlama",
+    title3: "iddialı markalar yaratıyor",
   };
   const descriptions = {
     desc1:
-      "Empower your brand with strategic insight and creative flair, meticulously combined to deliver outstanding results on social media.",
+      "Markanızı stratejik içgörü ve yaratıcı yetenekle güçlendirin; sosyal medyada olağanüstü sonuçlar elde etmek için titizlikle bir araya getirilmiştir.",
     desc2:
-      "The go-to social media agency to showcase your team and create authentic human connections with your customers.",
+      "Ekibinizi sergilemek ve müşterilerinizle otantik insan bağlantıları oluşturmak için tercih edilen sosyal medya ajansı.",
     desc3:
-      "We're the social agency for brands that aspire to stand out—whether through dedication to people, the planet, or innovative excellence.",
+      "İnsanlara, gezegene veya yenilikçi mükemmeliyete olan bağlılıklarıyla öne çıkmayı hedefleyen markalar için sosyal ajansız.",
   };
 
   const [backgroundImage, setBackgroundImage] = useState(
@@ -103,7 +103,7 @@ export default function Strategy() {
                 activeButton === "image1" ? "text-[#F07F55]" : ""
               }  xl:hover:text-[#F07F55] md:text-3xl  xl:relative xl:transform xl:-rotate-90 xl:text-2xl  xl:pb-2 xl:top-[450px] xl:left-[350px] xl:z-[100] transition-colors duration-300`}
             >
-              What We Do
+              Ne Yapıyoruz?
             </motion.button>
           </div>
 
@@ -126,7 +126,7 @@ export default function Strategy() {
                 activeButton === "image2" ? "text-[#F07F55]" : ""
               }  hover:text-[#F07F55] md:text-3xl  xl:relative xl:transform xl:-rotate-90 xl:text-2xl  xl:pb-2 xl:top-[450px] xl:left-[350px] xl:z-[100] xl:transition-colors xl:duration-300`}
             >
-              How We Do It
+              Nasıl Yapıyoruz?
             </motion.button>
           </div>
           <div
@@ -147,7 +147,7 @@ export default function Strategy() {
                 activeButton === "image3" ? "text-[#F07F55]" : ""
               } hover:text-[#F07F55] md:cursor-pointer md:text-3xl  xl:relative xl:transform xl:-rotate-90 xl:text-2xl  xl:top-[430px] xl:left-[300px] xl:z-[100] xl:transition-colors xl:duration-300 xl:pb-12`}
             >
-              Who We Help
+              Desteklerimiz Ne?
             </motion.button>
           </div>
         </div>

@@ -7,7 +7,7 @@ import Works from "../components/Works";
 export default function Portfolio() {
 
   const content = ["satışlarınızı artırmak", "markanızı tanıtmak"];
-  const buttonTwoText = "enquire now";
+  const buttonTwoText = "bize ulaş";
   const loveText = "ister misiniz?";
   return (
     <>

@@ -9,13 +9,13 @@ import Enquire from "@/app/components/Enquire";
 
 export default function PortfolioDetail() {
   const content = ["yaratıcı olmayı", "ilham vermeyi", "hayal kurmayı"];
-  const buttonTwoText = "let's talk social!";
+  const buttonTwoText = "hadi konuşalım!";
   const loveText = "Seviyoruz";
-  const { id } = useParams(); 
+  const { id } = useParams();
   const work = portfolioData.find((item) => item.id === id);
 
   if (!work) {
-    return <div>Portfolyo bulunamadı.</div>; 
+    return <div>Portfolyo bulunamadı.</div>;
   }
 
   const fadeInUp = {
@@ -69,15 +69,15 @@ export default function PortfolioDetail() {
           </motion.p>
           <div className="flex justify-center gap-12 mt-8">
             <div>
-              <h3 className="text-sm font-bold uppercase">Date</h3>
+              <h3 className="text-sm font-bold uppercase">Tarih</h3>
               <p>{work.date || "2023"}</p>
             </div>
             <div>
-              <h3 className="text-sm font-bold uppercase">Client</h3>
+              <h3 className="text-sm font-bold uppercase">Müşteri</h3>
               <p>{work.client || "Maison Noir"}</p>
             </div>
             <div>
-              <h3 className="text-sm font-bold uppercase">Category</h3>
+              <h3 className="text-sm font-bold uppercase">Kategori</h3>
               <p>{work.category || "Social Media Strategy"}</p>
             </div>
           </div>
@@ -85,14 +85,14 @@ export default function PortfolioDetail() {
       </motion.div>
 
       <div className="mt-8 w-[60%] mx-auto py-12 bg-gray-300 bg-opacity-10 rounded-lg flex flex-col gap-12 leading-loose">
-        <h2 className="text-6xl font-bold mb-4">the problem</h2>
+        <h2 className="text-6xl font-bold mb-4">problem</h2>
         <p className="text-md text-gray-700">{work.problem}</p>
       </div>
 
       <PortfolioWorks />
 
       <div className="mt-8 w-[60%] mx-auto py-12 bg-gray-300 bg-opacity-10 rounded-lg flex flex-col gap-12 leading-loose">
-        <h2 className="text-6xl font-bold mb-4">the approach</h2>
+        <h2 className="text-6xl font-bold mb-4">yaklaşım</h2>
         <p className="text-md text-gray-700">{work.approach}</p>
       </div>
 
@@ -115,7 +115,7 @@ export default function PortfolioDetail() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-lg text-orange-500 mt-2"
             >
-              followers gained
+              kazanılan takipçiler
             </motion.p>
           </div>
 
@@ -136,7 +136,7 @@ export default function PortfolioDetail() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-lg text-orange-500 mt-2"
             >
-              impressions increase
+              görünüm artışı
             </motion.p>
           </div>
         </div>
@@ -149,7 +149,7 @@ export default function PortfolioDetail() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-5xl font-bold text-gray-900"
           >
-            the results
+            sonuçlar
           </motion.h2>
           <motion.p
             initial="hidden"

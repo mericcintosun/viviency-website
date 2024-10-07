@@ -48,10 +48,10 @@ export default function MyMap() {
     <div id = "my-map" className=" w-[85%] mx-auto flex flex-col md:flex-row rounded-lg lg:overflow-hidden mb-12">
       <div className="contentContact w-[90%] lg:w-[35%] flex flex-col gap-6 p-6 bg-white">
         <h1 className="text-4xl lg:text-5xl font-bold text-gray-800">
-          Fancy a Visit
+        Ziyarete Ne Dersiniz?
         </h1>
         <p className="text-gray-600">
-          Viviency Medya Ajansı <br />
+          <strong>Viviency Medya Ajansı</strong> <br />
           Fenerbahçe Mahallesi <br />
           Fener Kalamış Caddesi <br />
           No: 72b, <br />
@@ -59,13 +59,13 @@ export default function MyMap() {
           Kadıköy/İSTANBUL
         </p>
         <h1 className="text-4xl lg:text-5xl font-bold text-gray-800">
-          Get in Touch
+        İletişime Geçin
         </h1>
         <p className="text-gray-600">
           Email: <span className="font-semibold">{contactInfo.email}</span>
         </p>
         <p className="text-gray-600">
-          Phone: <span className="font-semibold">{contactInfo.phone}</span>
+          Telefon: <span className="font-semibold">{contactInfo.phone}</span>
         </p>
       </div>
 

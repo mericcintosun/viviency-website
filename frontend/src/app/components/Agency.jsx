@@ -11,7 +11,7 @@ const AnimatedHeader = memo(() => (
     transition={{ duration: 1, ease: "easeInOut" }}
     className="text-7xl font-bold sm:text-[6rem] lg:text-[6rem]"
   >
-    social media <span className="text-[#F07F55]">agency</span>
+    sosyal medya <span className="text-[#F07F55]">ajansı</span>
   </motion.h1>
 ));
 
@@ -31,8 +31,8 @@ export default function Agency() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-md sm:text-xl md:text-md lg:text-lg"
         >
-          Outsource your social media to a trusted specialist social media
-          agency that's been doing it for over 11 years.
+          Sosyal medyanızı 11 yıldan fazla süredir bu işi yapan güvenilir bir
+          sosyal medya ajansına dış kaynak olarak verin.
         </motion.p>
       </div>
 

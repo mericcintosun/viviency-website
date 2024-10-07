@@ -105,7 +105,7 @@ export default function Works() {
               className="absolute inset-0 flex items-center justify-center opacity-0 scale-50 transition-all duration-300 z-30 group-hover:opacity-100 group-hover:scale-100"
             >
               <span className="bg-white text-black px-4 py-2 rounded">
-                Review Now
+                Şimdi İncele
               </span>
             </Link>
           </div>

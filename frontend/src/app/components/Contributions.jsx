@@ -20,7 +20,7 @@ export default function Contributions() {
     );
 
   const getTitleClass = (value) =>
-    open === value ? "text-white" : "text-black"; 
+    open === value ? "text-white" : "text-black";
 
   return (
     <>
@@ -32,45 +32,50 @@ export default function Contributions() {
           <Accordion open={open === 1}>
             <AccordionHeader onClick={() => handleOpen(1)}>
               <div className="flex items-center justify-between w-[100%]">
-                <span className={getTitleClass(1)}>strategy & creativity</span>
+                <span className={getTitleClass(1)}>
+                  strateji ve yaratıcılık
+                </span>
                 {getIcon(1)}
               </div>
             </AccordionHeader>
             <AccordionBody>
-              This value signifies our approach to social media marketing, where
-              we fuse strategic planning with imaginative creativity. Every
-              decision we make, every campaign we launch, is a meticulously
-              calculated move infused with creativity. We ensure every step is
-              strategic but never mundane, always brightened with our creative
-              edge. This value is also reflected in our operational structure.
+              Bu değer, sosyal medya pazarlama yaklaşımımızı simgeler; burada
+              stratejik planlamayı hayal gücüyle birleştiriyoruz. Aldığımız her
+              karar, başlattığımız her kampanya, yaratıcılıkla harmanlanmış
+              titizlikle hesaplanmış bir adım. Her adımın stratejik olmasını
+              sağlıyoruz, ancak asla sıradan olmuyor; her zaman
+              yaratıcılığımızla aydınlatılıyor. Bu değer, operasyonel yapımızda
+              da yansımaktadır.
             </AccordionBody>
           </Accordion>
 
           <Accordion open={open === 2}>
             <AccordionHeader onClick={() => handleOpen(2)}>
               <div className="flex items-center justify-between w-[100%]">
-                <span className={getTitleClass(2)}>balance & wellbeing</span>
+                <span className={getTitleClass(2)}>denge ve iyilik hali</span>
                 {getIcon(2)}
               </div>
             </AccordionHeader>
             <AccordionBody>
-              We prioritise work-life balance, nurturing an environment where
-              creativity and growth meet personal well-being. Our team thrives
-              by being both professionally challenged and personally content.
+              İş-yaşam dengesine öncelik veriyoruz ve yaratıcılık ile büyümenin
+              kişisel iyilik haliyle buluştuğu bir ortamı besliyoruz. Ekibimiz,
+              hem profesyonel olarak zorluklarla karşılaşarak hem de kişisel
+              olarak tatmin olarak gelişiyor.
             </AccordionBody>
           </Accordion>
 
           <Accordion open={open === 3}>
             <AccordionHeader onClick={() => handleOpen(3)}>
               <div className="flex items-center justify-between w-[100%]">
-                <span className={getTitleClass(3)}>evolution & growth</span>
+                <span className={getTitleClass(3)}>evrim ve büyüme</span>
                 {getIcon(3)}
               </div>
             </AccordionHeader>
             <AccordionBody>
-              We're a team committed to continuous learning, growth, and
-              evolution. We refuse to settle, always aiming to improve our
-              services and grasp of industry trends.
+              Sürekli öğrenme, büyüme ve evrime kendini adamış bir ekibiz. Asla
+              duraklamayı kabul etmiyoruz; hizmetlerimizi ve sektördeki
+              trendleri anlama becerimizi sürekli olarak geliştirmeyi
+              hedefliyoruz.
             </AccordionBody>
           </Accordion>
 
@@ -78,29 +83,29 @@ export default function Contributions() {
             <AccordionHeader onClick={() => handleOpen(4)}>
               <div className="flex items-center justify-between w-[100%]">
                 <span className={getTitleClass(4)}>
-                  sustainability & responsibility
+                  sürdürülebilirlik ve sorumluluk
                 </span>
                 {getIcon(4)}
               </div>
             </AccordionHeader>
             <AccordionBody>
-              We're committed to minimising our environmental impact,
-              integrating sustainable practices in our operations and advocating
-              for environmentally-friendly solutions in our services.
+              Çevresel etkilerimizi en aza indirmeye kararlıyız;
+              operasyonlarımıza sürdürülebilir uygulamaları entegre ediyor ve
+              hizmetlerimizde çevre dostu çözümler için savunuculuk yapıyoruz.
             </AccordionBody>
           </Accordion>
 
           <Accordion open={open === 5}>
             <AccordionHeader onClick={() => handleOpen(5)}>
               <div className="flex items-center justify-between w-[100%]">
-                <span className={getTitleClass(5)}>unity & recognition</span>
+                <span className={getTitleClass(5)}>birlik ve tanınma</span>
                 {getIcon(5)}
               </div>
             </AccordionHeader>
             <AccordionBody>
-              Our team thrives on unity and acknowledging each other's
-              successes. We believe in the power of mutual recognition,
-              positivity and creating a cohesive and triumphant team.
+              Ekibimiz, birlikteliğe ve birbirimizin başarılarını takdir etmeye
+              dayalı olarak gelişiyor. Karşılıklı tanımanın, pozitifliğin gücüne
+              ve uyumlu ve başarılı bir ekip oluşturmanın önemine inanıyoruz.
             </AccordionBody>
           </Accordion>
         </div>

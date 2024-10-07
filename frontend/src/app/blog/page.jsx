@@ -39,7 +39,7 @@ function BlogContent() {
       <Enquire
         titleText="İster misiniz?"
         phrases={["satışlarınızı artırmak", "markanızı tanıtmak"]}
-        buttonText="enquire now"
+        buttonText="bize ulaş"
       />
     </>
   );

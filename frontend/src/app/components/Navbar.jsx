@@ -128,7 +128,7 @@ export default function Navbar() {
                     id="social-btn"
                     className="btn rounded-xl bg-[#F07F55] text-white px-4 py-2 transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
                   >
-                    <span className="scroll-text">Let's Talk Social!</span>
+                    <span className="scroll-text">Hadi Konuşalım!</span>
                   </button>
                 </motion.div>
               </motion.div>
@@ -142,7 +142,7 @@ export default function Navbar() {
                 >
                   {isOpen ? (
                     <Image
-                      src="/close.png" 
+                      src="/close.png"
                       width={40}
                       height={40}
                       alt="close"
@@ -150,7 +150,7 @@ export default function Navbar() {
                     />
                   ) : (
                     <Image
-                      src="/hamburger.png" 
+                      src="/hamburger.png"
                       width={40}
                       height={40}
                       alt="menu"
@@ -217,28 +217,30 @@ export default function Navbar() {
                 </motion.span>
                 <span className="font-bold text-black">konuşalım</span>
                 <p className="text-base sm:text-lg md:text-xl lg:text-2xl mt-4 text-gray-600">
-                  If you think we might be a fit, reach out and tell us about
-                  your brand and your goals, and we’ll be happy to discuss.
+                  Eğer bizimle uyumlu olabileceğimizi düşünüyorsanız, markanızı
+                  ve hedeflerinizi bize iletin, memnuniyetle konuşalım.
                 </p>
 
                 <div className="mt-8 flex flex-col gap-6 text-sm text-gray-700">
                   <div className="text-left">
-                    <p className="font-bold text-lg">send a brief</p>
+                    <p className="font-bold text-lg">
+                      Kısa bir bilgi gönderin.
+                    </p>
                     <p className="text-sm md:text-base">
-                      we're open to exciting opportunities to work with
-                      ambitious brands.
+                      Hırslı markalarla çalışma konusunda heyecan verici
+                      fırsatlara açığız.
                     </p>
                     <p className="text-[#F07F55] text-sm md:text-base">
-                      hello@giraffesocialmedia.co.uk
+                      info@viviency.com
                     </p>
                   </div>
                   <div className="text-left">
-                    <p className="font-bold text-lg">careers</p>
+                    <p className="font-bold text-lg">Kariyer</p>
                     <p className="text-sm md:text-base">
-                      would you like to join our growing team?
+                      Büyüyen ekibimize katılmak ister misiniz?
                     </p>
                     <p className="text-[#F07F55] text-sm md:text-base">
-                      careers@giraffesocialmedia.co.uk
+                    info@viviency.com
                     </p>
                   </div>
                 </div>

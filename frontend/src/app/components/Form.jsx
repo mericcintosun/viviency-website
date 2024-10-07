@@ -60,7 +60,7 @@ export default function Form() {
         <div className="flex gap-4">
           <div className="flex-1">
             <label className="block text-sm font-medium text-gray-700">
-              Your name
+              Ad & Soyad
             </label>
             <input
               type="text"
@@ -68,13 +68,13 @@ export default function Form() {
               value={formData.name}
               onChange={handleChange}
               className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#F07F55] focus:border-[#F07F55] sm:text-sm"
-              placeholder="Full name"
+              placeholder="Ad soyad"
               required
             />
           </div>
           <div className="flex-1">
             <label className="block text-sm font-medium text-gray-700">
-              Email address
+              Mail Adresi
             </label>
             <input
               type="email"
@@ -82,14 +82,14 @@ export default function Form() {
               value={formData.email}
               onChange={handleChange}
               className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#F07F55] focus:border-[#F07F55] sm:text-sm"
-              placeholder="Email Address"
+              placeholder="Mail adresi"
               required
             />
           </div>
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700">
-            Phone number (Optional)
+            Telefon Numarası (opsiyonel)
           </label>
           <input
             type="text"
@@ -97,12 +97,12 @@ export default function Form() {
             value={formData.phone}
             onChange={handleChange}
             className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#F07F55] focus:border-[#F07F55] sm:text-sm"
-            placeholder="Phone number"
+            placeholder="Telefon numarası"
           />
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700">
-            Your message
+            Mesajınız
           </label>
           <textarea
             rows="4"
@@ -110,7 +110,7 @@ export default function Form() {
             value={formData.message}
             onChange={handleChange}
             className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-[#F07F55] focus:border-[#F07F55] sm:text-sm"
-            placeholder="Tell us about your brand and why you're looking for a social agency."
+            placeholder="Markanızı ve neden bir sosyal ajansa ihtiyaç duyduğunuzu bize anlatın."
             required
           />
         </div>
@@ -118,7 +118,7 @@ export default function Form() {
           type="submit"
           className="w-full bg-[#F07F55] text-white py-3 px-4 rounded-lg hover:bg-[#e07040] transition-all"
         >
-          Send Message
+          Mesaj Gönder
         </button>
         {status && <p className="mt-4">{status}</p>}
       </form>

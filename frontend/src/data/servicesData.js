@@ -1,19 +1,19 @@
 const servicesData = [
   {
     slug: "sosyal-medya-yonetimi",
-    title: "Social Media Strategy",
+    title: "Sosyal Medya Stratejisi",
     description:
       "Markanızın dijital varlığını güçlendirmek ve hedef kitlenizle etkileşim kurmak için profesyonel sosyal medya yönetimi hizmetleri sunuyoruz.",
     image: "/assets/services-assets/strategy.webp",
     objective: [
-      "Clicks through to the website",
-      "Increased engagement",
-      "App installs",
+      "Web sitesine tıklama",
+      "Artan etkileşim",
+      "Uygulama indirmeleri",
     ],
     solution: [
-      "Create a strategy of organic content and infographics",
-      "Publish informative and engaging content to educate the audience",
-      "Publish high-quality infographics designed to generate web traffic",
+      "Organik içerik ve infografikler için bir strateji oluşturun",
+      "Hedef kitleyi bilgilendirmek için bilgilendirici ve ilgi çekici içerikler yayınlayın",
+      "Web trafiği oluşturmak için yüksek kaliteli infografikler yayınlayın",
     ],
     images: [
       "/assets/instagram1.jpg",
@@ -28,59 +28,59 @@ const servicesData = [
     timeline: [
       {
         id: 1,
-        title: "Post Approval",
+        title: "Gönderi Onayı",
         description:
-          "Our multi-tiered approval process ensures high quality and no mistakes while keeping the review effortless for our partners.",
+          "Çok aşamalı onay sürecimiz, yüksek kalite ve hata olmadan, ortaklarımız için gözden geçirmeyi zahmetsiz hale getirir.",
       },
       {
         id: 2,
-        title: "Content Creation",
+        title: "İçerik Oluşturma",
         description:
-          "Developed engaging content tailored to the target audience to boost interaction and brand awareness.",
+          "Etkileşimi artırmak ve marka bilinirliğini artırmak için hedef kitleye uygun içerikler geliştirilmiştir.",
       },
       {
         id: 3,
-        title: "Analytics and Reporting",
+        title: "Analiz ve Raporlama",
         description:
-          "Monitored social media metrics to refine strategies and improve performance over time.",
+          "Zamanla stratejileri geliştirmek ve performansı artırmak için sosyal medya metriklerini izledik.",
       },
       {
         id: 4,
-        title: "Deneme Viviency Title",
+        title: "Deneme Viviency Başlığı",
         description:
-          "Monitored social media metrics to refine strategies and deneme viviency description.",
+          "Sosyal medya metriklerini izleyerek stratejileri geliştirdik ve deneme viviency açıklaması.",
       },
     ],
     information: [
       {
         id: 1,
-        title: "The Importance of a Social Media Strategy",
+        title: "Sosyal Medya Stratejisinin Önemi",
         description:
-          "A well-defined social media strategy is crucial for success in the digital age. It helps businesses align their goals, understand their audience, and establish a strong online presence. By leveraging analytics and insights, brands can refine their approaches and achieve better engagement.\n\nFurthermore, a strategic framework allows for consistency in messaging across different platforms, which builds trust and recognition among followers. In today’s fast-paced digital environment, having a clear strategy not only enhances your brand's visibility but also maximizes the potential for audience interaction and loyalty.",
+          "İyi tanımlanmış bir sosyal medya stratejisi, dijital çağda başarı için kritik öneme sahiptir. Bu, işletmelerin hedeflerini hizalamasına, hedef kitlelerini anlamasına ve güçlü bir çevrimiçi varlık oluşturmasına yardımcı olur. Analitik ve içgörülerden yararlanarak, markalar yaklaşımlarını geliştirebilir ve daha iyi etkileşim elde edebilir.\n\nAyrıca, stratejik bir çerçeve, farklı platformlar arasında tutarlılık sağlar, bu da takipçiler arasında güven ve tanınırlık oluşturur. Bugünün hızlı tempolu dijital ortamında, net bir stratejiye sahip olmak, yalnızca markanızın görünürlüğünü artırmakla kalmaz, aynı zamanda izleyici etkileşimi ve sadakati için potansiyeli en üst düzeye çıkarır.",
       },
       {
         id: 2,
-        title: "Engagement through Content",
+        title: "İçerik Üzerinden Etkileşim",
         description:
-          "Engaging content is the heart of social media success. From captivating images to thought-provoking posts, our team focuses on creating content that resonates with your audience, fostering interaction and building community around your brand.\n\nBy understanding the interests and behaviors of your target audience, we tailor content that prompts discussions and encourages sharing. This not only amplifies your reach but also strengthens customer relationships. Ultimately, the goal is to create a vibrant online community where followers feel connected and invested in your brand.",
+          "Etkileşimli içerik, sosyal medya başarısının kalbidir. Çekici görüntülerden düşündürücü gönderilere kadar, ekibimiz, hedef kitlenizle rezonansa giren içerikler oluşturmayı hedefliyor ve etkileşimi teşvik ediyor.\n\nHedef kitlenizin ilgi alanlarını ve davranışlarını anlayarak, tartışmaları teşvik eden ve paylaşımı teşvik eden içerikler sunuyoruz. Bu, yalnızca ulaşımınızı artırmakla kalmaz, aynı zamanda müşteri ilişkilerini güçlendirir. Nihai hedef, takipçilerin markanızla bağlantılı ve yatırım yapmış hissettiği canlı bir çevrimiçi topluluk yaratmaktır.",
       },
     ],
   },
   {
     slug: "produksiyon",
-    title: "Production",
+    title: "Prodüksiyon",
     description:
       "Prodüksiyon ihtiyaçlarınızı karşılayan ve markanızı en etkili şekilde tanıtan yaratıcı çözümler sunuyoruz.",
     image: "/assets/services-assets/strategy.webp",
     objective: [
-      "Create high-quality videos and photos",
-      "Enhance visual storytelling",
-      "Boost brand engagement",
+      "Yüksek kaliteli videolar ve fotoğraflar oluşturun",
+      "Görsel anlatımı artırın",
+      "Marka etkileşimini artırın",
     ],
     solution: [
-      "Develop a full-scale production plan tailored to your brand",
-      "Create visually appealing content for social media and ads",
-      "Utilize high-end equipment and a skilled production team",
+      "Markanıza özel bir tam ölçekli prodüksiyon planı geliştirin",
+      "Sosyal medya ve reklamlar için görsel olarak çekici içerikler oluşturun",
+      "Yüksek kaliteli ekipman ve uzman bir prodüksiyon ekibi kullanın",
     ],
     images: [
       "/assets/instagram1.jpg",
@@ -95,53 +95,53 @@ const servicesData = [
     timeline: [
       {
         id: 1,
-        title: "Concept Development",
+        title: "Kavram Geliştirme",
         description:
-          "Worked closely with the client to develop concepts that align with their brand message.",
+          "Müşteri ile yakın çalışarak markalarının mesajı ile uyumlu kavramlar geliştirdik.",
       },
       {
         id: 2,
-        title: "Shooting",
+        title: "Çekim",
         description:
-          "Executed the production with a professional crew, capturing high-quality visuals.",
+          "Profesyonel bir ekip ile prodüksiyonu gerçekleştirerek yüksek kaliteli görselleri yakaladık.",
       },
       {
         id: 3,
-        title: "Editing and Delivery",
+        title: "Düzenleme ve Teslimat",
         description:
-          "Edited the footage to create compelling videos and images, delivering them on schedule.",
+          "Çarpıcı videolar ve görseller oluşturmak için görüntüleri düzenleyerek, bunları zamanında teslim ettik.",
       },
     ],
     information: [
       {
         id: 1,
-        title: "The Power of Visual Storytelling",
+        title: "Görsel Anlatımın Gücü",
         description:
-          "Visual storytelling is a powerful way to communicate your brand message. High-quality visuals can evoke emotions and create connections with your audience, making it essential for effective marketing.\n\nBy using compelling narratives in conjunction with striking imagery, we ensure that your message not only reaches but resonates with your audience. This approach can significantly enhance brand recall and loyalty, as visuals are often more impactful than text alone.\n\nAdditionally, effective storytelling allows you to humanize your brand, creating a relatable and engaging narrative that draws customers in.",
+          "Görsel anlatım, marka mesajınızı iletmenin güçlü bir yoludur. Yüksek kaliteli görseller, duyguları uyandırabilir ve izleyicinizle bağlantı kurabilir, bu da etkili pazarlama için gereklidir.\n\nÇarpıcı görüntülerle birlikte etkileyici anlatılar kullanarak, mesajınızın yalnızca ulaşmasını değil, aynı zamanda izleyicinizle yankılanmasını sağlıyoruz. Bu yaklaşım, marka hatırlama ve sadakati önemli ölçüde artırabilir, çünkü görseller genellikle metinden daha etkileyicidir.\n\nAyrıca, etkili bir anlatım, markanızı insana yakınlaştırarak, müşterileri çeken ilişkisel ve ilgi çekici bir anlatı oluşturmanıza olanak tanır.",
       },
       {
         id: 2,
-        title: "Tailored Production Solutions",
+        title: "Özelleştirilmiş Prodüksiyon Çözümleri",
         description:
-          "Every brand has unique needs. We work with you to understand your vision and craft production solutions that align with your goals, ensuring your message is communicated effectively.\n\nOur team conducts thorough consultations to identify your specific requirements and preferences. From concept to execution, we remain committed to delivering tailored solutions that reflect your brand's ethos and engage your audience.\n\nThis customized approach not only guarantees that the final product meets your expectations but also enhances your brand's overall impact in the market.",
+          "Her markanın benzersiz ihtiyaçları vardır. Vizyonunuzu anlamak ve hedeflerinizle uyumlu prodüksiyon çözümleri oluşturmak için sizinle çalışıyoruz, böylece mesajınız etkili bir şekilde iletilir.\n\nEkibimiz, özel gereksinimlerinizi ve tercihlerinizi belirlemek için kapsamlı danışmanlık yapar. Kavramdan uygulamaya kadar, markanızın ethosunu yansıtan ve izleyicinizle etkileşimi artıran özelleştirilmiş çözümler sunmaya kararlıyız.\n\nBu özelleştirilmiş yaklaşım, nihai ürünün beklentilerinizi karşılamasını sağlamakla kalmaz, aynı zamanda markanızın pazardaki genel etkisini de artırır.",
       },
     ],
   },
   {
     slug: "web-site-tasarimi",
-    title: "Web Design",
+    title: "Web Tasarımı",
     description:
       "Modern ve kullanıcı dostu web siteleri ile dijital varlığınızı güçlendiriyoruz, markanızı online dünyada temsil ediyoruz.",
     image: "/assets/services-assets/strategy.webp",
     objective: [
-      "Increase online visibility",
-      "Boost user engagement",
-      "Improve conversion rates",
+      "Çevrimiçi görünürlüğü artırın",
+      "Kullanıcı etkileşimini artırın",
+      "Dönüşüm oranlarını iyileştirin",
     ],
     solution: [
-      "Design responsive and user-friendly websites",
-      "Implement SEO strategies for better search rankings",
-      "Integrate analytics tools to track performance",
+      "Responsive ve kullanıcı dostu web siteleri tasarlayın",
+      "Daha iyi arama sıralamaları için SEO stratejileri uygulayın",
+      "Performansı izlemek için analiz araçları entegre edin",
     ],
     images: [
       "/assets/instagram1.jpg",
@@ -156,53 +156,53 @@ const servicesData = [
     timeline: [
       {
         id: 1,
-        title: "Planning and Research",
+        title: "Planlama ve Araştırma",
         description:
-          "Conducted market research and planned the website structure and features.",
+          "Pazar araştırması yaparak web sitesi yapısını ve özelliklerini planladık.",
       },
       {
         id: 2,
-        title: "Design Mockups",
+        title: "Tasarım Mockupları",
         description:
-          "Created design mockups for client approval, focusing on UX/UI principles.",
+          "Müşteri onayı için UX/UI prensiplerine odaklanarak tasarım mockupları oluşturduk.",
       },
       {
         id: 3,
-        title: "Development and Launch",
+        title: "Geliştirme ve Lansman",
         description:
-          "Developed the website, performed testing, and launched it successfully.",
+          "Web sitesini geliştirdik, testler yaptık ve başarılı bir şekilde başlattık.",
       },
     ],
     information: [
       {
         id: 1,
-        title: "User-Centric Design",
+        title: "Kullanıcı Merkezli Tasarım",
         description:
-          "A user-centric design approach ensures that the website meets the needs of your visitors. By prioritizing user experience, we create sites that are not only visually appealing but also easy to navigate.\n\nThis involves understanding user behavior and preferences to design intuitive interfaces that facilitate seamless interactions. Additionally, our focus on accessibility ensures that all users, regardless of their abilities, can engage with your content effectively.\n\nThe end goal is to enhance user satisfaction, leading to higher retention rates and increased conversions.",
+          "Kullanıcı merkezli bir tasarım yaklaşımı, web sitesinin ziyaretçilerinizin ihtiyaçlarını karşıladığından emin olur. Kullanıcı deneyimini önceliklendiren tasarımlar, yalnızca görsel olarak çekici değil, aynı zamanda gezinti açısından da kolaydır.\n\nBu, kullanıcı davranışlarını ve tercihlerini anlayarak, sorunsuz etkileşimleri kolaylaştıran sezgisel arayüzler tasarlamayı içerir. Ayrıca, erişilebilirliğe odaklanarak, tüm kullanıcıların, yeteneklerine bakılmaksızın, içeriğinizle etkili bir şekilde etkileşime girmesini sağlarız.\n\nSonuç olarak, kullanıcı memnuniyetini artırmayı, daha yüksek tutma oranlarına ve artan dönüşümlere yol açmayı hedefliyoruz.",
       },
       {
         id: 2,
-        title: "SEO and Performance",
+        title: "SEO ve Performans",
         description:
-          "Integrating SEO best practices into web design is crucial for increasing visibility. Our designs are built to optimize your search engine ranking and enhance performance.\n\nThis involves utilizing appropriate keywords, optimizing images, and ensuring fast loading times to improve user experience. We also incorporate analytics tools to track user behavior and site performance, allowing us to make data-driven decisions for continuous improvement.\n\nBy combining beautiful design with technical SEO, we help ensure that your site not only attracts visitors but also converts them into loyal customers.",
+          "Web tasarımına SEO en iyi uygulamalarını entegre etmek, görünürlüğü artırmak için kritik öneme sahiptir. Tasarımlarımız, arama motoru sıralamanızı optimize etmek ve performansı artırmak için inşa edilmiştir.\n\nBu, uygun anahtar kelimeleri kullanmayı, görselleri optimize etmeyi ve kullanıcı deneyimini iyileştirmek için hızlı yükleme süreleri sağlamayı içerir. Ayrıca, kullanıcı davranışını ve site performansını izlemek için analiz araçları entegre ediyoruz, bu da sürekli iyileştirme için veri odaklı kararlar almamızı sağlıyor.\n\nGüzel tasarımı teknik SEO ile birleştirerek, sitenizin yalnızca ziyaretçileri çekmesini değil, aynı zamanda onları sadık müşterilere dönüştürmesini sağlıyoruz.",
       },
     ],
   },
   {
     slug: "reklam-yonetimi",
-    title: "Advertising Management",
+    title: "Reklam Yönetimi",
     description:
       "Hedef odaklı reklam kampanyaları oluşturarak markanızın daha geniş bir kitleye ulaşmasını sağlıyoruz.",
     image: "/assets/services-assets/strategy.webp",
     objective: [
-      "Increase brand awareness",
-      "Drive more traffic to your website",
-      "Boost lead generation",
+      "Marka bilinirliğini artırın",
+      "Web sitenize daha fazla trafik yönlendirin",
+      "Potansiyel müşteri üretimini artırın",
     ],
     solution: [
-      "Develop paid advertising strategies across platforms",
-      "Continuous monitoring and optimization of ads",
-      "Target specific demographics for maximum ROI",
+      "Platformlar arası ücretli reklam stratejileri geliştirin",
+      "Reklamların sürekli izlenmesi ve optimize edilmesi",
+      "Maksimum ROI için belirli demografileri hedefleyin",
     ],
     images: [
       "/assets/instagram1.jpg",
@@ -217,53 +217,53 @@ const servicesData = [
     timeline: [
       {
         id: 1,
-        title: "Market Analysis",
+        title: "Pazar Analizi",
         description:
-          "Analyzed target markets and demographics to tailor advertising efforts.",
+          "Reklam çalışmalarını uyarlamak için hedef pazarları ve demografileri analiz ettik.",
       },
       {
         id: 2,
-        title: "Campaign Setup",
+        title: "Kampanya Kurulumu",
         description:
-          "Set up ad campaigns across various platforms with optimized keywords and settings.",
+          "Optimize edilmiş anahtar kelimeler ve ayarlarla çeşitli platformlarda reklam kampanyaları kurduk.",
       },
       {
         id: 3,
-        title: "Performance Review",
+        title: "Performans İncelemesi",
         description:
-          "Regularly reviewed campaign performance and adjusted strategies accordingly.",
+          "Kampanya performansını düzenli olarak gözden geçirerek stratejileri buna göre ayarladık.",
       },
     ],
     information: [
       {
         id: 1,
-        title: "Crafting Effective Ads",
+        title: "Etkili Reklamlar Hazırlama",
         description:
-          "Effective advertising requires understanding your audience. We craft ads that speak directly to your target demographic, ensuring better engagement and conversion.\n\nThis involves not only appealing visuals but also persuasive copy that aligns with your brand's message. We utilize data-driven insights to identify the most effective channels and formats for your campaigns, ensuring maximum reach and impact.\n\nBy constantly testing and refining our approach, we can adapt to changing market trends and audience preferences, resulting in campaigns that drive tangible results.",
+          "Etkili reklamcılık, hedef kitlenizi anlamayı gerektirir. Hedef demografinizle doğrudan konuşan reklamlar oluşturuyoruz, böylece daha iyi etkileşim ve dönüşüm sağlıyoruz.\n\nBu, sadece çekici görselleri değil, aynı zamanda markanızın mesajıyla uyumlu ikna edici metinleri de içerir. Kampanyalarınız için en etkili kanalları ve formatları belirlemek için veri odaklı içgörüler kullanıyoruz, böylece maksimum erişim ve etki sağlıyoruz.\n\nSürekli olarak yaklaşımımızı test edip geliştirerek, değişen pazar trendlerine ve izleyici tercihlerine uyum sağlayabiliriz; bu da somut sonuçlar doğuran kampanyalara yol açar.",
       },
       {
         id: 2,
-        title: "Data-Driven Decisions",
+        title: "Veri Odaklı Kararlar",
         description:
-          "Our advertising strategies are informed by data. By analyzing performance metrics, we continuously optimize campaigns for maximum impact and ROI.\n\nThis includes tracking key performance indicators (KPIs) such as click-through rates, conversion rates, and customer acquisition costs. Through regular reporting and analysis, we provide insights into what's working and what needs adjustment, allowing for agile decision-making.\n\nOur commitment to data-driven advertising not only enhances campaign effectiveness but also provides our clients with a clear understanding of their marketing investment.",
+          "Reklam stratejilerimiz verilerle yönlendirilmektedir. Performans metriklerini analiz ederek, kampanyaları maksimum etki ve ROI için sürekli optimize ediyoruz.\n\nBu, tıklama oranları, dönüşüm oranları ve müşteri edinim maliyetleri gibi anahtar performans göstergelerini (KPI'lar) izlemeyi içerir. Düzenli raporlama ve analiz yoluyla, neyin işe yaradığını ve neyin ayarlanması gerektiğini belirten içgörüler sunuyoruz; bu da çevik karar verme olanağı sağlar.\n\nVeri odaklı reklamcılığa olan bağlılığımız, yalnızca kampanya etkinliğini artırmakla kalmaz, aynı zamanda müşterilerimize pazarlama yatırımlarının net bir anlayışını sunar.",
       },
     ],
   },
   {
     slug: "hukuki-danismanlik",
-    title: "Legal Consultancy",
+    title: "Hukuki Danışmanlık",
     description:
       "İşletmenizin yasal süreçlerinde güvenli adımlar atmanıza yardımcı olacak profesyonel hukuki danışmanlık hizmetleri sunuyoruz.",
     image: "/assets/services-assets/strategy.webp",
     objective: [
-      "Ensure legal compliance",
-      "Minimize business risks",
-      "Safeguard intellectual property",
+      "Yasal uyumu sağlamak",
+      "İşletme risklerini azaltmak",
+      "Fikri mülkiyeti korumak",
     ],
     solution: [
-      "Offer expert legal advice on contracts and agreements",
-      "Conduct risk assessments and legal audits",
-      "Provide ongoing legal support for businesses",
+      "Sözleşmeler ve anlaşmalar hakkında uzman hukuki danışmanlık sunmak",
+      "Risk değerlendirmeleri ve hukuki denetimler gerçekleştirmek",
+      "İşletmelere sürekli hukuki destek sağlamak",
     ],
     images: [
       "/assets/instagram1.jpg",
@@ -278,53 +278,53 @@ const servicesData = [
     timeline: [
       {
         id: 1,
-        title: "Legal Consultation",
+        title: "Hukuki Danışmanlık",
         description:
-          "Provided initial consultation to identify legal needs and areas of concern.",
+          "Hukuki ihtiyaçları ve endişeleri belirlemek için başlangıç danışmanlığı sağlandı.",
       },
       {
         id: 2,
-        title: "Documentation Review",
+        title: "Belge İncelemesi",
         description:
-          "Reviewed all legal documents and contracts to ensure compliance and protect interests.",
+          "Tüm hukuki belgeleri ve sözleşmeleri inceleyerek uyumu sağlamak ve menfaatleri korumak.",
       },
       {
         id: 3,
-        title: "Strategic Planning",
+        title: "Stratejik Planlama",
         description:
-          "Developed legal strategies to mitigate risks and support business objectives.",
+          "Riskleri azaltmak ve iş hedeflerini desteklemek için hukuki stratejiler geliştirmek.",
       },
     ],
     information: [
       {
         id: 1,
-        title: "Understanding Legal Risks",
+        title: "Hukuki Riskleri Anlamak",
         description:
-          "Understanding potential legal risks is essential for any business. Our consultancy services help identify these risks and develop strategies to mitigate them.\n\nThis involves conducting thorough assessments of current practices and identifying areas that may expose your business to legal liabilities. We work closely with your team to ensure that all operational practices adhere to legal standards, ultimately safeguarding your business from potential disputes and losses.\n\nBy proactively addressing these issues, we help you navigate complex legal landscapes with confidence.",
+          "Potansiyel hukuki riskleri anlamak, her işletme için esastır. Danışmanlık hizmetlerimiz, bu riskleri tanımlamaya ve bunları azaltacak stratejiler geliştirmeye yardımcı olur.\n\nBu, mevcut uygulamaların kapsamlı değerlendirmesini yapmayı ve işletmenizi hukuki sorumluluklara maruz bırakabilecek alanları tanımlamayı içerir. Tüm operasyonel uygulamaların hukuki standartlara uygun olmasını sağlamak için ekibinizle yakın çalışıyoruz, böylece işletmenizi potansiyel anlaşmazlıklar ve kayıplardan koruyoruz.\n\nBu sorunları proaktif olarak ele alarak, karmaşık hukuki manzaralarda güvenle navigasyon yapmanıza yardımcı oluyoruz.",
       },
       {
         id: 2,
-        title: "Ongoing Legal Support",
+        title: "Sürekli Hukuki Destek",
         description:
-          "Legal needs can evolve over time. We provide ongoing support to ensure your business remains compliant and protected as it grows.\n\nOur dedicated team stays updated on the latest legal developments relevant to your industry, allowing us to offer timely advice and adjustments to your legal strategies. Whether you require assistance with contract negotiations, compliance audits, or dispute resolutions, we are here to support you.\n\nThis long-term partnership fosters a strong legal foundation for your business, enabling you to focus on growth and success.",
+          "Hukuki ihtiyaçlar zamanla evrilebilir. İşletmenizin büyüdükçe uyumlu ve korunaklı kalmasını sağlamak için sürekli destek sağlıyoruz.\n\nÖzel ekibimiz, sektörünüze ilişkin en son hukuki gelişmeleri takip ederek, zamanında tavsiye ve hukuki stratejilerinizde ayarlamalar sunma olanağı sağlar. Sözleşme müzakereleri, uyum denetimleri veya uyuşmazlık çözümlemeleri ile ilgili yardıma ihtiyaç duyduğunuzda, burada destek olmak için varız.\n\nBu uzun vadeli ortaklık, işletmenizin güçlü bir hukuki temele sahip olmasını sağlayarak, büyüme ve başarıya odaklanmanıza olanak tanır.",
       },
     ],
   },
   {
     slug: "marka-gelistirme",
-    title: "Brand Development",
+    title: "Marka Geliştirme",
     description:
       "Marka bilinirliğinizi artırmak ve sürdürülebilir bir marka stratejisi oluşturmak için danışmanlık sağlıyoruz.",
     image: "/assets/services-assets/strategy.webp",
     objective: [
-      "Enhance brand recognition",
-      "Create a loyal customer base",
-      "Establish a unique brand identity",
+      "Marka tanınırlığını artırın",
+      "Sadık bir müşteri tabanı oluşturun",
+      "Eşsiz bir marka kimliği oluşturun",
     ],
     solution: [
-      "Develop a comprehensive brand strategy",
-      "Create visual identity elements like logos and guidelines",
-      "Implement strategies for long-term brand growth",
+      "Kapsamlı bir marka stratejisi geliştirin",
+      "Logo ve kılavuzlar gibi görsel kimlik unsurları oluşturun",
+      "Uzun vadeli marka büyümesi için stratejiler uygulayın",
     ],
     images: [
       "/assets/instagram1.jpg",
@@ -339,35 +339,35 @@ const servicesData = [
     timeline: [
       {
         id: 1,
-        title: "Brand Discovery",
+        title: "Marka Keşfi",
         description:
-          "Explored the client's mission, values, and market position to inform the branding process.",
+          "Müşterinin misyonunu, değerlerini ve pazar konumunu keşfederek marka sürecini bilgilendirdik.",
       },
       {
         id: 2,
-        title: "Identity Design",
+        title: "Kimlik Tasarımı",
         description:
-          "Designed logos, color schemes, and other visual elements to represent the brand.",
+          "Markayı temsil etmek için logo, renk şemaları ve diğer görsel unsurları tasarladık.",
       },
       {
         id: 3,
-        title: "Brand Guidelines",
+        title: "Marka Kılavuzları",
         description:
-          "Developed comprehensive brand guidelines to ensure consistency across all channels.",
+          "Tüm kanallar arasında tutarlılığı sağlamak için kapsamlı marka kılavuzları geliştirdik.",
       },
     ],
     information: [
       {
         id: 1,
-        title: "Creating a Unique Brand Identity",
+        title: "Eşsiz Bir Marka Kimliği Oluşturma",
         description:
-          "A strong brand identity sets you apart in a crowded market. We help you develop a unique identity that resonates with your audience and reflects your values.\n\nThis process includes in-depth research into market trends, competitor analysis, and audience insights to craft a brand narrative that is both authentic and compelling. We focus on creating visual elements, such as logos and color palettes, that not only represent your brand but also evoke the desired emotions in your audience.\n\nA well-defined brand identity not only enhances recognition but also fosters trust and loyalty among consumers.",
+          "Güçlü bir marka kimliği, kalabalık bir pazarda sizi ayırır. Hedef kitlenizle rezonansa giren ve değerlerinizi yansıtan benzersiz bir kimlik geliştirmenize yardımcı oluyoruz.\n\nBu süreç, pazar trendleri, rakip analizi ve hedef kitle içgörüleri üzerine derinlemesine araştırmayı içerir, böylece hem otantik hem de etkileyici bir marka anlatısı oluşturur. Markanızı temsil eden ve izleyicinizde istenen duyguları uyandıran görsel unsurları, örneğin logolar ve renk paletleri oluşturmaya odaklanıyoruz.\n\nİyi tanımlanmış bir marka kimliği, yalnızca tanınırlığı artırmakla kalmaz, aynı zamanda tüketiciler arasında güven ve sadakat oluşturur.",
       },
       {
         id: 2,
-        title: "Building Brand Loyalty",
+        title: "Marka Sadakati Oluşturma",
         description:
-          "Brand loyalty is essential for long-term success. Our strategies focus on creating meaningful connections with customers to foster loyalty and advocacy.\n\nWe believe that brand loyalty stems from positive customer experiences and the value provided. Through targeted marketing campaigns, community engagement initiatives, and personalized customer interactions, we help brands cultivate lasting relationships with their audience.\n\nBy actively listening to customer feedback and adapting to their needs, we empower brands to not only retain existing customers but also attract new ones through authentic recommendations and referrals.",
+          "Marka sadakati uzun vadeli başarı için esastır. Stratejilerimiz, müşterilerle anlamlı bağlantılar kurmaya odaklanarak sadakati ve savunuculuğu artırır.\n\nMarka sadakatinin, olumlu müşteri deneyimlerinden ve sağlanan değerden kaynaklandığına inanıyoruz. Hedefli pazarlama kampanyaları, topluluk katılım girişimleri ve kişiselleştirilmiş müşteri etkileşimleri yoluyla, markaların izleyicileriyle kalıcı ilişkiler kurmasına yardımcı oluyoruz.\n\nMüşteri geri bildirimlerini aktif olarak dinleyerek ve ihtiyaçlarına uyum sağlayarak, markaların mevcut müşterileri korumalarını ve ayrıca otantik öneriler ve tavsiyelerle yeni müşteriler çekmelerini sağlıyoruz.",
       },
     ],
   },

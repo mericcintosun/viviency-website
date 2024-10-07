@@ -5,37 +5,37 @@ import Image from "next/image";
 const testimonials = [
   {
     quote:
-      "We’ve had the pleasure of working with Giraffe for a little over 6 months now and they’ve been very supportive, professional, efficient and also flexible in terms of making adjustments as we go along and build the ZAFARI brand in social media. In fact, we’ve made incredible progress together with Giraffe and generated over 1.5 million impressions during the last 6 months across both ZAFARI’s Facebook and Instagram profiles.",
+      "Viviency ile yaklaşık 6 aydır çalışma fırsatına sahip olduk ve kendileri son derece destekleyici, profesyonel, verimli ve süreç içinde ayarlamalar yapma konusunda da esnek oldular. ZAFARI markasını sosyal medyada oluştururken birlikte harika ilerleme kaydettik ve son 6 ayda ZAFARI'nın Facebook ve Instagram profillerinde 1,5 milyondan fazla gösterim elde ettik.",
     name: "Kiki",
-    role: "Sweetness Director",
+    role: "Tatlılık Direktörü",
     image: "/assets/about-assets/kiki.webp",
   },
   {
     quote:
-      "Giraffe has been a fantastic partner in helping us grow our social media presence. Their team is creative, professional, and always willing to go the extra mile to ensure our success.",
+      "Viviency, sosyal medya varlığımızı büyütmemize yardımcı olan harika bir ortak oldu. Ekibi yaratıcı, profesyonel ve başarımızı sağlamak için her zaman ekstra çaba göstermeye istekli.",
     name: "Alex Johnson",
-    role: "Marketing Lead",
+    role: "Pazarlama Lideri",
     image: "/assets/about-assets/kiki.webp",
   },
   {
     quote:
-      "Thanks to Giraffe's strategies, we've seen a significant increase in engagement across all our social media platforms. They are truly experts in their field!",
+      "Viviency'nin stratejileri sayesinde, tüm sosyal medya platformlarımızda etkileşimde önemli bir artış gördük. Gerçekten alanlarında uzmandırlar!",
     name: "Maria Martinez",
-    role: "Social Media Manager",
+    role: "Sosyal Medya Yöneticisi",
     image: "/assets/about-assets/kiki.webp",
   },
   {
     quote:
-      "Working with Giraffe has been an absolute pleasure. Their professionalism and dedication to our success have made a huge impact on our social media presence.",
+      "Viviency ile çalışmak tam bir zevkti. Profesyonellikleri ve başarımıza olan bağlılıkları, sosyal medya varlığımız üzerinde büyük bir etki yarattı.",
     name: "James Lee",
-    role: "Creative Director",
+    role: "Yaratıcı Direktör",
     image: "/assets/about-assets/kiki.webp",
   },
   {
     quote:
-      "Giraffe's team consistently delivers top-notch content and insights. Their strategic approach has helped us exceed our marketing goals.",
+      "Viviency'nin ekibi sürekli olarak birinci sınıf içerikler ve içgörüler sunuyor. Stratejik yaklaşımları, pazarlama hedeflerimizi aşmamıza yardımcı oldu.",
     name: "Sophia Taylor",
-    role: "Content Strategist",
+    role: "İçerik Stratejisti",
     image: "/assets/about-assets/kiki.webp",
   },
 ];
@@ -44,10 +44,12 @@ export default function Testimonials() {
   return (
     <>
       <div className="w-[90%] mx-auto font-bold my-6 flex flex-col gap-6">
-        <h1 className=" text-5xl font-bold my-6 sm:text-6xl lg:text-7xl">testimonials</h1>
+        <h1 className=" text-5xl font-bold my-6 sm:text-6xl lg:text-7xl">
+          referanslar
+        </h1>
         <p className="text-lg lg:text-xl font-light">
-          Explore feedback from our partners to get a sense of our impact and
-          collaboration style.
+          Ortaklarımızdan gelen geri bildirimleri keşfedin ve etkimizi ve iş
+          birliği tarzımızı anlayın.
         </p>
       </div>
 

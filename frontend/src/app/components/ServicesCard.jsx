@@ -45,7 +45,7 @@ export default function ServicesCard() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-6xl font-bold mb-8 lg:text-center">Our Services</h1>
+      <h1 className="text-6xl font-bold mb-8 lg:text-center">Hizmetlerimiz</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {services.map((service, index) => (
           <div
@@ -67,7 +67,7 @@ export default function ServicesCard() {
                 href={`/works/${service.slug}`}
                 className="font-bold tracking-widest inline-block text-white bg-[#F07F55] rounded-xl px-6 py-3 transition-colors duration-300 hover:bg-[#92b188] hover:text-black focus:outline-none focus:ring-4 focus:ring-[#F07F55]/50 mt-auto w-[51%] lg:w-[45%]"
               >
-                Learn More
+                Daha fazla
               </Link>
             </div>
           </div>

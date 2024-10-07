@@ -7,39 +7,39 @@ export default function AgencyCard() {
   const agencyData = [
     {
       image: "/assets/agency/member1.png",
-      title: "social media strategy",
+      title: "sosyal medya stratejisi",
       description:
-        "Benefit from a data-driven social media strategy, transforming deep insights and your brand’s DNA into a dynamic roadmap toward your business goals.",
+        "Veri odaklı bir sosyal medya stratejisinden faydalanarak, derin içgörüler ve markanızın DNA'sını dinamik bir yol haritasına dönüştürün ve iş hedeflerinize ulaşın.",
     },
     {
       image: "/assets/agency/member2.webp",
-      title: "human-first social",
+      title: "insan odaklı sosyal",
       description:
-        "Take the first step in transforming your social media presence with our human-first approach.",
+        "Sosyal medya varlığınızı dönüştürmek için ilk adımı insan odaklı yaklaşımımızla atın.",
     },
     {
       image: "/assets/agency/member3.webp",
-      title: "social media advertising",
+      title: "sosyal medya reklamcılığı",
       description:
-        "Turn every ad into a powerful brand encounter with our relentless split testing and data-informed adjustments, ensuring your message not only reaches but resonates and engages.",
+        "Her reklamı güçlü bir marka etkileşimine dönüştürün; sürekli A/B testleri ve veriyle bilgilendirilmiş ayarlamalarla, mesajınızın yalnızca ulaşmasını değil, aynı zamanda yankılanmasını ve etkileşim sağlamasını garanti edin.",
     },
     {
       image: "/assets/agency/member4.webp",
-      title: "social media management",
+      title: "sosyal medya yönetimi",
       description:
-        "Leverage our social media management to master the art of engagement, from trend-tapping hashtag research to community interactions that forge strong connections.",
+        "Sosyal medya yönetimimizden yararlanarak, trendleri yakalayan hashtag araştırmasından güçlü bağlantılar kuran topluluk etkileşimlerine kadar etkileşimin sanatını öğrenin.",
     },
     {
       image: "/assets/agency/member5.webp",
-      title: "content creation",
+      title: "içerik oluşturma",
       description:
-        "Keep up with the demand for more content from your brand; from custom graphics to compelling videos, every piece is designed to drive engagement and amplify your marketing impact.",
+        "Markanızdan daha fazla içerik talebine ayak uydurun; özel grafiklerden etkileyici videolara kadar her parça, etkileşimi artırmak ve pazarlama etkinizi güçlendirmek için tasarlanmıştır.",
     },
     {
       image: "/assets/agency/member6.webp",
-      title: "influencer marketing",
+      title: "influencer pazarlama",
       description:
-        "Engage with influencer marketing that values authenticity; our campaigns are crafted with precision to resonate with your brand values and speak through voices that genuinely champion your message.",
+        "Otantikliği değer veren influencer pazarlaması ile etkileşimde bulunun; kampanyalarımız, marka değerlerinizle yankılanacak ve mesajınızı gerçekten destekleyen seslerle iletecek şekilde hassasiyetle hazırlanmıştır.",
     },
   ];
 

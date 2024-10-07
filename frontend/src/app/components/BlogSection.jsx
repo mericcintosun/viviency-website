@@ -147,7 +147,7 @@ export default function BlogSection() {
                     }}
                     className="px-4 py-2 text-white bg-[#F07F55] rounded-lg transition-colors duration-300 hover:bg-[#FFC107]"
                   >
-                    {isExpanded ? "Show Less" : "Read More"}
+                    {isExpanded ? "Daha Az Göster" : "Daha Fazla Oku"}
                   </motion.button>
 
                   <Link target = "_blank" href={`/blog/${slug}`}>
@@ -156,7 +156,7 @@ export default function BlogSection() {
                       whileTap={{ scale: 0.95 }}
                       className="px-4 py-2 border-2 border-[#F07F55] text-[#F07F55] rounded-lg transition-colors duration-300 hover:bg-[#F07F55] hover:text-white"
                     >
-                      Go to Post
+                      Gönderiye Git
                     </motion.button>
                   </Link>
                 </CardFooter>

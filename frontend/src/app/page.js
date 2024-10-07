@@ -13,7 +13,7 @@ export default function Home() {
     "hayal kurmayı ",
   ];
   
-  const buttonTwoText = "let's talk social!";
+  const buttonTwoText = "hadi konuşalım!";
 
   const loveText = `${" "} seviyoruz` ;
 

@@ -9,7 +9,7 @@ const MyMap = dynamic(() => import("./MyMap"), { ssr: false });
 const Enquire = dynamic(() => import("./Enquire"), { ssr: false });
 
 const content = ["satışlarınızı artırmak", "markanızı tanıtmak"];
-const buttonTwoText = "enquire now";
+const buttonTwoText = "bize ulaş";
 const loveText = "ister misiniz?";
 
 export default function ContactContent() {
@@ -37,10 +37,10 @@ export default function ContactContent() {
 
   return (
     <>
-        <motion.div
-        initial={{ opacity: 0, y: 50 }} 
-        animate={{ opacity: 1, y: 0 }}  
-        transition={{ duration: 1.0 }}    
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.0 }}
       >
         <div className="container mx-auto px-12 py-12 grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div className="space-y-8">
@@ -54,8 +54,8 @@ export default function ContactContent() {
               <p>konuşalım</p>
             </h1>
             <p className="text-lg text-gray-600">
-              Fill in the below contact form and a member of our team will
-              contact you to discuss.
+              Aşağıdaki iletişim formunu doldurun, ekibimizden bir üye sizinle
+              iletişime geçerek konuyu görüşecektir.
             </p>
 
             <Form />
