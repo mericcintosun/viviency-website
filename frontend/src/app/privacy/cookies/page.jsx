@@ -1,7 +1,63 @@
+"use client"; // İstemci tarafında çalışmasını belirtmek için
+
+import { motion } from "framer-motion";
+import privacyData from "@/data/privacyData";
+
+// Tarih formatını manuel olarak ayarlayan bir fonksiyon
+function formatDate(date) {
+  const day = String(date.getDate()).padStart(2, "0");
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const year = date.getFullYear();
+  return `${day}.${month}.${year}`;
+}
+
+// Metni güvenli bir şekilde işleyip bold yapacak fonksiyon
+function formatTextWithBold(text) {
+  const parts = text.split(/\*\*(.*?)\*\*/g); // '**' ile ayırarak bölme işlemi
+  return parts.map((part, index) =>
+    index % 2 === 1 ? <strong key={index}>{part}</strong> : part
+  );
+}
+
 export default function Cookies() {
-    return (
-      <>
-        <h1>Welcome Cookies!</h1>
-      </>
-    );
-  }
+  const fadeIn = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.3 } },
+  };
+
+  return (
+    <motion.div
+      className="container mx-auto px-4 py-8"
+      initial="hidden"
+      animate="visible"
+      variants={fadeIn}
+    >
+      <h1 className="text-3xl font-bold text-center mb-8 text-[#F07F55]">
+        {privacyData.cookieDisclosure.title}
+      </h1>
+      <div className="space-y-6">
+        {privacyData.cookieDisclosure.content.map((paragraph, index) => (
+          <motion.p
+            key={index}
+            className="text-gray-700 leading-relaxed"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.1 }}
+          >
+            {formatTextWithBold(paragraph)}
+          </motion.p>
+        ))}
+      </div>
+      <div className="mt-8">
+        <motion.p
+          className="text-gray-600 text-sm text-center"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.8 }}
+        >
+          Son güncelleme: {formatDate(new Date())}
+        </motion.p>
+      </div>
+    </motion.div>
+  );
+}
